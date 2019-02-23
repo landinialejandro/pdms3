@@ -1,10 +1,13 @@
 <?php
-	// For help on using hooks, please refer to https://bigprof.com/appgini/help/working-with-generated-web-database-application/hooks
+
 
 	function firstCashNote_init(&$options, $memberInfo, &$args){
+            
+            $options->TemplateDV = 'hooks/firstCashNote_templateDV.html';
 
 		return TRUE;
 	}
+
 
 	function firstCashNote_header($contentType, $memberInfo, &$args){
 		$header='';
@@ -38,6 +41,7 @@
 		return $header;
 	}
 
+
 	function firstCashNote_footer($contentType, $memberInfo, &$args){
 		$footer='';
 
@@ -70,43 +74,70 @@
 		return $footer;
 	}
 
+
 	function firstCashNote_before_insert(&$data, $memberInfo, &$args){
+	
+                $data['balance'] = $data['revenue'] - $data['outputs'];
 
 		return TRUE;
+
 	}
+
 
 	function firstCashNote_after_insert($data, $memberInfo, &$args){
 
 		return TRUE;
 	}
 
+
 	function firstCashNote_before_update(&$data, $memberInfo, &$args){
+	
+                $data['balance'] = $data['revenue'] - $data['outputs'];
 
 		return TRUE;
 	}
+
 
 	function firstCashNote_after_update($data, $memberInfo, &$args){
+	
 
 		return TRUE;
 	}
+
 
 	function firstCashNote_before_delete($selectedID, &$skipChecks, $memberInfo, &$args){
 
 		return TRUE;
 	}
 
+
 	function firstCashNote_after_delete($selectedID, $memberInfo, &$args){
 
 	}
 
-	function firstCashNote_dv($selectedID, $memberInfo, &$html, &$args){
 
-	}
+	function firstCashNote_dv($selectedID, $memberInfo, &$html, &$args){
+                /* current user is not an admin? */
+		if($mi['group'] != 'Admins'){
+			$html .= <<<EOC
+				<script>
+					\$j(function(){
+						\$j('#balance').prop('readonly', true);
+					})
+				</script>
+EOC;
+                }
+                if (isset($_REQUEST['addNew_x']) && isset($_REQUEST['Embedded'])){
+                    echo '<script>var AUTOMATICDV = true; </script>';
+                }
+        }
+
 
 	function firstCashNote_csv($query, $memberInfo, &$args){
 
 		return $query;
 	}
+
 	function firstCashNote_batch_actions(&$args){
 
 		return array();

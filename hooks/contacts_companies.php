@@ -1,10 +1,10 @@
 <?php
-	// For help on using hooks, please refer to https://bigprof.com/appgini/help/working-with-generated-web-database-application/hooks
 
 	function contacts_companies_init(&$options, $memberInfo, &$args){
 
 		return TRUE;
 	}
+
 
 	function contacts_companies_header($contentType, $memberInfo, &$args){
 		$header='';
@@ -37,6 +37,7 @@
 
 		return $header;
 	}
+
 
 	function contacts_companies_footer($contentType, $memberInfo, &$args){
 		$footer='';
@@ -75,38 +76,48 @@
 		return TRUE;
 	}
 
+
 	function contacts_companies_after_insert($data, $memberInfo, &$args){
 
 		return TRUE;
 	}
+
 
 	function contacts_companies_before_update(&$data, $memberInfo, &$args){
 
 		return TRUE;
 	}
 
+
 	function contacts_companies_after_update($data, $memberInfo, &$args){
 
 		return TRUE;
 	}
+
 
 	function contacts_companies_before_delete($selectedID, &$skipChecks, $memberInfo, &$args){
 
 		return TRUE;
 	}
 
+
 	function contacts_companies_after_delete($selectedID, $memberInfo, &$args){
 
 	}
 
-	function contacts_companies_dv($selectedID, $memberInfo, &$html, &$args){
 
+	function contacts_companies_dv($selectedID, $memberInfo, &$html, &$args){
+                    if (isset($_REQUEST['Parent'])){
+                        echo '<script> var PARENTDV = "'.$_REQUEST['Parent'].'"; </script>';
+                    }
 	}
+
 
 	function contacts_companies_csv($query, $memberInfo, &$args){
 
 		return $query;
 	}
+
 	function contacts_companies_batch_actions(&$args){
 
 		return array();

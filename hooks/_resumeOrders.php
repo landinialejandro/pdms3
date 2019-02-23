@@ -2,7 +2,7 @@
 	// For help on using hooks, please refer to https://bigprof.com/appgini/help/working-with-generated-web-database-application/hooks
 
 	function _resumeOrders_init(&$options, $memberInfo, &$args){
-
+                $options->Template = 'hooks/_resumeOrders_templateTV.html';
 		return TRUE;
 	}
 
@@ -102,6 +102,23 @@
 	function _resumeOrders_dv($selectedID, $memberInfo, &$html, &$args){
 
 	}
+
+	/**
+	 * Called when a user requests to download table data as a CSV file (by clicking on the SAVE CSV button)
+	 * 
+	 * @param $query
+	 * Contains the query that will be executed to return the data in the CSV file.
+	 * 
+	 * @param $memberInfo
+	 * An array containing logged member's info.
+	 * @see https://bigprof.com/appgini/help/working-with-generated-web-database-application/hooks/memberInfo
+	 * 
+	 * @param $args
+	 * An empty array. It's currently not used but is reserved for future uses.
+	 * 
+	 * @return
+	 * A string containing the query to use for fetching the CSV data. If FALSE or empty is returned, the default query is used.
+	*/
 
 	function _resumeOrders_csv($query, $memberInfo, &$args){
 

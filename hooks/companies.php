@@ -2,6 +2,13 @@
 	// For help on using hooks, please refer to https://bigprof.com/appgini/help/working-with-generated-web-database-application/hooks
 
 	function companies_init(&$options, $memberInfo, &$args){
+		/* Inserted by Search Page Maker for AppGini on 2018-09-26 02:07:33 */
+		$options->FilterPage = 'hooks/companies_filter.php';
+		/* End of Search Page Maker for AppGini code */
+                if (isset($_REQUEST['ck'])){
+                            $ck = makeSafe($_REQUEST['ck']);
+                            addFilter(1, 'and', 2, 'Equal to', $ck);
+                }
 
 		return TRUE;
 	}
@@ -44,6 +51,12 @@
 		switch($contentType){
 			case 'tableview':
 				$footer='';
+                            
+                            if (isset($_REQUEST['ck'])){
+                                $title=makeSafe($_REQUEST['ck']);
+                                echo title_tv($title,"?ck=".$title);
+                            }
+                            
 				break;
 
 			case 'detailview':
@@ -100,7 +113,60 @@
 	}
 
 	function companies_dv($selectedID, $memberInfo, &$html, &$args){
+            
+            if (isset($_REQUEST['addNew_x'])){
+                if (isset($_REQUEST['ck']) || (isset($_REQUEST['FilterValue']) && isset($_REQUEST['FilterField']))){
+                    if (isset($_REQUEST['ok'])){
+                       $ck_id = makeSafe($_REQUEST['ck']);
+                       $ck_text = sqlValue("select name from kinds where code = '{$ck_id}'");
+                    }
+                    if (isset($_REQUEST['FilterValue'])){
+                        $ck_text = makeSafe($_REQUEST['FilterValue'][1]);
+                        $ck_id = sqlValue("select code from kinds where name = '{$ck_text}'");
+                    }
+					ob_start();
+					?>
+						<!-- insert HTML code-->
+						<?php echo title_tv($ck_text,"?ck=$ck_text");?>
+						<script>
+							$j(function(){
+								setTimeout(function(){
+									$j('#s2id_kind-container').select2("data", {id: "<?php echo $ck_id; ?>", text: "<?php echo $ck_text; ?>"});
+									$j('#kind').val("<?php echo $ck_id; ?>");
+									orderNumber();
+								},1000);
+							});  
+						</script>
+					<?php
+					$html_code = ob_get_contents();
+					ob_end_clean();
+					$html= $html . $html_code;
+				}
+            }
+            // add actions buttons
+            if(!function_exists('mkbuttons')){
+                    include'_mkbuttons.php';
+                }
+            $buttons = [];
+            
+            $buttons['settings']['CUST_CREDIT']['name'] = 'Set Credit Limit';
+            $buttons['settings']['CUST_CREDIT']['insert'] = false;
+            $buttons['settings']['CUST_CREDIT']['update'] = true;
+            $buttons['settings']['CUST_CREDIT']['style'] = 'info';
+            $buttons['settings']['CUST_CREDIT']['icon'] = 'fa fa-arrows-h';
+            $buttons['settings']['CUST_CREDIT']['onclick'] = 'script|setLimit("' . $selectedID . '",this)';
+            $buttons['settings']['CUST_CREDIT']['confirm'] = '';
 
+            $buttons['settings']['CUST_PAYMENT']['name'] = 'Set Payment Limit';
+            $buttons['settings']['CUST_PAYMENT']['insert'] = false;
+            $buttons['settings']['CUST_PAYMENT']['update'] = true;
+            $buttons['settings']['CUST_PAYMENT']['style'] = 'info';
+            $buttons['settings']['CUST_PAYMENT']['icon'] = 'fa fa-calendar';
+            $buttons['settings']['CUST_PAYMENT']['onclick'] = 'script|setLimit("' . $selectedID . '",this)';
+            $buttons['settings']['CUST_PAYMENT']['confirm'] = '';
+            
+            $html .= mkbuttons('companies', $selectedID, $buttons);
+            
 	}
 
 	function companies_csv($query, $memberInfo, &$args){
