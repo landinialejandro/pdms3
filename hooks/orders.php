@@ -6,14 +6,14 @@
 		$options->FilterPage = 'hooks/orders_filter.php';
 		/* End of Search Page Maker for AppGini code */
 
-                 $options->TemplateDV = 'hooks/orders_templateDV_lte.html';
+//                 $options->TemplateDV = 'hooks/orders_templateDV_lte.html';
                  
                 if (isset($_REQUEST['SelectedID']) && $_REQUEST['SelectedID']){
                     $selectedID = intval(makeSafe($_REQUEST['SelectedID']));
                     $doc = sqlValue("select document from orders where id = {$selectedID}");
                     if ($doc){
                         //read only form
-                        $options->TemplateDV = 'hooks/orders_templateDVR.html';
+                        $options->TemplateDV = 'templates/orders_templateDVR.html';
                     }
                 }
                 if (isset($_REQUEST['ok'])){
@@ -183,7 +183,21 @@
                 <?php
                 $html_code = ob_get_contents();
                 ob_end_clean();
-                $html= $html . $html_code;
+                
+                $html .= $html_code;
+                
+            }else{
+            
+                $buttons = [];
+                $buttons['print']['invoice']['name'] = 'Print Invoice';
+                $buttons['print']['invoice']['insert'] = false;
+                $buttons['print']['invoice']['update'] = true;
+                $buttons['print']['invoice']['style'] = 'default';
+                $buttons['print']['invoice']['icon'] = 'fa fa-files-o';
+                $buttons['print']['invoice']['onclick'] = '';
+                $buttons['print']['invoice']['confirm'] = '';
+
+                $html .= mkbuttons('orders', $selectedID, $buttons);
             }
 	}
 

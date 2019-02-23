@@ -1,7 +1,5 @@
 <?php
 
-$currDir = dirname(__FILE__);
-include("$currDir/hooks/_mk/_mkbuttons.php");
 
 /**
  * This hook function is called when get a row from a table. 
@@ -135,4 +133,27 @@ function importData(){
     foreach ($views as $sql){
         $res = sql(file_get_contents("$dir/$sql"),$eo);
     }
+}
+
+function title_tv($title,$href=""){
+    $html_code ="";
+    if ($title){
+        ob_start();
+        ?>
+            <!-- insert HTML code-->
+            <script>
+             $j(function(){
+                 setTimeout(function(){
+                    var text = $j('.page-header a').html() + " - <?php echo $title;?>";
+                    var href = $j('.page-header a').attr("href") + "<?php echo $href;?>";
+                    $j('.page-header a').html(text);
+                    $j('.page-header a').attr("href",href);
+                 },100);
+             })
+            </script>
+        <?php
+        $html_code = ob_get_contents();
+        ob_end_clean();
+    }
+    return $html_code;
 }
