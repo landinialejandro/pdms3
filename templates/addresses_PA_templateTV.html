@@ -1,0 +1,19 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%SELECT%%> and <%%ENDSELECT%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the addresses_PA_init() hook (in hooks/addresses_PA.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="addresses_PA-kind-<%%VALUE(id)%%>" class="addresses_PA-kind"><%%SELECT%%><%%VALUE(kind)%%><%%ENDSELECT%%></td>
+		<td id="addresses_PA-IBAN_PA-<%%VALUE(id)%%>" class="addresses_PA-IBAN_PA"><%%SELECT%%><%%VALUE(IBAN_PA)%%><%%ENDSELECT%%></td>
+		<td id="addresses_PA-ABI_PA-<%%VALUE(id)%%>" class="addresses_PA-ABI_PA text-right"><%%SELECT%%><%%VALUE(ABI_PA)%%><%%ENDSELECT%%></td>
+		<td id="addresses_PA-CAB_PA-<%%VALUE(id)%%>" class="addresses_PA-CAB_PA text-right"><%%SELECT%%><%%VALUE(CAB_PA)%%><%%ENDSELECT%%></td>
+		<td id="addresses_PA-BIC_PA-<%%VALUE(id)%%>" class="addresses_PA-BIC_PA"><%%SELECT%%><%%VALUE(BIC_PA)%%><%%ENDSELECT%%></td>
+		<td id="addresses_PA-altroIndirizzo_Ced_PA-<%%VALUE(id)%%>" class="addresses_PA-altroIndirizzo_Ced_PA"><%%SELECT%%><%%VALUE(altroIndirizzo_Ced_PA)%%><%%ENDSELECT%%></td>
+		<td id="addresses_PA-altro_nr_Civico_Ced_PA-<%%VALUE(id)%%>" class="addresses_PA-altro_nr_Civico_Ced_PA"><%%SELECT%%><%%VALUE(altro_nr_Civico_Ced_PA)%%><%%ENDSELECT%%></td>
+		<td id="addresses_PA-altroCAP_Ced_PA-<%%VALUE(id)%%>" class="addresses_PA-altroCAP_Ced_PA"><%%SELECT%%><%%VALUE(altroCAP_Ced_PA)%%><%%ENDSELECT%%></td>
+		<td id="addresses_PA-altra_PR_Ced_PA-<%%VALUE(id)%%>" class="addresses_PA-altra_PR_Ced_PA"><%%SELECT%%><%%VALUE(altra_PR_Ced_PA)%%><%%ENDSELECT%%></td>
+		<td id="addresses_PA-altraNazione_Ced_PA-<%%VALUE(id)%%>" class="addresses_PA-altraNazione_Ced_PA"><%%SELECT%%><%%VALUE(altraNazione_Ced_PA)%%><%%ENDSELECT%%></td>
+		<td id="addresses_PA-default-<%%VALUE(id)%%>" class="addresses_PA-default text-right"><%%SELECT%%><%%VALUE(default)%%><%%ENDSELECT%%></td>
+		<td id="addresses_PA-ship-<%%VALUE(id)%%>" class="addresses_PA-ship text-right"><%%SELECT%%><%%VALUE(ship)%%><%%ENDSELECT%%></td>

@@ -1,0 +1,14 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%SELECT%%> and <%%ENDSELECT%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the contacts_companies_init() hook (in hooks/contacts_companies.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="contacts_companies-contact-<%%VALUE(id)%%>" class="contacts_companies-contact"><%%SELECT%%><%%VALUE(contact)%%><%%ENDSELECT%%></td>
+		<td id="contacts_companies-company-<%%VALUE(id)%%>" class="contacts_companies-company"><%%SELECT%%><%%VALUE(company)%%><%%ENDSELECT%%></td>
+		<td id="contacts_companies-default-<%%VALUE(id)%%>" class="contacts_companies-default"><%%SELECT%%><%%VALUE(default)%%><%%ENDSELECT%%></td>
+		<td id="contacts_companies-telefonoCompanyPA-<%%VALUE(id)%%>" class="contacts_companies-telefonoCompanyPA"><%%SELECT%%><%%VALUE(telefonoCompanyPA)%%><%%ENDSELECT%%></td>
+		<td id="contacts_companies-faxCompanyPA-<%%VALUE(id)%%>" class="contacts_companies-faxCompanyPA"><%%SELECT%%><%%VALUE(faxCompanyPA)%%><%%ENDSELECT%%></td>
+		<td id="contacts_companies-eMailCompanyPA-<%%VALUE(id)%%>" class="contacts_companies-eMailCompanyPA"><%%SELECT%%><%%VALUE(eMailCompanyPA)%%><%%ENDSELECT%%></td>
+		<td id="contacts_companies-riferimentoAmministrazionePA-<%%VALUE(id)%%>" class="contacts_companies-riferimentoAmministrazionePA"><%%SELECT%%><%%VALUE(riferimentoAmministrazionePA)%%><%%ENDSELECT%%></td>

@@ -1,0 +1,2103 @@
+<!-- Edit this file to change the layout of the detail view form -->
+
+<a name="detail-view"></a>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div class="panel-body" id="electronicInvoice_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="electronicInvoice_dv_form">
+			<fieldset class="form-horizontal">
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="id" class="control-label col-lg-3">Numero Progressivo invio</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="id"><%%VALUE(id)%%></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="idPaese_TR_PA" class="control-label col-lg-3">Id Paese trasmittente PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#idPaese_TR_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="idPaese_TR_PA-description"><div class="alert alert-info">1.1.1.1 <IdPaese> codice della nazione espresso secondo lo standard ISO 3166-1 alpha-2 code</div></span>
+
+						<div class="form-control-static" id="idPaese_TR_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="idCodice_TR_PA" class="control-label col-lg-3">Id Codice trasm. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#idCodice_TR_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="idCodice_TR_PA-description"><div class="alert alert-info">1.1.1.2 <IdCodice>codice identificativo fiscale</div></span>
+
+						<div class="form-control-static" id="idCodice_TR_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="progressivoInvioPA" class="control-label col-lg-3">Progressivo Invio PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#progressivoInvioPA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="progressivoInvioPA-description"><div class="alert alert-info">1.1.2 <ProgressivoInvio> progressivo univoco, attribuito dal soggetto che trasmette, relativo ad ogni singolo documento fattura</div></span>
+
+						<input maxlength="28" type="text" class="form-control" name="progressivoInvioPA" id="progressivoInvioPA" value="<%%VALUE(progressivoInvioPA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="formatoTrasmissionePA" class="control-label col-lg-3">Formato Trasmissione PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#formatoTrasmissionePA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="formatoTrasmissionePA-description"><div class="alert alert-info">1.1.3 <FormatoTrasmissione> contiene il codice identificativo del formato/versione con cui &#232; stato trasmesso il documento fattura. Valori ammessi:<br>[SDI10]</div></span>
+
+						<input maxlength="5" type="text" class="form-control" name="formatoTrasmissionePA" id="formatoTrasmissionePA" value="<%%VALUE(formatoTrasmissionePA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="codiceDestinatarioPA" class="control-label col-lg-3">Codice Destinatario PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#codiceDestinatarioPA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="codiceDestinatarioPA-description"><div class="alert alert-info">1.1.4 <CodiceDestinatario> codice ass. dell'ufficio dell&#8217;amministrazione dello stato al destinatario della fattura, definito dall'amministrazione di appartenenza come<br>riportato nella rubrica &#8220;Indice PA&#8221;.</div></span>
+
+						<div class="form-control-static" id="codiceDestinatarioPA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="telefonoPA" class="control-label col-lg-3" data-parent_link="view_parent_modal">Telefono PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#telefonoPA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="telefonoPA-description"><div class="alert alert-info">1.1.5 <ContattiTrasmittente>dati relativi ai contatti del trasmittente;<br>1.1.5.1 <Telefono>contatto telefonico fisso o mobile </div></span>
+
+						<div class="form-control-static" style="white-space: nowrap; overflow-x: hidden;"><%%COMBO(telefonoPA)%%><%%PLINK(telefonoPA)%%><%%ADDNEW(phones)%%></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="emailPA" class="control-label col-lg-3">Email PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#emailPA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="emailPA-description"><div class="alert alert-info">1.1.5.2 <Email>
+ indirizzo di posta elettronica </div></span>
+
+						<input maxlength="255" type="text" class="form-control" name="emailPA" id="emailPA" value="<%%VALUE(emailPA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="idFiscaleIVA_Ced_PA" class="control-label col-lg-3" data-parent_link="view_parent_modal">Id Fiscale IVA Ced. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#idFiscaleIVA_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="idFiscaleIVA_Ced_PA-description"><div class="alert alert-info">1.2.1.1 <IdFiscaleIVA>numero di identificazione fiscale ai fini IVA; i primi due caratteri rappresentano il paese ( IT, DE, ES &#8230;..) ed i restanti (fino ad un<br>massimo di 28) il codice vero e proprio che, per i residenti in Italia, corrisponde al numero di partita IVA. </div></span>
+
+						<div class="form-control-static" style="white-space: nowrap; overflow-x: hidden;"><%%COMBO(idFiscaleIVA_Ced_PA)%%><%%PLINK(idFiscaleIVA_Ced_PA)%%><%%ADDNEW(companies)%%><span id="idFiscaleIVA_Ced_PALoading"></span></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="codiceFiscale_Ced_PA" class="control-label col-lg-3">Codice Fiscale Ced. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#codiceFiscale_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="codiceFiscale_Ced_PA-description"><div class="alert alert-info">1.2.1.2 <CodiceFiscale>numero di Codice Fiscale </div></span>
+
+						<div class="form-control-static" id="codiceFiscale_Ced_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="denominazione_Ced_PA" class="control-label col-lg-3">Denominazione Cedente PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#denominazione_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="denominazione_Ced_PA-description"><div class="alert alert-info">1.2.1.3 <Anagrafica>dati anagrafici identificativi del cedente / prestatore <br>1.2.1.3.1 <Denominazione>ditta, denominazione o ragione sociale (ditta, impresa, societ&#224;, ente), da valorizzare in alternativa ai campi 1.2.1.3.2 e 1.2.1.3.3</div></span>
+
+						<div class="form-control-static" id="denominazione_Ced_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="nome_Ced_PA" class="control-label col-lg-3">Nome Ced. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#nome_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="nome_Ced_PA-description"><div class="alert alert-info">1.2.1.3.2 <Nome>ditta, denominazione o ragione sociale (ditta, impresa, societ&#224;, ente), da valorizzare in alternativa ai campi 1.2.1.3.2 e 1.2.1.3.3</div></span>
+
+						<div class="form-control-static" id="nome_Ced_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="cognome_Ced_PA" class="control-label col-lg-3">Cognome Ced. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#cognome_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="cognome_Ced_PA-description"><div class="alert alert-info">1.2.1.3.3 <Cognome>cognome della persona fisica. Da valorizzare insieme al campo 1.2.1.3.2 ed in alternativa al campo 1.2.1.3.1 </div></span>
+
+						<div class="form-control-static" id="cognome_Ced_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="titolo_Ced_PA" class="control-label col-lg-3">Titolo Ced. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#titolo_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="titolo_Ced_PA-description"><div class="alert alert-info">1.2.1.3.4 <Titolo>titolo onorifico</div></span>
+
+						<div class="form-control-static" id="titolo_Ced_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="codEORI_Ced_PA" class="control-label col-lg-3">CodEORI Ced. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#codEORI_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="codEORI_Ced_PA-description"><div class="alert alert-info">1.2.1.3.5 <CodEORI>numero del Codice EORI (Economic Operator Registration and Identification) in base al Regolamento (CE) n. 312 del 16 aprile<br>2009. In vigore dal 1 luglio 2009</div></span>
+
+						<div class="form-control-static" id="codEORI_Ced_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="alboProfessionale_Ced_PA" class="control-label col-lg-3">Albo Professionale Ced. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#alboProfessionale_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="alboProfessionale_Ced_PA-description"><div class="alert alert-info">1.2.1.4 <AlboProfessionale>nome dell'albo professionale</div></span>
+
+						<div class="form-control-static" id="alboProfessionale_Ced_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="provinciaAlbo_Ced_PA" class="control-label col-lg-3">Provincia Albo Ced. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#provinciaAlbo_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="provinciaAlbo_Ced_PA-description"><div class="alert alert-info">1.2.1.5 <ProvinciaAlbo>provincia dell'albo professionale</div></span>
+
+						<div class="form-control-static" id="provinciaAlbo_Ced_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="nrIscrizioneAlbo_Ced_PA" class="control-label col-lg-3">Nr. Iscrizione Albo Ced. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#nrIscrizioneAlbo_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="nrIscrizioneAlbo_Ced_PA-description"><div class="alert alert-info">1.2.1.6 <NumeroIscrizioneAlbo>numero di iscrizione all'albo professionale </div></span>
+
+						<div class="form-control-static" id="nrIscrizioneAlbo_Ced_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="dataIscAlbo_Ced_PA" class="control-label col-lg-3">Data Iscr. Albo Ced. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#dataIscAlbo_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="dataIscAlbo_Ced_PA-description"><div class="alert alert-info">1.2.1.7 <DataIscrizioneAlbo>data di iscrizione all'albo professionale (secondo il formato ISO 8601:2004) formato ISO 8601:2004, con la precisione<br>seguente: YYYY-MM-DD </div></span>
+
+						<div class="form-control-static" id="dataIscAlbo_Ced_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="regimeFiscale_Ced_PA" class="control-label col-lg-3">Regime Fiscale Ced. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#regimeFiscale_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="regimeFiscale_Ced_PA-description"><div class="alert alert-info">1.2.1.8 <RegimeFiscale>regime fiscale</div></span>
+
+						<div class="form-control-static" id="regimeFiscale_Ced_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="indirizzo_Ced_PA" class="control-label col-lg-3" data-parent_link="view_parent_modal">Indirizzo Ced. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#indirizzo_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="indirizzo_Ced_PA-description"><div class="alert alert-info">1.2.2 <Sede>blocco sempre obbligatorio contenente i dati della sede del cedente / prestatore;<br>1.2.2.1 <Indirizzo>indirizzo della sede del cedente o prestatore (nome della via, piazza etc.) </div></span>
+
+						<div class="form-control-static" style="white-space: nowrap; overflow-x: hidden;"><%%COMBO(indirizzo_Ced_PA)%%><%%PLINK(indirizzo_Ced_PA)%%><%%ADDNEW(addresses_PA)%%><span id="indirizzo_Ced_PALoading"></span></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="numeroCivico_Ced_PA" class="control-label col-lg-3">Numero Civico Ced. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#numeroCivico_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="numeroCivico_Ced_PA-description"><div class="alert alert-info">1.2.2.2 <NumeroCivico>numero civico riferito all'indirizzo (non indicare se gi&#224; presente nel campo indirizzo)</div></span>
+
+						<div class="form-control-static" id="numeroCivico_Ced_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="CAP_Ced_PA" class="control-label col-lg-3">CAP Cedente PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#CAP_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="CAP_Ced_PA-description"><div class="alert alert-info">1.2.2.3 <CAP>Codice Avviamento Postale dell'indirizzo di resa</div></span>
+
+						<div class="form-control-static" id="CAP_Ced_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="comune_Ced_PA" class="control-label col-lg-3">Comune Ced. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#comune_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="comune_Ced_PA-description"><div class="alert alert-info">1.2.2.4 <Comune>comune ove ha sede l'indirizzo di resa</div></span>
+
+						<div class="form-control-static" id="comune_Ced_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="provincia_Ced_PA" class="control-label col-lg-3">Provincia Ced. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#provincia_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="provincia_Ced_PA-description"><div class="alert alert-info">1.2.2.5 <Provincia>sigla della provincia di appartenenza del comune indicato nel campo 1.2.2.4</div></span>
+
+						<div class="form-control-static" id="provincia_Ced_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="nazione_Ced_PA" class="control-label col-lg-3">Nazione Ced. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#nazione_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="nazione_Ced_PA-description"><div class="alert alert-info">1.2.2.6 <Nazione>codice della nazione espresso secondo lo standard ISO 3166-1 alpha-2 code</div></span>
+
+						<div class="form-control-static" id="nazione_Ced_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="altroIndirizzo_Ced_PA" class="control-label col-lg-3">Altro Indirizzo Ced. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#altroIndirizzo_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="altroIndirizzo_Ced_PA-description"><div class="alert alert-info">1.2.3 <StabileOrganizzazione>blocco da valorizzare nei casi di cedente / prestatore non residente</div></span>
+
+						<div class="form-control-static" id="altroIndirizzo_Ced_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="altro_nr_Civico_Ced_PA" class="control-label col-lg-3">Altro nr Civico Ced. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#altro_nr_Civico_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="altro_nr_Civico_Ced_PA-description"><div class="alert alert-info">1.2.3.2 <NumeroCivico>numero civico riferito all'indirizzo (non indicare se gi&#224; presente nel campo indirizzo) </div></span>
+
+						<div class="form-control-static" id="altro_nr_Civico_Ced_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="altroCAP_Ced_PA" class="control-label col-lg-3">Altro CAP Ced. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#altroCAP_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="altroCAP_Ced_PA-description"><div class="alert alert-info">1.2.3.3 <CAP>
+Codice Avviamento Postale </div></span>
+
+						<div class="form-control-static" id="altroCAP_Ced_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="altro_Com_Ced_PA" class="control-label col-lg-3">Altro Com Ced PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#altro_Com_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="altro_Com_Ced_PA-description"><div class="alert alert-info">1.2.3.4 <Comune>comune relativo alla stabile organizzazione in Italia</div></span>
+
+						<div class="form-control-static" id="altro_Com_Ced_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="altro_PR_Ced_PA" class="control-label col-lg-3">Altra PR Ced. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#altro_PR_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="altro_PR_Ced_PA-description"><div class="alert alert-info">1.2.3.5 <Provincia>sigla della provincia di appartenenza del comune indicato nel campo 1.2.3.4</div></span>
+
+						<div class="form-control-static" id="altro_PR_Ced_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="altraNazione_Ced_PA" class="control-label col-lg-3">Altra Nazione Ced. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#altraNazione_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="altraNazione_Ced_PA-description"><div class="alert alert-info">1.2.3.6 <Nazione>codice della nazione espresso secondo lo standard ISO 3166-1 alpha-2 code </div></span>
+
+						<div class="form-control-static" id="altraNazione_Ced_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="ufficio_Ced_PA" class="control-label col-lg-3" data-parent_link="view_parent_modal">Ufficio Ced. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#ufficio_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="ufficio_Ced_PA-description"><div class="alert alert-info">1.2.4 <IscrizioneREA>blocco da valorizzare nei casi di societ&#224; iscritte nel registro delle imprese ai sensi dell'art. 2250 del codice civile<br>1.2.4.1 <Ufficio>sigla della provincia dell'Ufficio del registro delle imprese presso il quale &#232; registrata la societ&#224;</div></span>
+
+						<div class="form-control-static" style="white-space: nowrap; overflow-x: hidden;"><%%COMBO(ufficio_Ced_PA)%%><%%PLINK(ufficio_Ced_PA)%%><%%ADDNEW(vatRegister)%%><span id="ufficio_Ced_PALoading"></span></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="numeroREA_Ced__PA" class="control-label col-lg-3">NumeroREA PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#numeroREA_Ced__PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="numeroREA_Ced__PA-description"><div class="alert alert-info">1.2.4.2 <NumeroREA>numero di iscrizione al registro delle imprese</div></span>
+
+						<div class="form-control-static" id="numeroREA_Ced__PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="capitaleSociale_Ced_PA" class="control-label col-lg-3">CapitaleSocialePA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#capitaleSociale_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="capitaleSociale_Ced_PA-description"><div class="alert alert-info">1.2.4.3 <CapitaleSociale>nei soli casi di societ&#224; di capitali (SpA, SApA, SRL), il campo va valorizzato per indicare il capitale sociale</div></span>
+
+						<div class="form-control-static" id="capitaleSociale_Ced_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="socioUnico_Ced_PA" class="control-label col-lg-3">SocioUnicoPA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#socioUnico_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="socioUnico_Ced_PA-description"><div class="alert alert-info">1.2.4.4 <SocioUnico>nei casi di societ&#224; per azioni e a responsabilit&#224; limitata, il campo va valorizzato per indicare se vi &#232; un socio unico oppure se vi<br>sono pi&#249; soci </div></span>
+
+						<div class="form-control-static" id="socioUnico_Ced_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="statoLiquidazione_Ced_PA" class="control-label col-lg-3">StatoLiquidazionePA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#statoLiquidazione_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="statoLiquidazione_Ced_PA-description"><div class="alert alert-info">1.2.4.5 <StatoLiquidazione>indica se la Societ&#224; si trova in stato di liquidazione oppure no<br>valori ammessi<br>[LS] : in liquidazione<br>[LN] : non in liquidazione</div></span>
+
+						<div class="form-control-static" id="statoLiquidazione_Ced_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="telefonoCompany_Ced_PA" class="control-label col-lg-3">TelefonoCompanyPA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#telefonoCompany_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="telefonoCompany_Ced_PA-description"><div class="alert alert-info">1.2.5 <Contatti>dati relativi ai contatti del cedente / prestatore ;<br>1.2.5.1 <Telefono>contatto telefonico fisso o mobile </div></span>
+
+						<div class="form-control-static" id="telefonoCompany_Ced_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="faxCompany_Ced_PA" class="control-label col-lg-3" data-parent_link="view_parent_modal">FaxCompanyPA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#faxCompany_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="faxCompany_Ced_PA-description"><div class="alert alert-info">1.2.5.2 <Fax>Fax Aziende </div></span>
+
+						<div class="form-control-static" style="white-space: nowrap; overflow-x: hidden;"><%%COMBO(faxCompany_Ced_PA)%%><%%PLINK(faxCompany_Ced_PA)%%><%%ADDNEW(contacts_companies)%%><span id="faxCompany_Ced_PALoading"></span></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="eMailCompany_Ced_PA" class="control-label col-lg-3" data-parent_link="view_parent_modal">EMailCompanyPA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#eMailCompany_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="eMailCompany_Ced_PA-description"><div class="alert alert-info">1.2.5.3 <Email>email Azienda</div></span>
+
+						<div class="form-control-static" style="white-space: nowrap; overflow-x: hidden;"><%%COMBO(eMailCompany_Ced_PA)%%><%%PLINK(eMailCompany_Ced_PA)%%><%%ADDNEW(contacts_companies)%%></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="rif_Amm_Ced_PA" class="control-label col-lg-3">Rif Amm Ced PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#rif_Amm_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="rif_Amm_Ced_PA-description"><div class="alert alert-info">1.2.6 <RiferimentoAmministrazione>g codice identificativo del cedente / prestatore ai fini amministrativo-contabili;<br>1.3.1 <DatiAnagrafici>blocco contenente i dati fiscali e anagrafici del rappresentante fiscale del cedente / prestatore;<br>1.3.1.1 <IdFiscaleIVA>numero di identificazione fiscale ai fini IVA; i primi due caratteri rappresentano il paese ( IT, DE, ES &#8230;..) ed i restanti (fino ad un<br>massimo di 28) il codice vero e proprio che, per i residenti in Italia, corrisponde al numero di partita IVA. <br></div></span>
+
+						<input maxlength="20" type="text" class="form-control" name="rif_Amm_Ced_PA" id="rif_Amm_Ced_PA" value="<%%VALUE(rif_Amm_Ced_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="idPaeseRap_Fisc_PA" class="control-label col-lg-3" data-parent_link="view_parent_modal">Id Paese Rap. Fisc PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#idPaeseRap_Fisc_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="idPaeseRap_Fisc_PA-description"><div class="alert alert-info">1.3.1.1.1 <IdPaese>codice della nazione espresso secondo lo standard ISO 3166-1 alpha-2 code</div></span>
+
+						<div class="form-control-static" style="white-space: nowrap; overflow-x: hidden;"><%%COMBO(idPaeseRap_Fisc_PA)%%><%%PLINK(idPaeseRap_Fisc_PA)%%><%%ADDNEW(sogg_Terzi_Rapp_PA)%%><span id="idPaeseRap_Fisc_PALoading"></span></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="idPaeseRap_CodPA" class="control-label col-lg-3">Id Paese Rap. Fisc. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#idPaeseRap_CodPA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="idPaeseRap_CodPA-description"><div class="alert alert-info">1.3.1.1.1 <IdPaese>codice della nazione espresso secondo lo standard ISO 3166-1 alpha-2 code </div></span>
+
+						<div class="form-control-static" id="idPaeseRap_CodPA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="idCodFiscRap_Fisc_PA" class="control-label col-lg-3">Id Cod.Fisc. Rappr. Fisc. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#idCodFiscRap_Fisc_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="idCodFiscRap_Fisc_PA-description"><div class="alert alert-info">1.3.1.1.2 <IdCodice>codice identificativo fiscale</div></span>
+
+						<div class="form-control-static" id="idCodFiscRap_Fisc_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="idDenominazioneRap_FiscPA" class="control-label col-lg-3">Id Denominazione Rapp. Fisc. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#idDenominazioneRap_FiscPA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="idDenominazioneRap_FiscPA-description"><div class="alert alert-info">1.3.1.2 <CodiceFiscale>numero di Codice Fiscale;<br>1.3.1.3 <Anagrafica>dati anagrafici identificativi del rappresentante fiscale del cedente / prestatore;<br>1.3.1.3.1 <Denominazione>ditta, denominazione o ragione sociale (ditta, impresa, societ&#224;, ente), da valorizzare in alternativa ai campi 1.3.1.3.2 e 1.3.1.3.3;<br></div></span>
+
+						<div class="form-control-static" id="idDenominazioneRap_FiscPA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="idNomeRap_Fisc_PA" class="control-label col-lg-3">ID Nome Rap. Fisc. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#idNomeRap_Fisc_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="idNomeRap_Fisc_PA-description"><div class="alert alert-info">1.3.1.3.2 <Nome> nome della persona fisica. Da valorizzare insieme al campo 1.3.1.3.3 ed in alternativa al campo 1.3.1.3.1 </div></span>
+
+						<div class="form-control-static" id="idNomeRap_Fisc_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="idCognRap_Fisc_PA" class="control-label col-lg-3">Id Cogn. Rap. Fisc.PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#idCognRap_Fisc_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="idCognRap_Fisc_PA-description"><div class="alert alert-info">1.3.1.3.3 <Cognome>cognome della persona fisica. Da valorizzare insieme al campo 1.3.1.3.2 ed in alternativa al campo 1.3.1.3.1 </div></span>
+
+						<div class="form-control-static" id="idCognRap_Fisc_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="idTitoloRap_Fisc_PA" class="control-label col-lg-3">Id Titolo Rap. Fisc. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#idTitoloRap_Fisc_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="idTitoloRap_Fisc_PA-description"><div class="alert alert-info">1.3.1.3.4 <Titolo>titolo onorifico</div></span>
+
+						<div class="form-control-static" id="idTitoloRap_Fisc_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="idEORI_Rap_Fisc_PA" class="control-label col-lg-3">Id EORI Rap. Fisc. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#idEORI_Rap_Fisc_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="idEORI_Rap_Fisc_PA-description"><div class="alert alert-info">1.3.1.3.5 <CodEORI>numero del Codice EORI (Economic Operator Registration and Identification) in base al Regolamento (CE) n. 312 del 16 aprile<br>2009. In vigore dal 1 luglio 2009 </div></span>
+
+						<div class="form-control-static" id="idEORI_Rap_Fisc_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="idPaeseCess_PA" class="control-label col-lg-3" data-parent_link="view_parent_modal">IdPaeseCess PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#idPaeseCess_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="idPaeseCess_PA-description"><div class="alert alert-info">1.4 <CessionarioCommittente>blocco sempre obbligatorio contenente dati relativi al cessionario / committente;<br>1.4.1 <DatiAnagrafici>blocco contenente i dati fiscali e anagrafici del cessionario/committente;<br>1.4.1.1 <IdFiscaleIVA>numero di identificazione fiscale ai fini IVA; i primi due caratteri rappresentano il paese ( IT, DE, ES &#8230;..) ed i restanti (fino ad un<br>massimo di 28) il codice vero e proprio che, per i residenti in Italia, corrisponde al numero di partita IVA. L&#8217;indicazione di questo<br>campo &#232; obbligatoria nei casi in cui il cessionario/committente &#232; titolare di partita IVA (agisce nell&#8217;esercizio di impresa, arte o<br>professione);<br>1.4.1.1.1 <IdPaese>codice della nazione espresso secondo lo standard ISO 3166-1 alpha-2 code </div></span>
+
+						<div class="form-control-static" style="white-space: nowrap; overflow-x: hidden;"><%%COMBO(idPaeseCess_PA)%%><%%PLINK(idPaeseCess_PA)%%><%%ADDNEW(CLIENTI_CESSIONARI_PA)%%><span id="idPaeseCess_PALoading"></span></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="idCodiceCess_PA" class="control-label col-lg-3">IdCodiceCess PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#idCodiceCess_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="idCodiceCess_PA-description"><div class="alert alert-info">1.4.1.1.2 <IdCodice>codice identificativo fiscale</div></span>
+
+						<div class="form-control-static" id="idCodiceCess_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="idCodiceFiscCess_PA" class="control-label col-lg-3">IdCodiceFiscCess PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#idCodiceFiscCess_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="idCodiceFiscCess_PA-description"><div class="alert alert-info">1.4.1.2 <CodiceFiscale>numero di Codice Fiscale</div></span>
+
+						<input maxlength="16" type="text" class="form-control" name="idCodiceFiscCess_PA" id="idCodiceFiscCess_PA" value="<%%VALUE(idCodiceFiscCess_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="denominazioneCess_PA" class="control-label col-lg-3">DenominazioneCess PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#denominazioneCess_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="denominazioneCess_PA-description"><div class="alert alert-info">1.4.1.3 <Anagrafica>dati anagrafici identificativi del cessionario/committente;<br>1.4.1.3.1 <Denominazione>g ditta, denominazione o ragione sociale (ditta, impresa, societ&#224;, ente), da valorizzare in alternativa ai campi 1.4.1.3.2 e 1.4.1.3.3 </div></span>
+
+						<div class="form-control-static" id="denominazioneCess_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="nomeCess_PA" class="control-label col-lg-3">NomeCess PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#nomeCess_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="nomeCess_PA-description"><div class="alert alert-info">1.4.1.3.2 <Nome>
+g nome della persona fisica. Da valorizzare insieme al campo 1.4.1.3.3 ed in alternativa al campo 1.4.1.3.1 </div></span>
+
+						<div class="form-control-static" id="nomeCess_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="cognomeCess_PA" class="control-label col-lg-3">CognomeCess PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#cognomeCess_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="cognomeCess_PA-description"><div class="alert alert-info">1.4.1.3.3 <Cognome>g cognome della persona fisica. Da valorizzare insieme al campo 1.4.1.3.2 ed in alternativa al campo 1.4.1.3.1 </div></span>
+
+						<div class="form-control-static" id="cognomeCess_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="titoloCess_PA" class="control-label col-lg-3">TitoloCess PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#titoloCess_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="titoloCess_PA-description"><div class="alert alert-info">1.4.1.3.4 <Titolo>titolo onorifico </div></span>
+
+						<div class="form-control-static" id="titoloCess_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="codEORI_Cess_PA" class="control-label col-lg-3">CodEORI Cess PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#codEORI_Cess_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="codEORI_Cess_PA-description"><div class="alert alert-info">1.4.1.3.5 <CodEORI>numero del Codice EORI (Economic Operator Registration and Identification) in base al Regolamento (CE) n. 312 del 16 aprile<br>2009. In vigore dal 1 luglio 2009</div></span>
+
+						<div class="form-control-static" id="codEORI_Cess_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="indirizzoCess_PA" class="control-label col-lg-3">IndirizzoCess PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#indirizzoCess_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="indirizzoCess_PA-description"><div class="alert alert-info">1.4.2 <Sede>
+blocco sempre obbligatorio contenente i dati della sede del cessionario / committente (nel caso di somministrazione di servizi quali<br>energia elettrica, gas &#8230; , i dati possono fare riferimento all'ubicazione dell'utenza, ex DM 370/2000);<br>1.4.2.1 <Indirizzo>g indirizzo della sede del cessionario / committente (nome della via, piazza etc.)</div></span>
+
+						<div class="form-control-static" id="indirizzoCess_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="nrCivicoCess_PA" class="control-label col-lg-3">NrCivicoCess PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#nrCivicoCess_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="nrCivicoCess_PA-description"><div class="alert alert-info">1.4.2.2 <NumeroCivico>
+numero civico riferito all'indirizzo (non indicare se gi&#224; presente nel campo indirizzo)</div></span>
+
+						<div class="form-control-static" id="nrCivicoCess_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="CAP_Cess_PA" class="control-label col-lg-3">CAP Cess PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#CAP_Cess_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="CAP_Cess_PA-description"><div class="alert alert-info">1.4.2.3 <CAP>Codice Avviamento Postale</div></span>
+
+						<div class="form-control-static" id="CAP_Cess_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="comuneCess_PA" class="control-label col-lg-3">ComuneCess PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#comuneCess_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="comuneCess_PA-description"><div class="alert alert-info">1.4.2.4 <Comune>comune relativo alla stabile organizzazione in Italia</div></span>
+
+						<div class="form-control-static" id="comuneCess_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="provCess_PA" class="control-label col-lg-3">ProvCess PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#provCess_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="provCess_PA-description"><div class="alert alert-info">1.4.2.5 <Provincia>sigla della provincia di appartenenza del comune indicato nel campo 1.4.2.4 </div></span>
+
+						<div class="form-control-static" id="provCess_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="nazione_Cess_PA" class="control-label col-lg-3">Nazione Cess PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#nazione_Cess_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="nazione_Cess_PA-description"><div class="alert alert-info">1.4.2.6 <Nazione>codice della nazione espresso secondo lo standard ISO 3166-1 alpha-2 code</div></span>
+
+						<div class="form-control-static" id="nazione_Cess_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="idPaese3intSogEm_PA" class="control-label col-lg-3">IdPaese3intSogEm PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#idPaese3intSogEm_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="idPaese3intSogEm_PA-description"><div class="alert alert-info">1.5 <TerzoIntermediarioOSoggettoEmittente>dati relativi al soggetto terzo che emette fattura per conto del cedente / prestatore;<br>1.5.1 <DatiAnagrafici>blocco contenente i dati fiscali e anagrafici del terzo intermediario;<br>1.5.1.1 <IdFiscaleIVA>numero di identificazione fiscale ai fini IVA; i primi due caratteri rappresentano il paese ( IT, DE, ES &#8230;..) ed i restanti (fino ad un<br>massimo di 28) il codice vero e proprio che, per i residenti in Italia, corrisponde al numero di partita IVA;<br>1.5.1.1.1 <IdPaese>
+codice della nazione espresso secondo lo standard ISO 3166-1 alpha-2 code </div></span>
+
+						<div class="form-control-static" id="idPaese3intSogEm_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="idCod_3intSogEm_PA" class="control-label col-lg-3">IdCod 3intSogEm PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#idCod_3intSogEm_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="idCod_3intSogEm_PA-description"><div class="alert alert-info">1.5.1.1.2 <IdCodice>codice identificativo fiscale </div></span>
+
+						<div class="form-control-static" id="idCod_3intSogEm_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="codFisc_3intSogEm_PA" class="control-label col-lg-3">CodFisc 3intSogEm PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#codFisc_3intSogEm_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="codFisc_3intSogEm_PA-description"><div class="alert alert-info">1.5.1.2 <CodiceFiscale>numero di Codice Fiscale;<br>1.5.1.3 <Anagrafica>dati anagrafici identificativi del terzo intermediario</div></span>
+
+						<div class="form-control-static" id="codFisc_3intSogEm_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="denom_3intSogEm_PA" class="control-label col-lg-3">Denom 3intSogEm PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#denom_3intSogEm_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="denom_3intSogEm_PA-description"><div class="alert alert-info">1.5.1.3.1 <Denominazione>ditta, denominazione o ragione sociale (ditta, impresa, societ&#224;, ente), da valorizzare in alternativa ai campi 1.5.1.3.2 e 1.5.1.3.3</div></span>
+
+						<div class="form-control-static" id="denom_3intSogEm_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="nome_3_intSogEm_PA" class="control-label col-lg-3">Nome 3 SogEm PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#nome_3_intSogEm_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="nome_3_intSogEm_PA-description"><div class="alert alert-info">1.5.1.3.2 <Nome>nome della persona fisica. Da valorizzare insieme al campo 1.5.1.3.3 ed in alternativa al campo 1.5.1.3.1 </div></span>
+
+						<div class="form-control-static" id="nome_3_intSogEm_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="cogn_3_intSogEm_PA" class="control-label col-lg-3">Cogn 3 SogEm PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#cogn_3_intSogEm_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="cogn_3_intSogEm_PA-description"><div class="alert alert-info">1.5.1.3.3 <Cognome> cognome della persona fisica. Da valorizzare insieme al campo 1.5.1.3.2 ed in alternativa al campo 1.5.1.3.1 </div></span>
+
+						<div class="form-control-static" id="cogn_3_intSogEm_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="tit_3_IntSogEm_PA" class="control-label col-lg-3">Tit 3 SogEm PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#tit_3_IntSogEm_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="tit_3_IntSogEm_PA-description"><div class="alert alert-info">1.5.1.3.4 <Titolo>titolo onorifico</div></span>
+
+						<div class="form-control-static" id="tit_3_IntSogEm_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="codEORi_3_intSogEm_PA" class="control-label col-lg-3">CodEORi 3 intSogEm PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#codEORi_3_intSogEm_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="codEORi_3_intSogEm_PA-description"><div class="alert alert-info">1.5.1.3.5 <CodEORI>
+numero del Codice EORI (Economic Operator Registration and Identification) in base al Regolamento (CE) n. 312 del 16 aprile<br>2009. In vigore dal 1 luglio 2009 </div></span>
+
+						<div class="form-control-static" id="codEORi_3_intSogEm_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="SoggettoEmittente_PA" class="control-label col-lg-3">SoggettoEmittente PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#SoggettoEmittente_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="SoggettoEmittente_PA-description"><div class="alert alert-info">1.6 <SoggettoEmittente>da valorizzare nei casi di documenti emessi da un soggetto diverso dal cedente/prestatore; indica se la fattura sia stata emessa o<br>da parte del cessionario/committente oppure da parte di un terzo per conto del cedente/prestatore
+;<br>valori ammessi:<br>[CC]: cessionario / committente<br>[TZ]: terzo</div></span>
+
+						<input maxlength="255" type="text" class="form-control" name="SoggettoEmittente_PA" id="SoggettoEmittente_PA" value="<%%VALUE(SoggettoEmittente_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="tipoDocumentoFEB_PA" class="control-label col-lg-3" data-parent_link="view_parent_modal">TipoDocumento PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#tipoDocumentoFEB_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="tipoDocumentoFEB_PA-description"><div class="alert alert-info">2 <FatturaElettronicaBody>il blocco ha molteplicit&#224; pari a 1 nel caso di fattura singola; nel caso di lotto di fatture, si ripete per ogni fattura componente il lotto<br>stesso;<br>2.1 <DatiGenerali>blocco sempre obbligatorio contenente i dati generali del documento principale ed i dati dei documenti correlati;<br>2.1.1 <DatiGeneraliDocumento>blocco sempre obbligatorio contenente i dati generali del documento principale;<br>2.1.1.1 <TipoDocumento>tipologia di documento </div></span>
+
+						<div class="form-control-static" style="white-space: nowrap; overflow-x: hidden;"><%%COMBO(tipoDocumentoFEB_PA)%%><%%PLINK(tipoDocumentoFEB_PA)%%><%%ADDNEW(orders)%%><span id="tipoDocumentoFEB_PALoading"></span></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="divisaFEB_PA" class="control-label col-lg-3">DivisaFEB PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#divisaFEB_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="divisaFEB_PA-description"><div class="alert alert-info">2.1.1.2 <Divisa>codice (espresso secondo lo standard ISO 4217 alpha-3:2001) della valuta utilizzata per l'indicazione degli importi;<br>il codice deve essere compreso tra quelli<br>consentiti dallo standard ISO 4217 alpha-3:201,<br>ad esempio: [EUR], [USD], [GBP], [CZK], [...]</div></span>
+
+						<div class="form-control-static" id="divisaFEB_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="dataFEB_PA" class="control-label col-lg-3">DataFEB PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#dataFEB_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="dataFEB_PA-description"><div class="alert alert-info">2.1.1.3 <Data>data del documento (secondo il formato ISO 8601:2004) </div></span>
+
+						<div class="form-control-static" id="dataFEB_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="numeroFEB_PA" class="control-label col-lg-3">NumeroFEB PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#numeroFEB_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="numeroFEB_PA-description"><div class="alert alert-info">2.1.1.4 <Numero>numero progressivo del documento</div></span>
+
+						<div class="form-control-static" id="numeroFEB_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="tipoRiten_PA" class="control-label col-lg-3">Tipo Ritenenuta PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#tipoRiten_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="tipoRiten_PA-description"><div class="alert alert-info">2.1.1.5 <DatiRitenuta>blocco dati relativi alla ritenuta;<br>2.1.1.5.1 <TipoRitenuta>tipologia della ritenuta
+;<br>valori ammessi:<br>[RT01]: ritenuta pers. fisiche<br>[RT02]: ritenuta pers. giurid.
+</div></span>
+
+						<div class="form-control-static" id="tipoRiten_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="impRiten_PA" class="control-label col-lg-3">ImpRiten PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#impRiten_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="impRiten_PA-description"><div class="alert alert-info">2.1.1.5.2 <ImportoRitenuta>importo della ritenuta</div></span>
+
+						<div class="form-control-static" id="impRiten_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="aliqRiten_PA" class="control-label col-lg-3">AliqRiten PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#aliqRiten_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="aliqRiten_PA-description"><div class="alert alert-info">2.1.1.5.3 <AliquotaRitenuta>aliquota (%) della ritenuta</div></span>
+
+						<div class="form-control-static" id="aliqRiten_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="causPagRit_PA" class="control-label col-lg-3">CausPagRit PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#causPagRit_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="causPagRit_PA-description"><div class="alert alert-info">2.1.1.5.4 <CausalePagamento>causale del pagamento (quella del modello 770)</div></span>
+
+						<div class="form-control-static" id="causPagRit_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="numBolloRit_PA" class="control-label col-lg-3">NumBolloRit PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#numBolloRit_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="numBolloRit_PA-description"><div class="alert alert-info">2.1.1.6 <DatiBollo>blocco dati relativi al bollo;<br>2.1.1.6.1 <NumeroBollo>numero del bollo;<br></div></span>
+
+						<div class="form-control-static" id="numBolloRit_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="impBolloRit_PA" class="control-label col-lg-3">ImpBolloRit PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#impBolloRit_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="impBolloRit_PA-description"><div class="alert alert-info">2.1.1.6.2 <ImportoBollo>importo del bollo</div></span>
+
+						<div class="form-control-static" id="impBolloRit_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="tipoCassaPrev_PA" class="control-label col-lg-3">TipoCassaPrev PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#tipoCassaPrev_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="tipoCassaPrev_PA-description"><div class="alert alert-info">2.1.1.7 <DatiCassaPrevidenziale>blocco dati relativi alla cassa professionale di appartenenza;<br>2.1.1.7.1 <TipoCassa>tipologia cassa previdenziale di appartenenza</div></span>
+
+						<div class="form-control-static" id="tipoCassaPrev_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="alCassaPr_PA" class="control-label col-lg-3">AlCassaPr PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#alCassaPr_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="alCassaPr_PA-description"><div class="alert alert-info">2.1.1.7.2 <AlCassa>aliquota (%) del contributo, se previsto, per la cassa di appartenenza</div></span>
+
+						<div class="form-control-static" id="alCassaPr_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="impContCassaPr_PA" class="control-label col-lg-3">ImpContCassa PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#impContCassaPr_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="impContCassaPr_PA-description"><div class="alert alert-info">2.1.1.7.3 <ImportoContributoCassa>importo del contributo per la cassa di appartenenza</div></span>
+
+						<div class="form-control-static" id="impContCassaPr_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="imponCassaPr_PA" class="control-label col-lg-3">Imponibile CassaPr PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#imponCassaPr_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="imponCassaPr_PA-description"><div class="alert alert-info">2.1.1.7.4 <ImponibileCassa>importo sul quale applicare il contributo cassa previdenziale</div></span>
+
+						<div class="form-control-static" id="imponCassaPr_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="aliIVA_CassaPr_PA" class="control-label col-lg-3">Ali IVA CassaPr PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#aliIVA_CassaPr_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="aliIVA_CassaPr_PA-description"><div class="alert alert-info">2.1.1.7.5 <AliquotaIVA>aliquota (%) IVA applicata</div></span>
+
+						<div class="form-control-static" id="aliIVA_CassaPr_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="ritCassaPr_PA" class="control-label col-lg-3">RitCassaPr PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#ritCassaPr_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="ritCassaPr_PA-description"><div class="alert alert-info">2.1.1.7.6 <Ritenuta>indica se il contributo cassa &#232; soggetto a ritenuta;<br>valore ammesso:<br>[SI]: contributo cassa soggetto a ritenuta</div></span>
+
+						<div class="form-control-static" id="ritCassaPr_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="naturaCassaPr_PA" class="control-label col-lg-3">NaturaCassaPr PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#naturaCassaPr_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="naturaCassaPr_PA-description"><div class="alert alert-info">2.1.1.7.7 <Natura>nei casi di AliquotaIVA (campo 2.1.1.7.5) pari a zero;<br>valori ammessi:<br>vedi codifiche in calce al documento </div></span>
+
+						<div class="form-control-static" id="naturaCassaPr_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="rifAmmCasPr_PA" class="control-label col-lg-3">RifAmmCasPr PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#rifAmmCasPr_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="rifAmmCasPr_PA-description"><div class="alert alert-info">2.1.1.7.8 <RiferimentoAmministrazione>codice identificativo ai fini amministrativo-contabili</div></span>
+
+						<div class="form-control-static" id="rifAmmCasPr_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="tipoScMag_PA" class="control-label col-lg-3">Tipo Sconto Mag. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#tipoScMag_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="tipoScMag_PA-description"><div class="alert alert-info">2.1.1.8 <ScontoMaggiorazione>eventuale sconto o maggiorazione applicati sul totale documento (la molteplicit&#224; N del blocco consente di gestire la presenza di<br>pi&#249; sconti o pi&#249; maggiorazioni a 'cascata');<br>2.1.1.8.1 <Tipo>indica se trattasi di sconto o di maggiorazione
+;<br>valori ammessi:<br>[SC]: sconto<br>[MG]: maggiorazione
+</div></span>
+
+						<div class="form-control-static" id="tipoScMag_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="impScMag_PA" class="control-label col-lg-3">Importo Sc. Mag. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#impScMag_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="impScMag_PA-description"><div class="alert alert-info">2.1.1.8.3 <Importo>importo dello sconto o della maggiorazione </div></span>
+
+						<div class="form-control-static" id="impScMag_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="ImpTotDoc_PA" class="control-label col-lg-3">Importo Tot. Doc. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#ImpTotDoc_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="ImpTotDoc_PA-description"><div class="alert alert-info">2.1.1.9 <ImportoTotaleDocumento>l importo totale del documento al netto dell'eventuale sconto e comprensivo di imposta a debito del cessionario / committente</div></span>
+
+						<div class="form-control-static" id="ImpTotDoc_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="arrotDoc_PA" class="control-label col-lg-3">Arrotondamento Doc. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#arrotDoc_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="arrotDoc_PA-description"><div class="alert alert-info">2.1.1.10 <Arrotondamento>eventuale arrotondamento sul totale documento (ammette anche il segno negativo) </div></span>
+
+						<div class="form-control-static" id="arrotDoc_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="causale_Doc_PA" class="control-label col-lg-3">Causale Doc PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#causale_Doc_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="causale_Doc_PA-description"><div class="alert alert-info">2.1.1.11 <Causale>descrizione della causale del documento</div></span>
+
+						<div class="form-control-static" id="causale_Doc_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="art73_doc_PA" class="control-label col-lg-3">Art. 73 doc PA</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="art73_doc_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="rifNumLineaDoc_PA" class="control-label col-lg-3" data-parent_link="view_parent_modal">Rif. Num. Linea Doc. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#rifNumLineaDoc_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="rifNumLineaDoc_PA-description"><div class="alert alert-info">2.1.2 <DatiOrdineAcquisto>blocco contenente le informazioni relative all'ordine di acquisto;<br>2.1.2.1 <RiferimentoNumeroLinea>linea di dettaglio della fattura a cui si fa riferimento (se il riferimento &#232; all'intera fattura, non viene valorizzato) (vedi campo 2.2.1.1)</div></span>
+
+						<div class="form-control-static" style="white-space: nowrap; overflow-x: hidden;"><%%COMBO(rifNumLineaDoc_PA)%%><%%PLINK(rifNumLineaDoc_PA)%%><%%ADDNEW(ordersDetails)%%><span id="rifNumLineaDoc_PALoading"></span></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="idDocNum_PA" class="control-label col-lg-3">Id Numero Documento PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#idDocNum_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="idDocNum_PA-description"><div class="alert alert-info">2.1.2.2 <IdDocumento>g numero del documento </div></span>
+
+						<div class="form-control-static" id="idDocNum_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="dataOrder_PA" class="control-label col-lg-3">DataOrder PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#dataOrder_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="dataOrder_PA-description"><div class="alert alert-info">2.1.2.3 <Data>data del documento (secondo il formato ISO 8601:2004);<br>ormato ISO 8601:2004, con la precisione<br>seguente: YYYY-MM-DD </div></span>
+
+						<div class="form-control-static" id="dataOrder_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="numItemDoc_PA" class="control-label col-lg-3">Num.Item Doc. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#numItemDoc_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="numItemDoc_PA-description"><div class="alert alert-info">VERIFICARE QUESTO CAMPO!!!!!!<br>2.1.2.4 <NumItem>dentificativo della singola voce all'interno del documento (ad esempio, nel caso di ordine di acquisto, &#232; il numero della linea<br>dell'ordine di acquisto, oppure, nel caso di contratto, &#232; il numero della linea del contratto, etc. ) </div></span>
+
+						<div class="form-control-static" id="numItemDoc_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="codCommConvDoc_PA" class="control-label col-lg-3">Cod. Comm. Conv. Doc. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#codCommConvDoc_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="codCommConvDoc_PA-description"><div class="alert alert-info">2.1.2.5 <CodiceCommessaConvenzione>codice della commessa o della convenzione </div></span>
+
+						<div class="form-control-static" id="codCommConvDoc_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="codCUP_PA" class="control-label col-lg-3">Cod. CUP PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#codCUP_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="codCUP_PA-description"><div class="alert alert-info">2.1.2.6 <CodiceCUP>
+codice gestito dal CIPE che caratterizza ogni progetto di investimento pubblico (Codice Unitario Progetto) </div></span>
+
+						<div class="form-control-static" id="codCUP_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="codCIG_PA" class="control-label col-lg-3">Cod.CIG PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#codCIG_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="codCIG_PA-description"><div class="alert alert-info">2.1.2.7 <CodiceCIG>Codice Identificativo della Gara </div></span>
+
+						<div class="form-control-static" id="codCIG_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="RIFERIMENTO_FASE_PA" class="control-label col-lg-3">RIFERIMENTO FASE PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#RIFERIMENTO_FASE_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="RIFERIMENTO_FASE_PA-description"><div class="alert alert-info">2.1.3 <DatiContratto>blocco contenente le informazioni relative al contratto; contiene gli stessi campi previsti per il blocco 2.1.2;<br>2.1.4 <DatiConvenzione>blocco contenente le informazioni relative alla convenzione; contiene gli stessi campi previsti per il blocco 2.1.2;<br>2.1.5 <DatiRicezione>blocco contenente le informazioni relative ai dati presenti sul sistema gestionale in uso presso la PA (Agenzie Fiscali) riguardanti<br>la fase di ricezione; contiene gli stessi campi previsti per il blocco 2.1.2;<br>2.1.6 <DatiFattureCollegate>blocco contenente le informazioni relative alle fatture precedentemente trasmesse e alle quali si collega il documento presente;<br>riguarda i casi di invio di nota di credito e/o di fatture di conguaglio a fronte di precedenti fatture di acconto; contiene gli stessi<br>campi previsti per il blocco 2.1.2;<br>2.1.7 <DatiSAL>blocco da valorizzare nei casi di fattura per stato di avanzamento;<br>2.1.7.1 <RiferimentoFase>r fase dello stato di avanzamento cui il documento si riferisce</div></span>
+
+						<div class="form-control-static" id="RIFERIMENTO_FASE_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="NUMERO_DDT_PA" class="control-label col-lg-3">NUMERO DDT PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#NUMERO_DDT_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="NUMERO_DDT_PA-description"><div class="alert alert-info">2.1.8 <DatiDDT>blocco da valorizzare nei casi di fattura "differita" per indicare il documento con cui &#232; stato consegnato il bene (i campi del blocco<br>possono essere ripetuti se la fattura fa riferimento a pi&#249; consegne e quindi a pi&#249; documenti di trasporto);<br>2.1.8.1 <NumeroDDT>numero del documento di trasporto</div></span>
+
+						<div class="form-control-static" id="NUMERO_DDT_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="dataDDT_PA" class="control-label col-lg-3">Data DDT PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#dataDDT_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="dataDDT_PA-description"><div class="alert alert-info">2.1.8.2 <DataDDT>data del documento di trasporto (secondo il formato ISO 8601:2004);<br></div></span>
+
+						<div class="form-control-static" id="dataDDT_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="rifNumLinea_PA" class="control-label col-lg-3">Rif. Num. Linea PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#rifNumLinea_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="rifNumLinea_PA-description"><div class="alert alert-info">2.1.8.3 <RiferimentoNumeroLinea>linea di dettaglio della fattura cui si riferisce il DDT (non viene valorizzato se il riferimento &#232; all'intera fattura) (vedi campo 2.2.1.1) </div></span>
+
+						<div class="form-control-static" id="rifNumLinea_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="ID_PAESE_VET_PA" class="control-label col-lg-3">ID PAESE PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#ID_PAESE_VET_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="ID_PAESE_VET_PA-description"><div class="alert alert-info">2.1.9 <DatiTrasporto>blocco valorizzabile nei casi di fattura "accompagnatoria" per inserire informazioni relative al trasporto;<br>2.1.9.1 <DatiAnagraficiVettore>blocco contenente i dati fiscali e anagrafici del vettore;<br>2.1.9.1.1 <IdFiscaleIVA>numero di identificazione fiscale ai fini IVA; i primi due caratteri rappresentano il paese ( IT, DE, ES &#8230;..) ed i restanti (fino ad un<br>massimo di 28) il codice vero e proprio che, per i residenti in Italia, corrisponde al numero di partita IVA;<br>2.1.9.1.1.1 <IdPaese>codice della nazione espresso secondo lo standard ISO 3166-1 alpha-2 code</div></span>
+
+						<div class="form-control-static" id="ID_PAESE_VET_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="idCodVet_PA" class="control-label col-lg-3">Id .Cod. Vettore PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#idCodVet_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="idCodVet_PA-description"><div class="alert alert-info">2.1.9.1.1.2 <IdCodice>codice identificativo fiscale</div></span>
+
+						<div class="form-control-static" id="idCodVet_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="codFiscVet_PA" class="control-label col-lg-3">Cod. Fisc. Vettore PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#codFiscVet_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="codFiscVet_PA-description"><div class="alert alert-info">2.1.9.1.2 <CodiceFiscale>numero di Codice Fiscale </div></span>
+
+						<div class="form-control-static" id="codFiscVet_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="DENOMINAZIONE_ANAGR_VETT_PA" class="control-label col-lg-3">DENOMINAZIONE ANAGR. Vettore PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#DENOMINAZIONE_ANAGR_VETT_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="DENOMINAZIONE_ANAGR_VETT_PA-description"><div class="alert alert-info">2.1.9.1.3 <Anagrafica>dati anagrafici identificativi del vettore;<br>2.1.9.1.3.1 <Denominazione>g ditta, denominazione o ragione sociale (ditta, impresa, societ&#224;, ente), da valorizzare in alternativa ai campi 2.1.9.1.3.2 e<br>2.1.9.1.3.3 </div></span>
+
+						<div class="form-control-static" id="DENOMINAZIONE_ANAGR_VETT_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="nomeVett_PA" class="control-label col-lg-3">Nome Vett PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#nomeVett_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="nomeVett_PA-description"><div class="alert alert-info">2.1.9.1.3.2 <Nome>nome della persona fisica. Da valorizzare insieme al campo 2.1.9.1.3.3 ed in alternativa al campo 2.1.9.1.3.1 </div></span>
+
+						<div class="form-control-static" id="nomeVett_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="cognVett_PA" class="control-label col-lg-3">Cogn.Vett. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#cognVett_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="cognVett_PA-description"><div class="alert alert-info">2.1.9.1.3.3 <Cognome>g cognome della persona fisica. Da valorizzare insieme al campo 2.1.9.1.3.2 ed in alternativa al campo 2.1.9.1.3.1 </div></span>
+
+						<div class="form-control-static" id="cognVett_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="titVett_PA" class="control-label col-lg-3">Titolo Vett. PA</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="titVett_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="codEORI_Vet_PA" class="control-label col-lg-3">Cod. EORI Vet. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#codEORI_Vet_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="codEORI_Vet_PA-description"><div class="alert alert-info">2.1.9.1.3.5 <CodEORI>numero del Codice EORI (Economic Operator Registration and Identification) in base al Regolamento (CE) n. 312 del 16 aprile<br>2009. In vigore dal 1 luglio 2009 </div></span>
+
+						<div class="form-control-static" id="codEORI_Vet_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="nrLicenzaGuidaVet_PA" class="control-label col-lg-3">NrLicenzaGuidaVet PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#nrLicenzaGuidaVet_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="nrLicenzaGuidaVet_PA-description"><div class="alert alert-info">2.1.9.1.4 <NumeroLicenzaGuida>numero identificativo della licenza di guida (es. numero patente)</div></span>
+
+						<div class="form-control-static" id="nrLicenzaGuidaVet_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="mezzoTraspVet_PA" class="control-label col-lg-3">MezzoTraspVet PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#mezzoTraspVet_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="mezzoTraspVet_PA-description"><div class="alert alert-info">2.1.9.2 <MezzoTrasporto>mezzo utilizzato per il trasporto</div></span>
+
+						<div class="form-control-static" id="mezzoTraspVet_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="causaleTrsVet_PA" class="control-label col-lg-3">CausaleTrsVet PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#causaleTrsVet_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="causaleTrsVet_PA-description"><div class="alert alert-info">2.1.9.3 <CausaleTrasporto>causale del trasporto</div></span>
+
+						<div class="form-control-static" id="causaleTrsVet_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="nrColliTrasp_PA" class="control-label col-lg-3">NrColliTrasp PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#nrColliTrasp_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="nrColliTrasp_PA-description"><div class="alert alert-info">2.1.9.4 <NumeroColli> numero dei colli trasportati </div></span>
+
+						<div class="form-control-static" id="nrColliTrasp_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="descrTrasp_PA" class="control-label col-lg-3">DescrTrasp PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#descrTrasp_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="descrTrasp_PA-description"><div class="alert alert-info">2.1.9.5 <Descrizione>descrizione (natura, qualit&#224;, aspetto &#8230;) relativa ai colli trasportati </div></span>
+
+						<div class="form-control-static" id="descrTrasp_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="unMisPeso_PA" class="control-label col-lg-3">Un. Mis. Peso PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#unMisPeso_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="unMisPeso_PA-description"><div class="alert alert-info">2.1.9.6 <UnitaMisuraPeso>unit&#224; di misura riferita al peso della merce </div></span>
+
+						<div class="form-control-static" id="unMisPeso_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="pesoLordoMerce_PA" class="control-label col-lg-3">Peso Lordo Merce PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#pesoLordoMerce_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="pesoLordoMerce_PA-description"><div class="alert alert-info">2.1.9.7 <PesoLordo>peso lordo della merce</div></span>
+
+						<div class="form-control-static" id="pesoLordoMerce_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="pesoNettoMer_PA" class="control-label col-lg-3">PesoNettoMer PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#pesoNettoMer_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="pesoNettoMer_PA-description"><div class="alert alert-info">2.1.9.8 <PesoNetto>peso netto della merce</div></span>
+
+						<div class="form-control-static" id="pesoNettoMer_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="dataOraRitMer_PA" class="control-label col-lg-3">DataOraRitMer PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#dataOraRitMer_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="dataOraRitMer_PA-description"><div class="alert alert-info">2.1.9.9 <DataOraRitiro>e data e ora del ritiro della merce (secondo il formato ISO 8601:2004)</div></span>
+
+						<div class="form-control-static" id="dataOraRitMer_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="dataInTrMer_PA" class="control-label col-lg-3">Data Inizio Tr. Merce PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#dataInTrMer_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="dataInTrMer_PA-description"><div class="alert alert-info">2.1.9.10 <DataInizioTrasporto>data di inizio del trasporto (secondo il formato ISO 8601:2004)</div></span>
+
+						<div class="form-control-static" id="dataInTrMer_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="tipoResaTr_PA" class="control-label col-lg-3">TipoResaTr PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#tipoResaTr_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="tipoResaTr_PA-description"><div class="alert alert-info">2.1.9.11 <TipoResa>codifica del termine di resa espresso secondo lo standard ICC-Camera di Commercio Internazionale (Incoterms);<br>[EXW], [CPT], [&#8230;] </div></span>
+
+						<div class="form-control-static" id="tipoResaTr_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="INDIRIZZO_RESA_PA" class="control-label col-lg-3">IndirizzoResa PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#INDIRIZZO_RESA_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="INDIRIZZO_RESA_PA-description"><div class="alert alert-info">2.1.9.12 <IndirizzoResa>dati dell'indirizzo di resa<br>2.1.9.12.1 <Indirizzo> indirizzo di resa (nome della via, piazza etc.)</div></span>
+
+						<div class="form-control-static" id="INDIRIZZO_RESA_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="nrCivResa_PA" class="control-label col-lg-3">NrCivResa PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#nrCivResa_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="nrCivResa_PA-description"><div class="alert alert-info">2.1.9.12.2 <NumeroCivico>numero civico riferito all'indirizzo di resa (non indicare se gi&#224; presente nel campo Indirizzo) </div></span>
+
+						<div class="form-control-static" id="nrCivResa_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="capResa_PA" class="control-label col-lg-3">CAP Resa PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#capResa_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="capResa_PA-description"><div class="alert alert-info">2.1.9.12.3 <CAP>Codice Avviamento Postale dell'indirizzo di resa</div></span>
+
+						<div class="form-control-static" id="capResa_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="comuneResa_PA" class="control-label col-lg-3">ComuneResa PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#comuneResa_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="comuneResa_PA-description"><div class="alert alert-info">2.1.9.12.4 <Comune>comune ove ha sede l'indirizzo di resa</div></span>
+
+						<div class="form-control-static" id="comuneResa_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="prResa_PA" class="control-label col-lg-3">PrResa PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#prResa_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="prResa_PA-description"><div class="alert alert-info">2.1.9.12.5 <Provincia>sigla della provincia di appartenenza del comune indicato nel campo 2.1.9.12.4</div></span>
+
+						<div class="form-control-static" id="prResa_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="nazioneResa_PA" class="control-label col-lg-3">NazioneResa PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#nazioneResa_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="nazioneResa_PA-description"><div class="alert alert-info">2.1.9.12.6 <Nazione>codice della nazione espresso secondo lo standard ISO 3166-1 alpha-2 code</div></span>
+
+						<div class="form-control-static" id="nazioneResa_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="dataOraCons_PA" class="control-label col-lg-3">DataOraCons PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#dataOraCons_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="dataOraCons_PA-description"><div class="alert alert-info">2.1.9.13 <DataOraConsegna>data e ora della consegna della merce (secondo il formato ISO 8601:2004)</div></span>
+
+						<div class="form-control-static" id="dataOraCons_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="normaRif_PA" class="control-label col-lg-3">NormaRif PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#normaRif_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="normaRif_PA-description"><div class="alert alert-info">2.1.10 <NormaDiRiferimento>blocco da valorizzare nei casi di reverse charge (autofattura); contiene la norma di riferimento, comunitaria o nazionale, nei casi in<br>cui il cessionario/committente &#232; debitore di imposta in luogo del cedente/prestatore; negli altri casi il campo non va valorizzato</div></span>
+
+						<div class="form-control-static" id="normaRif_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="NR_FATT_PRINC_PA" class="control-label col-lg-3">NR FATT PRINC PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#NR_FATT_PRINC_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="NR_FATT_PRINC_PA-description"><div class="alert alert-info">2.1.11 <FatturaPrincipale>blocco da valorizzare nei casi di fatture per operazioni accessorie, emesse dagli 'autotrasportatori' per usufruire delle agevolazioni<br>in materia di registrazione e pagamento dell' IVA;<br>2.1.11.1 <NumeroFatturaPrincipale>numero della fattura relativa al trasporto di beni, da indicare sulle fatture emesse dagli autotrasportatori per certificare le<br>operazioni accessorie</div></span>
+
+						<div class="form-control-static" id="NR_FATT_PRINC_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="dataFattPrin_PA" class="control-label col-lg-3">DataFattPrin PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#dataFattPrin_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="dataFattPrin_PA-description"><div class="alert alert-info">2.1.11.2 <DataFatturaPrincipale>data della fattura di cui al campo 2.1.11.1 (secondo il formato ISO 8601:2004)</div></span>
+
+						<div class="form-control-static" id="dataFattPrin_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="NUMERO_LINEA_BENI_SERV_PA" class="control-label col-lg-3">NUMERO LINEA BENI SERV PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#NUMERO_LINEA_BENI_SERV_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="NUMERO_LINEA_BENI_SERV_PA-description"><div class="alert alert-info">2.2 <DatiBeniServizi>blocco sempre obbligatorio contenente natura, qualit&#224; e quantit&#224; dei beni / servizi formanti oggetto dell'operazione;<br>2.2.1 <DettaglioLinee>blocco sempre obbligatorio contenente le linee di dettaglio del documento (i campi del blocco si ripetono per ogni riga di dettaglio);<br>2.2.1.1 <NumeroLinea>
+numero della riga di dettaglio del documento</div></span>
+
+						<input maxlength="255" type="text" class="form-control" name="NUMERO_LINEA_BENI_SERV_PA" id="NUMERO_LINEA_BENI_SERV_PA" value="<%%VALUE(NUMERO_LINEA_BENI_SERV_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="tipoCessPrest_PA" class="control-label col-lg-3">TipoCessPrest PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#tipoCessPrest_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="tipoCessPrest_PA-description"><div class="alert alert-info">2.2.1.2 <TipoCessionePrestazione>
+da valorizzare nei soli casi di sconto, premio, abbuono, spesa accessoria
+;<br>valori ammessi:<br>[SC]: sconto<br>[PR]: premio<br>[AB]: abbuono<br>[AC]: spesa accessoria</div></span>
+
+						<input maxlength="2" type="text" class="form-control" name="tipoCessPrest_PA" id="tipoCessPrest_PA" value="<%%VALUE(tipoCessPrest_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="CODICE_TIPO_PA" class="control-label col-lg-3">CODICE TIPO PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#CODICE_TIPO_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="CODICE_TIPO_PA-description"><div class="alert alert-info">2.2.1.3 <CodiceArticolo>eventuale codifica dell'articolo (la molteplicit&#224; N del blocco consente di gestire la presenza di pi&#249; codifiche);<br>2.2.1.3.1 <CodiceTipo>indica la tipologia di codice articolo (TARIC, CPV, EAN, SSC, ...) </div></span>
+
+						<input maxlength="35" type="text" class="form-control" name="CODICE_TIPO_PA" id="CODICE_TIPO_PA" value="<%%VALUE(CODICE_TIPO_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="codiceVal_PA" class="control-label col-lg-3">CodiceVal PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#codiceVal_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="codiceVal_PA-description"><div class="alert alert-info">2.2.1.3.2 <CodiceValore>indica il valore del codice articolo corrispondente alla tipologia riportata nel campo 2.2.1.3.1. </div></span>
+
+						<input maxlength="35" type="text" class="form-control" name="codiceVal_PA" id="codiceVal_PA" value="<%%VALUE(codiceVal_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="descrizioneBene_PA" class="control-label col-lg-3">DescrizioneBene PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#descrizioneBene_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="descrizioneBene_PA-description"><div class="alert alert-info">2.2.1.4 <Descrizione>natura e qualit&#224; dell'oggetto della cessione/prestazione; pu&#242; fare anche riferimento ad un precedente documento emesso a titolo di<br>'anticipo/acconto' , nel qual caso il valore del campo 2.2.1.9 e 2.2.1.11 sar&#224; negativo</div></span>
+
+						<div class="form-control-static" id="descrizioneBene_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="quantitaBene_PA" class="control-label col-lg-3">QuantitaBene PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#quantitaBene_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="quantitaBene_PA-description"><div class="alert alert-info">2.2.1.5 <Quantita>
+numero di unit&#224; cedute / prestate</div></span>
+
+						<div class="form-control-static" id="quantitaBene_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="uniMisBene_PA" class="control-label col-lg-3">Unita Misura Bene PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#uniMisBene_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="uniMisBene_PA-description"><div class="alert alert-info">2.2.1.6 <UnitaMisura>unit&#224; di misura riferita alla quantit&#224;</div></span>
+
+						<div class="form-control-static" id="uniMisBene_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="dataInPeriodo_PA" class="control-label col-lg-3">DataInPeriodo PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#dataInPeriodo_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="dataInPeriodo_PA-description"><div class="alert alert-info">2.2.1.7 <DataInizioPeriodo>data iniziale del periodo di riferimento cui si riferisce l'eventuale servizio prestato (secondo il formato ISO 8601:2004)</div></span>
+
+						<%%COMBO(dataInPeriodo_PA)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="dataFinePeriodo_PA" class="control-label col-lg-3">DataFinePeriodo PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#dataFinePeriodo_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="dataFinePeriodo_PA-description"><div class="alert alert-info">2.2.1.8 <DataFinePeriodo>e data finale del periodo di riferimento cui si riferisce l'eventuale servizio prestato (secondo il formato ISO 8601:2004) </div></span>
+
+						<%%COMBO(dataFinePeriodo_PA)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="prezzoUn_PA" class="control-label col-lg-3">PrezzoUn PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#prezzoUn_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="prezzoUn_PA-description"><div class="alert alert-info">2.2.1.9 <PrezzoUnitario>prezzo unitario del bene/servizio; nel caso di beni ceduti a titolo di sconto, premio o abbuono, l'importo indicato rappresenta il<br>"valore normale"
+</div></span>
+
+						<div class="form-control-static" id="prezzoUn_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="TIPO_SCONTO_MAG_PA" class="control-label col-lg-3">TIPO SCONTO MAG PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#TIPO_SCONTO_MAG_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="TIPO_SCONTO_MAG_PA-description"><div class="alert alert-info">2.2.1.10 <ScontoMaggiorazione>eventuale sconto o maggiorazione applicati (la molteplicit&#224; N del blocco consente di gestire la presenza di pi&#249; sconti o<br>maggiorazioni a 'cascata');<br>2.2.1.10.1 <Tipo>indica se trattasi di sconto o di maggiorazione;<br>valori ammessi:<br>[SC]: sconto<br>[MG]: maggiorazione</div></span>
+
+						<div class="form-control-static" id="TIPO_SCONTO_MAG_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="perScMagBene_PA" class="control-label col-lg-3">PerScMagBene PA</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="perScMagBene_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="impScMagBene_PA" class="control-label col-lg-3">ImpScMagBene PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#impScMagBene_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="impScMagBene_PA-description"><div class="alert alert-info">2.2.1.10.3 <Importo>importo dello sconto o della maggiorazione</div></span>
+
+						<div class="form-control-static" id="impScMagBene_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="prezzoTotaleBene_PA" class="control-label col-lg-3">PrezzoTotaleBene PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#prezzoTotaleBene_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="prezzoTotaleBene_PA-description"><div class="alert alert-info">2.2.1.11 <PrezzoTotale>l importo totale del bene/servizio (che tiene conto di eventuali sconti / maggiorazioni) IVA esclusa</div></span>
+
+						<div class="form-control-static" id="prezzoTotaleBene_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="aliqIVA_bene_PA" class="control-label col-lg-3">AliqIVA bene PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#aliqIVA_bene_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="aliqIVA_bene_PA-description"><div class="alert alert-info">2.2.1.12 <AliquotaIVA>aliquota (%) IVA applicata al bene/servizio </div></span>
+
+						<div class="form-control-static" id="aliqIVA_bene_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="ritenuta_bene_PA" class="control-label col-lg-3">Ritenuta bene PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#ritenuta_bene_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="ritenuta_bene_PA-description"><div class="alert alert-info">2.2.1.13 <Ritenuta>da valorizzare solo in caso di cessione/prestazione soggetta a ritenuta di acconto;<br>valore ammesso:<br>[SI]: cessione / prestazione soggetta a ritenuta </div></span>
+
+						<input maxlength="2" type="text" class="form-control" name="ritenuta_bene_PA" id="ritenuta_bene_PA" value="<%%VALUE(ritenuta_bene_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="naturaRitBene" class="control-label col-lg-3">NaturaRitBene <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#naturaRitBene-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="naturaRitBene-description"><div class="alert alert-info">2.2.1.14 <Natura>natura dell'operazione se non rientra tra quelle imponibili (il campo 2.2.1.12 deve essere valorizzato a zero);<br>valori ammessi:<br>vedi codifiche in calce al documento </div></span>
+
+						<input maxlength="255" type="text" class="form-control" name="naturaRitBene" id="naturaRitBene" value="<%%VALUE(naturaRitBene)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="rifAmm_PA" class="control-label col-lg-3">Rif. Amm PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#rifAmm_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="rifAmm_PA-description"><div class="alert alert-info">2.2.1.15 <RiferimentoAmministrazione>codice identificativo ai fini amministrativo-contabili </div></span>
+
+						<input maxlength="20" type="text" class="form-control" name="rifAmm_PA" id="rifAmm_PA" value="<%%VALUE(rifAmm_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="TIPO_DATO_ALTRI_DATI_PA" class="control-label col-lg-3">TipoDatoAltriDati PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#TIPO_DATO_ALTRI_DATI_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="TIPO_DATO_ALTRI_DATI_PA-description"><div class="alert alert-info">2.2.1.16 <AltriDatiGestionali>
+blocco che consente di inserire, con riferimento ad una linea di dettaglio, diverse tipologie di informazioni utili ai fini amministrativi,<br>gestionali etc.;<br>2.2.1.16.1 <TipoDato>codice che identifica la tipologia di informazione</div></span>
+
+						<input maxlength="255" type="text" class="form-control" name="TIPO_DATO_ALTRI_DATI_PA" id="TIPO_DATO_ALTRI_DATI_PA" value="<%%VALUE(TIPO_DATO_ALTRI_DATI_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="rifTesto_altri_dati_PA" class="control-label col-lg-3">Rif. Testo altri dati PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#rifTesto_altri_dati_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="rifTesto_altri_dati_PA-description"><div class="alert alert-info">2.2.1.16.2 <RiferimentoTesto>campo in cui inserire un valore alfanumerico riferito alla tipologia di informazione di cui al campo 2.2.1.16.1 </div></span>
+
+						<input maxlength="60" type="text" class="form-control" name="rifTesto_altri_dati_PA" id="rifTesto_altri_dati_PA" value="<%%VALUE(rifTesto_altri_dati_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="rifNum_Altri_dati_PA" class="control-label col-lg-3">Rif. Num Altri dati PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#rifNum_Altri_dati_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="rifNum_Altri_dati_PA-description"><div class="alert alert-info">2.2.1.16.3 <RiferimentoNumero>campo in cui inserire un valore numerico riferito alla tipologia di informazione di cui al campo 2.2.1.16.1<br></div></span>
+
+						<input maxlength="24" type="text" class="form-control" name="rifNum_Altri_dati_PA" id="rifNum_Altri_dati_PA" value="<%%VALUE(rifNum_Altri_dati_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="rifData_altri_dati_PA" class="control-label col-lg-3">RifData altri dati PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#rifData_altri_dati_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="rifData_altri_dati_PA-description"><div class="alert alert-info">2.2.1.16.4 <RiferimentoData>campo in cui inserire una data riferita alla tipologia di informazione di cui al campo 2.2.1.16.1</div></span>
+
+						<%%COMBO(rifData_altri_dati_PA)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="AL_IVA_RIEP_PA" class="control-label col-lg-3">AL IVA RIEP PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#AL_IVA_RIEP_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="AL_IVA_RIEP_PA-description"><div class="alert alert-info">2.2.2 <DatiRiepilogo>blocco sempre obbligatorio contenente i dati di riepilogo per ogni aliquota IVA o natura;<br>2.2.2.1 <AliquotaIVA>l aliquota (%) IVA</div></span>
+
+						<div class="form-control-static" id="AL_IVA_RIEP_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="naturaRiep_PA" class="control-label col-lg-3">NaturaRiep PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#naturaRiep_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="naturaRiep_PA-description"><div class="alert alert-info">2.2.2.2 <Natura>natura delle operazioni qualora non rientrino tra quelle 'imponibili';<br>valori ammessi:<br>vedi codifiche in calce al documento</div></span>
+
+						<div class="form-control-static" id="naturaRiep_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="speseAcc_Riep_PA" class="control-label col-lg-3">SpeseAcc Riep PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#speseAcc_Riep_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="speseAcc_Riep_PA-description"><div class="alert alert-info">2.2.2.3 <SpeseAccessorie>
+mal corrispettivi relativi alle cessioni accessorie (es. imballaggi etc.) qualora presenti</div></span>
+
+						<div class="form-control-static" id="speseAcc_Riep_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="arrotRiep_PA" class="control-label col-lg-3">ArrotRiep PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#arrotRiep_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="arrotRiep_PA-description"><div class="alert alert-info">2.2.2.4 <Arrotondamento>arrotondamento sull'imponibile o sull'importo</div></span>
+
+						<div class="form-control-static" id="arrotRiep_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="imponibileImpRiep_PA" class="control-label col-lg-3">ImponibileImp PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#imponibileImpRiep_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="imponibileImpRiep_PA-description"><div class="alert alert-info">2.2.2.5 <ImponibileImporto>questo valore rappresenta:<br>base imponibile, per le operazioni soggette ad IVA;<br>importo, per le operazioni che non rientrano tra quelle 'imponibili' (campo 2.2.2.2 valorizzato)
+</div></span>
+
+						<div class="form-control-static" id="imponibileImpRiep_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="impostaRiep_PA" class="control-label col-lg-3">ImpostaRiep PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#impostaRiep_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="impostaRiep_PA-description"><div class="alert alert-info">2.2.2.6 <Imposta>imposta risultante dall'applicazione dell'aliquota IVA all'imponibile</div></span>
+
+						<div class="form-control-static" id="impostaRiep_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="esigIVA_riep_PA" class="control-label col-lg-3">Esig. IVA riep PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#esigIVA_riep_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="esigIVA_riep_PA-description"><div class="alert alert-info">2.2.2.7 <EsigibilitaIVA>esigibilit&#224; IVA (immediata ai sensi dell'Art. 6 comma 5 del DPR 633 1972, oppure differita)
+;<br>valori ammessi:<br>[I]: IVA ad esigibilit&#224; immediata<br>[D]: IVA ad esigibilit&#224; differita</div></span>
+
+						<div class="form-control-static" id="esigIVA_riep_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="rifNormRiep_PA" class="control-label col-lg-3">Rif. Norm. Riep PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#rifNormRiep_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="rifNormRiep_PA-description"><div class="alert alert-info">2.2.2.8 <RiferimentoNormativo>norma di riferimento (obbligatoria nei casi in cui il campo 2.2.2.2 &#232; valorizzato)</div></span>
+
+						<input maxlength="255" type="text" class="form-control" name="rifNormRiep_PA" id="rifNormRiep_PA" value="<%%VALUE(rifNormRiep_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="DATA_DATI_VEIC_PA" class="control-label col-lg-3">DATA DATI VEIC PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#DATA_DATI_VEIC_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="DATA_DATI_VEIC_PA-description"><div class="alert alert-info">2.3 <DatiVeicoli>dati relativi ai veicoli di cui all'art. 38, comma 4 del dl 331 del 1993;<br>2.3.1 <Data>te data di prima immatricolazione o di iscrizione nei pubblici registri (secondo il formato ISO 8601:2004) </div></span>
+
+						<div class="form-control-static" id="DATA_DATI_VEIC_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="totalePercorso_PA" class="control-label col-lg-3">TotalePercorso PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#totalePercorso_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="totalePercorso_PA-description"><div class="alert alert-info">2.3.2 <TotalePercorso> totale chilometri percorsi, oppure totale ore navigate o volate;</div></span>
+
+						<div class="form-control-static" id="totalePercorso_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="BENEFIC_DATI_PAG_PA" class="control-label col-lg-3" data-parent_link="view_parent_modal">BENEFIC DATI PAG PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#BENEFIC_DATI_PAG_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="BENEFIC_DATI_PAG_PA-description"><div class="alert alert-info">2.4 <DatiPagamento>
+dati relativi al pagamento;<br>2.4.1 <CondizioniPagamento>condizioni di pagamento;<br>valori ammessi:<br>[TP01]: pagamento a rate<br>[TP02]: pagamento completo<br>[TP03]: anticipo
+;<br>2.4.2 <DettaglioPagamento>dati di dettaglio del pagamento</div></span>
+
+						<div class="form-control-static" style="white-space: nowrap; overflow-x: hidden;"><%%COMBO(BENEFIC_DATI_PAG_PA)%%><%%PLINK(BENEFIC_DATI_PAG_PA)%%><%%ADDNEW(firstCashNote)%%><span id="BENEFIC_DATI_PAG_PALoading"></span></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="modPagam_PA" class="control-label col-lg-3">ModPagam PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#modPagam_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="modPagam_PA-description"><div class="alert alert-info">2.4.2.2 <ModalitaPagamento>modalit&#224; di pagamento;<br></div></span>
+
+						<div class="form-control-static" id="modPagam_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="dataRifTermPag_PA" class="control-label col-lg-3">DataRifTermPag PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#dataRifTermPag_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="dataRifTermPag_PA-description"><div class="alert alert-info">2.4.2.3 <DataRiferimentoTerminiPagamento>data dalla quale decorrono i termini di pagamento (secondo il formato ISO 8601:2004) </div></span>
+
+						<div class="form-control-static" id="dataRifTermPag_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="giorniTermPag_PA" class="control-label col-lg-3">GiorniTermPag PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#giorniTermPag_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="giorniTermPag_PA-description"><div class="alert alert-info">2.4.2.4 <GiorniTerminiPagamento>termini di pagamento espressi in giorni a partire dalla data di riferimento di cui al campo precedente 2.4.2.3 (vale 0 per pagamenti<br>a vista ) </div></span>
+
+						<div class="form-control-static" id="giorniTermPag_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="dataScadPag_PA" class="control-label col-lg-3">DataScadPag PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#dataScadPag_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="dataScadPag_PA-description"><div class="alert alert-info">2.4.2.5 <DataScadenzaPagamento>data di scadenza del pagamento (secondo il formato ISO 8601:2004) da indicare nei casi in cui ha senso sulla bese delle<br>condizioni di pagamento previste)</div></span>
+
+						<div class="form-control-static" id="dataScadPag_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="imporPag_PA" class="control-label col-lg-3">Importo Pag PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#imporPag_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="imporPag_PA-description"><div class="alert alert-info">2.4.2.6 <ImportoPagamento>importo relativo al pagamento</div></span>
+
+						<div class="form-control-static" id="imporPag_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="codUffPostale_PA" class="control-label col-lg-3">CodUffPostale PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#codUffPostale_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="codUffPostale_PA-description"><div class="alert alert-info">2.4.2.7 <CodUfficioPostale>
+nei casi di modalit&#224; di pagamento in cui ha senso l'indicazione dell'ufficio postale</div></span>
+
+						<div class="form-control-static" id="codUffPostale_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="cognomeQuietanzante_PA" class="control-label col-lg-3">CognomeQuietanzante PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#cognomeQuietanzante_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="cognomeQuietanzante_PA-description"><div class="alert alert-info">2.4.2.8 <CognomeQuietanzante>cognome del quietanzante (nei casi di campo 2.4.2.2 = MP04 ) </div></span>
+
+						<div class="form-control-static" id="cognomeQuietanzante_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="nomeQuietanzante_PA" class="control-label col-lg-3">NomeQuietanzante PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#nomeQuietanzante_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="nomeQuietanzante_PA-description"><div class="alert alert-info">2.4.2.9 <NomeQuietanzante>nome del quietanzante (nei casi di campo 2.4.2.2 = MP04 ) </div></span>
+
+						<div class="form-control-static" id="nomeQuietanzante_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="CF_Quietanzante_PA" class="control-label col-lg-3">CF Quietanzante PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#CF_Quietanzante_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="CF_Quietanzante_PA-description"><div class="alert alert-info">2.4.2.10 <CFQuietanzante>codice fiscale del quietanzante (nei casi di campo 2.4.2.2 = MP04 )</div></span>
+
+						<div class="form-control-static" id="CF_Quietanzante_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="titQuietanzante_PA" class="control-label col-lg-3">TitQuietanzante PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#titQuietanzante_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="titQuietanzante_PA-description"><div class="alert alert-info">2.4.2.11 <TitoloQuietanzante>titolo del quietanzante (nei casi di campo 2.4.2.2 = MP04 )</div></span>
+
+						<div class="form-control-static" id="titQuietanzante_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="IBAN_PA" class="control-label col-lg-3">IBAN PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#IBAN_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="IBAN_PA-description"><div class="alert alert-info">2.4.2.13 <IBAN>International Bank Account Number (coordinata bancaria internazionale che consente di identificare, in maniera standard, il conto<br>corrente del beneficiario ) </div></span>
+
+						<div class="form-control-static" id="IBAN_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="ABI_PA" class="control-label col-lg-3">ABI PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#ABI_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="ABI_PA-description"><div class="alert alert-info">2.4.2.14 <ABI>codice ABI </div></span>
+
+						<input maxlength="255" type="text" class="form-control" name="ABI_PA" id="ABI_PA" value="<%%VALUE(ABI_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="CAB_PA" class="control-label col-lg-3">CAB PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#CAB_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="CAB_PA-description"><div class="alert alert-info">2.4.2.15 <CAB>codice CAB</div></span>
+
+						<div class="form-control-static" id="CAB_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="BIC_PA" class="control-label col-lg-3">BIC PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#BIC_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="BIC_PA-description"><div class="alert alert-info">2.4.2.16 <BIC>
+Bank Identifier Code (codice che identifica la banca del beneficiario) </div></span>
+
+						<input maxlength="255" type="text" class="form-control" name="BIC_PA" id="BIC_PA" value="<%%VALUE(BIC_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="scontoPagAntic_PA" class="control-label col-lg-3">ScontoPagAntic PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#scontoPagAntic_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="scontoPagAntic_PA-description"><div class="alert alert-info">2.4.2.17 <ScontoPagamentoAnticipato>l'ammontare dello sconto per pagamento anticipato</div></span>
+
+						<div class="form-control-static" id="scontoPagAntic_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="dataLimPagAntic_PA" class="control-label col-lg-3">DataLimPagAntic PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#dataLimPagAntic_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="dataLimPagAntic_PA-description"><div class="alert alert-info">2.4.2.18 <DataLimitePagamentoAnticipato>data limite stabilita per il pagamento anticipato (secondo il formato ISO 8601:2004) </div></span>
+
+						<div class="form-control-static" id="dataLimPagAntic_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="penRitarPagam_PA" class="control-label col-lg-3">PenRitarPagam PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#penRitarPagam_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="penRitarPagam_PA-description"><div class="alert alert-info">2.4.2.19 <PenalitaPagamentiRitardati>ammontare della penalit&#224; dovuta per pagamenti ritardati </div></span>
+
+						<div class="form-control-static" id="penRitarPagam_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="dataDecPenale_PA" class="control-label col-lg-3">DataDecPenale PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#dataDecPenale_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="dataDecPenale_PA-description"><div class="alert alert-info">2.4.2.20 <DataDecorrenzaPenale>data di decorrenza della penale (secondo il formato ISO 8601:2004)</div></span>
+
+						<div class="form-control-static" id="dataDecPenale_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="codPagamento_PA" class="control-label col-lg-3">CodPagamento PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#codPagamento_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="codPagamento_PA-description"><div class="alert alert-info">2.4.2.21 <CodicePagamento>codice per la riconciliazione degli incassi da parte del cedente/prestatore </div></span>
+
+						<div class="form-control-static" id="codPagamento_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="ALLEGATI_NOME_ALL_PA" class="control-label col-lg-3" data-parent_link="view_parent_modal">ALLEGATI NOME ALL PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#ALLEGATI_NOME_ALL_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="ALLEGATI_NOME_ALL_PA-description"><div class="alert alert-info">2.5 <Allegati>dati relativi ad eventuali allegati;<br>2.5.1 <NomeAttachment>nome dell'allegato</div></span>
+
+						<div class="form-control-static" style="white-space: nowrap; overflow-x: hidden;"><%%COMBO(ALLEGATI_NOME_ALL_PA)%%><%%PLINK(ALLEGATI_NOME_ALL_PA)%%><%%ADDNEW(allegati_PA)%%><span id="ALLEGATI_NOME_ALL_PALoading"></span></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="algoritmoComp_PA" class="control-label col-lg-3">AlgoritmoComp PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#algoritmoComp_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="algoritmoComp_PA-description"><div class="alert alert-info">2.5.2 <AlgoritmoCompressione>algoritmo usato per comprimere l'attachment (ad es.: ZIP, RAR, &#8230;) </div></span>
+
+						<div class="form-control-static" id="algoritmoComp_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="formatoAttachement_PA" class="control-label col-lg-3">FormatoAttachement PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#formatoAttachement_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="formatoAttachement_PA-description"><div class="alert alert-info">2.5.3 <FormatoAttachment>formato dell'attachment (ad es: TXT, XML, DOC, PDF &#8230;&#8230;.)</div></span>
+
+						<div class="form-control-static" id="formatoAttachement_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="descrizioneAttach_PA" class="control-label col-lg-3">DescrizioneAttach PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#descrizioneAttach_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="descrizioneAttach_PA-description"><div class="alert alert-info">2.5.4 <DescrizioneAttachment>descrizione del documento</div></span>
+
+						<div class="form-control-static" id="descrizioneAttach_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="attachment_PA" class="control-label col-lg-3">Attachment PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#attachment_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="attachment_PA-description"><div class="alert alert-info">2.5.5 <Attachment>ry contiene il documento allegato alla fattura; il contenuto &#232; demandato agli accordi tra PA e fornitore;<br>base64Binary [RFC 2045];<br>valore vincolato alla<br>dimensione max prevista<br>per la fattura ele</div></span>
+
+						<div class="form-control-static" id="attachment_PA"></div>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="electronicInvoice_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<input type="hidden" name="percScMag_PA" value="<%%VALUE(percScMag_PA)%%>">
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode){
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			if(!(embedded_mode && AppGini.mobileDevice())){
+				$j('select, input[type=text], textarea').not(':disabled').eq(0).focus();
+			}
+
+			$j('form').eq(0).change(function(){
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			$j('a[href="<%%TRANSLATION(ImageFolder)%%>"]').click(function(){ /* */ return false; });
+
+
+			if(!embedded_mode){
+				/* add a horizontal spacer to [add new parent] buttons that don't have a spacered element before them */
+				$j('.add_new_parent').prev(':not(.hspacer-md)').next().addClass('hspacer-md');
+
+				$j('.add_new_parent').click(function(){
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function(){
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function(){
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length){
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				}else{
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length){
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != ''){
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link){
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function(){
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+
+			/* load admin tools for admin user */
+			if(!add_new_mode){
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=electronicInvoice&id=<%%URLVALUE(id)%%>',
+					function(resp){
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=electronicInvoice&id=<%%URLVALUE(id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function(){
+				if($j('#deselect.btn-warning').length){
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>

@@ -1,0 +1,131 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ID</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(id)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Kind</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="kind<%%RND1%%>"><%%COMBOTEXT(kind)%%></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">IBAN PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(IBAN_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ABI PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(ABI_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CAB PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(CAB_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">BIC PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(BIC_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Altro Indirizzo Ced. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(altroIndirizzo_Ced_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Altro nr Civico Ced. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(altro_nr_Civico_Ced_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Altro CAP Ced. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(altroCAP_Ced_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Altra PR Ced. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(altra_PR_Ced_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Altra Nazione Ced. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="altraNazione_Ced_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Map</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><img src="<%%GOOGLEMAPTHUMB(map)%%>" style="max-width: 480px;  max-height: 360px; "></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Default</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><input type="checkbox" name="default" id="default" value="1" <%%CHECKED(default)%%> readonly></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Ship</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><input type="checkbox" name="ship" id="ship" value="1" <%%CHECKED(ship)%%> readonly></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<!-- child records -->
+<div class="panel-body">
+	<div id="addresses_PA-children"></div>
+</div>
+
+<script>
+	$j(function(){
+		/* prevent loading child records in multiple DVP */
+		if($j('[id=addresses_PA-children]').length > 1) return;
+
+		post(
+			'parent-children.php', {
+				ParentTable: 'addresses_PA',
+				SelectedID: '<%%VALUE(id)%%>',
+				Operation: 'show-children-printable'
+			},
+			'addresses_PA-children',
+			'disable-element',
+			'loading-element',
+			apply_persisting_children
+		);
+
+		$j('form').on('click', '#children-tabs button[data-target]', function(){
+			$j(this).toggleClass('active');
+			persist_expanded_child($j(this).attr('id'));
+		});
+	})
+</script>
+

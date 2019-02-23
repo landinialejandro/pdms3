@@ -1,0 +1,1176 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Numero Progressivo invio</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(id)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Id Paese trasmittente PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="idPaese_TR_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Id Codice trasm. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="idCodice_TR_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Progressivo Invio PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(progressivoInvioPA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Formato Trasmissione PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(formatoTrasmissionePA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Codice Destinatario PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="codiceDestinatarioPA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Telefono PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="telefonoPA<%%RND1%%>"><%%COMBOTEXT(telefonoPA)%%></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Email PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(emailPA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Id Fiscale IVA Ced. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="idFiscaleIVA_Ced_PA<%%RND1%%>"><%%COMBOTEXT(idFiscaleIVA_Ced_PA)%%></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Codice Fiscale Ced. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="codiceFiscale_Ced_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Denominazione Cedente PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="denominazione_Ced_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Nome Ced. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="nome_Ced_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Cognome Ced. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="cognome_Ced_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Titolo Ced. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="titolo_Ced_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CodEORI Ced. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="codEORI_Ced_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Albo Professionale Ced. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="alboProfessionale_Ced_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Provincia Albo Ced. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="provinciaAlbo_Ced_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Nr. Iscrizione Albo Ced. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="nrIscrizioneAlbo_Ced_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Data Iscr. Albo Ced. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="dataIscAlbo_Ced_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Regime Fiscale Ced. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="regimeFiscale_Ced_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Indirizzo Ced. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="indirizzo_Ced_PA<%%RND1%%>"><%%COMBOTEXT(indirizzo_Ced_PA)%%></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Numero Civico Ced. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="numeroCivico_Ced_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CAP Cedente PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="CAP_Ced_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Comune Ced. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="comune_Ced_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Provincia Ced. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="provincia_Ced_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Nazione Ced. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="nazione_Ced_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Altro Indirizzo Ced. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="altroIndirizzo_Ced_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Altro nr Civico Ced. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="altro_nr_Civico_Ced_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Altro CAP Ced. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="altroCAP_Ced_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Altro Com Ced PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="altro_Com_Ced_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Altra PR Ced. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="altro_PR_Ced_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Altra Nazione Ced. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="altraNazione_Ced_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Ufficio Ced. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="ufficio_Ced_PA<%%RND1%%>"><%%COMBOTEXT(ufficio_Ced_PA)%%></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">NumeroREA PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="numeroREA_Ced__PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CapitaleSocialePA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="capitaleSociale_Ced_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">SocioUnicoPA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="socioUnico_Ced_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">StatoLiquidazionePA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="statoLiquidazione_Ced_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">TelefonoCompanyPA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="telefonoCompany_Ced_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">FaxCompanyPA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="faxCompany_Ced_PA<%%RND1%%>"><%%COMBOTEXT(faxCompany_Ced_PA)%%></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">EMailCompanyPA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="eMailCompany_Ced_PA<%%RND1%%>"><%%COMBOTEXT(eMailCompany_Ced_PA)%%></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Rif Amm Ced PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(rif_Amm_Ced_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Id Paese Rap. Fisc PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="idPaeseRap_Fisc_PA<%%RND1%%>"><%%COMBOTEXT(idPaeseRap_Fisc_PA)%%></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Id Paese Rap. Fisc. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="idPaeseRap_CodPA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Id Cod.Fisc. Rappr. Fisc. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="idCodFiscRap_Fisc_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Id Denominazione Rapp. Fisc. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="idDenominazioneRap_FiscPA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ID Nome Rap. Fisc. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="idNomeRap_Fisc_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Id Cogn. Rap. Fisc.PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="idCognRap_Fisc_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Id Titolo Rap. Fisc. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="idTitoloRap_Fisc_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Id EORI Rap. Fisc. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="idEORI_Rap_Fisc_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">IdPaeseCess PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="idPaeseCess_PA<%%RND1%%>"><%%COMBOTEXT(idPaeseCess_PA)%%></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">IdCodiceCess PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="idCodiceCess_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">IdCodiceFiscCess PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(idCodiceFiscCess_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">DenominazioneCess PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="denominazioneCess_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">NomeCess PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="nomeCess_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CognomeCess PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="cognomeCess_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">TitoloCess PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="titoloCess_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CodEORI Cess PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="codEORI_Cess_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">IndirizzoCess PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="indirizzoCess_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">NrCivicoCess PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="nrCivicoCess_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CAP Cess PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="CAP_Cess_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ComuneCess PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="comuneCess_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ProvCess PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="provCess_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Nazione Cess PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="nazione_Cess_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">IdPaese3intSogEm PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="idPaese3intSogEm_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">IdCod 3intSogEm PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="idCod_3intSogEm_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CodFisc 3intSogEm PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="codFisc_3intSogEm_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Denom 3intSogEm PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="denom_3intSogEm_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Nome 3 SogEm PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="nome_3_intSogEm_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Cogn 3 SogEm PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="cogn_3_intSogEm_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tit 3 SogEm PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="tit_3_IntSogEm_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CodEORi 3 intSogEm PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="codEORi_3_intSogEm_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">SoggettoEmittente PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(SoggettoEmittente_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">TipoDocumento PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="tipoDocumentoFEB_PA<%%RND1%%>"><%%COMBOTEXT(tipoDocumentoFEB_PA)%%></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">DivisaFEB PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="divisaFEB_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">DataFEB PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="dataFEB_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">NumeroFEB PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="numeroFEB_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tipo Ritenenuta PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="tipoRiten_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ImpRiten PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="impRiten_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">AliqRiten PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="aliqRiten_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CausPagRit PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="causPagRit_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">NumBolloRit PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="numBolloRit_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ImpBolloRit PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="impBolloRit_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">TipoCassaPrev PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="tipoCassaPrev_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">AlCassaPr PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="alCassaPr_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ImpContCassa PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="impContCassaPr_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Imponibile CassaPr PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="imponCassaPr_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Ali IVA CassaPr PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="aliIVA_CassaPr_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">RitCassaPr PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="ritCassaPr_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">NaturaCassaPr PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="naturaCassaPr_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">RifAmmCasPr PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="rifAmmCasPr_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tipo Sconto Mag. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="tipoScMag_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Importo Sc. Mag. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="impScMag_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Importo Tot. Doc. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="ImpTotDoc_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Arrotondamento Doc. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="arrotDoc_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Causale Doc PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="causale_Doc_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Art. 73 doc PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="art73_doc_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Rif. Num. Linea Doc. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="rifNumLineaDoc_PA<%%RND1%%>"><%%COMBOTEXT(rifNumLineaDoc_PA)%%></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Id Numero Documento PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="idDocNum_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">DataOrder PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="dataOrder_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Num.Item Doc. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="numItemDoc_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Cod. Comm. Conv. Doc. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="codCommConvDoc_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Cod. CUP PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="codCUP_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Cod.CIG PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="codCIG_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">RIFERIMENTO FASE PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="RIFERIMENTO_FASE_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">NUMERO DDT PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="NUMERO_DDT_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Data DDT PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="dataDDT_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Rif. Num. Linea PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="rifNumLinea_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ID PAESE PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="ID_PAESE_VET_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Id .Cod. Vettore PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="idCodVet_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Cod. Fisc. Vettore PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="codFiscVet_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">DENOMINAZIONE ANAGR. Vettore PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="DENOMINAZIONE_ANAGR_VETT_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Nome Vett PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="nomeVett_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Cogn.Vett. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="cognVett_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Titolo Vett. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="titVett_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Cod. EORI Vet. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="codEORI_Vet_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">NrLicenzaGuidaVet PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="nrLicenzaGuidaVet_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">MezzoTraspVet PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="mezzoTraspVet_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CausaleTrsVet PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="causaleTrsVet_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">NrColliTrasp PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="nrColliTrasp_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">DescrTrasp PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="descrTrasp_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Un. Mis. Peso PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="unMisPeso_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Peso Lordo Merce PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="pesoLordoMerce_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">PesoNettoMer PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="pesoNettoMer_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">DataOraRitMer PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="dataOraRitMer_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Data Inizio Tr. Merce PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="dataInTrMer_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">TipoResaTr PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="tipoResaTr_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">IndirizzoResa PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="INDIRIZZO_RESA_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">NrCivResa PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="nrCivResa_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CAP Resa PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="capResa_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ComuneResa PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="comuneResa_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">PrResa PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="prResa_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">NazioneResa PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="nazioneResa_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">DataOraCons PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="dataOraCons_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">NormaRif PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="normaRif_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">NR FATT PRINC PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="NR_FATT_PRINC_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">DataFattPrin PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="dataFattPrin_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">NUMERO LINEA BENI SERV PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(NUMERO_LINEA_BENI_SERV_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">TipoCessPrest PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(tipoCessPrest_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CODICE TIPO PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(CODICE_TIPO_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CodiceVal PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(codiceVal_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">DescrizioneBene PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="descrizioneBene_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">QuantitaBene PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="quantitaBene_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Unita Misura Bene PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="uniMisBene_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">DataInPeriodo PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(dataInPeriodo_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">DataFinePeriodo PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(dataFinePeriodo_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">PrezzoUn PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="prezzoUn_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">TIPO SCONTO MAG PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="TIPO_SCONTO_MAG_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">PerScMagBene PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="perScMagBene_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ImpScMagBene PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="impScMagBene_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">PrezzoTotaleBene PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="prezzoTotaleBene_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">AliqIVA bene PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="aliqIVA_bene_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Ritenuta bene PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(ritenuta_bene_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">NaturaRitBene</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(naturaRitBene)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Rif. Amm PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(rifAmm_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">TipoDatoAltriDati PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(TIPO_DATO_ALTRI_DATI_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Rif. Testo altri dati PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(rifTesto_altri_dati_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Rif. Num Altri dati PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(rifNum_Altri_dati_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">RifData altri dati PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(rifData_altri_dati_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">AL IVA RIEP PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="AL_IVA_RIEP_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">NaturaRiep PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="naturaRiep_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">SpeseAcc Riep PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="speseAcc_Riep_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ArrotRiep PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="arrotRiep_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ImponibileImp PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="imponibileImpRiep_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ImpostaRiep PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="impostaRiep_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Esig. IVA riep PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="esigIVA_riep_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Rif. Norm. Riep PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(rifNormRiep_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">DATA DATI VEIC PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="DATA_DATI_VEIC_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">TotalePercorso PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="totalePercorso_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">BENEFIC DATI PAG PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="BENEFIC_DATI_PAG_PA<%%RND1%%>"><%%COMBOTEXT(BENEFIC_DATI_PAG_PA)%%></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ModPagam PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="modPagam_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">DataRifTermPag PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="dataRifTermPag_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">GiorniTermPag PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="giorniTermPag_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">DataScadPag PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="dataScadPag_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Importo Pag PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="imporPag_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CodUffPostale PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="codUffPostale_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CognomeQuietanzante PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="cognomeQuietanzante_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">NomeQuietanzante PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="nomeQuietanzante_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CF Quietanzante PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="CF_Quietanzante_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">TitQuietanzante PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="titQuietanzante_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">IBAN PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="IBAN_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ABI PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(ABI_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CAB PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="CAB_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">BIC PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(BIC_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ScontoPagAntic PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="scontoPagAntic_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">DataLimPagAntic PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="dataLimPagAntic_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">PenRitarPagam PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="penRitarPagam_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">DataDecPenale PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="dataDecPenale_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CodPagamento PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="codPagamento_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ALLEGATI NOME ALL PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="ALLEGATI_NOME_ALL_PA<%%RND1%%>"><%%COMBOTEXT(ALLEGATI_NOME_ALL_PA)%%></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">AlgoritmoComp PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="algoritmoComp_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">FormatoAttachement PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="formatoAttachement_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">DescrizioneAttach PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="descrizioneAttach_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Attachment PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="attachment_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+	</fieldset>
+</div>

@@ -1,0 +1,584 @@
+<!-- Edit this file to change the layout of the detail view form -->
+
+<a name="detail-view"></a>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div class="panel-body" id="orders_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="ordersDetails_view.php?filterer_order=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="ordersDetails_link"><i class="glyphicon glyphicon-list-alt"></i> Dettaglio Ordini vendita PA</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="ordersDetails_view.php?filterer_order=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="xs_ordersDetails_link"><i class="glyphicon glyphicon-list-alt"></i> Dettaglio Ordini vendita PA</a>
+			<input type="hidden" id="ordersDetails_hclink" value="ordersDetails_view.php?filterer_order=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="_resumeOrders_hclink" value="_resumeOrders_view.php?filterer_related=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="firstCashNote_hclink" value="firstCashNote_view.php?filterer_order=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="electronicInvoice_hclink" value="electronicInvoice_view.php?filterer_tipoDocumentoFEB_PA=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="orders_dv_form">
+			<fieldset class="form-horizontal">
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="kind" class="control-label col-lg-3" data-parent_link="view_parent_modal">Kind<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#kind-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="kind-description"><div class="alert alert-info">like input or outpu order</div></span>
+
+						<div class="form-control-static" style="white-space: nowrap; overflow-x: hidden;"><%%COMBO(kind)%%><%%PLINK(kind)%%><%%ADDNEW(kinds)%%></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="company" class="control-label col-lg-3" data-parent_link="view_parent_modal">ID Azienda<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<div class="form-control-static" style="white-space: nowrap; overflow-x: hidden;"><%%COMBO(company)%%><%%PLINK(company)%%><%%ADDNEW(companies)%%></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="typeDoc" class="control-label col-lg-3" data-parent_link="view_parent_modal">Documento<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#typeDoc-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="typeDoc-description"><div class="alert alert-info">Scrivere il tipo di documento, il numero si autodefinisce in base all'Azienda e al tipo di documento.</div></span>
+
+						<div class="form-control-static" style="white-space: nowrap; overflow-x: hidden;"><%%COMBO(typeDoc)%%><%%PLINK(typeDoc)%%><%%ADDNEW(kinds)%%></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="multiOrder_nr_PA" class="control-label col-lg-3">Numero<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#multiOrder_nr_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="multiOrder_nr_PA-description"><div class="alert alert-info">2.1.1.4 <Numero>numero progressivo del documento;<br></div></span>
+
+						<input maxlength="" type="text" class="form-control" name="multiOrder_nr_PA" id="multiOrder_nr_PA" value="<%%VALUE(multiOrder_nr_PA)%%>" required>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="formatoTrasmissione_PA" class="control-label col-lg-3">Formato Trasmissione PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#formatoTrasmissione_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="formatoTrasmissione_PA-description"><div class="alert alert-info">1.1.3 <FormatoTrasmissione>contiene il codice identificativo del formato/versione con cui &#232; stato trasmesso il documento fattura</div></span>
+
+						<div class="form-control-static" id="formatoTrasmissione_PA"><%%VALUE(formatoTrasmissione_PA)%%></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="tipo_Documento_PA" class="control-label col-lg-3">Tipo Documento PA<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#tipo_Documento_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="tipo_Documento_PA-description"><div class="alert alert-info">2 <FatturaElettronicaBody>il blocco ha molteplicit&#224; pari a 1 nel caso di fattura singola; nel caso di lotto di fatture, si ripete per ogni fattura componente il lotto<br>stesso ;<br>2.1 <DatiGenerali>blocco sempre obbligatorio contenente i dati generali del documento principale ed i dati dei documenti correlati;<br>2.1.1 <DatiGeneraliDocumento>blocco sempre obbligatorio contenente i dati generali del documento principale <br>2.1.1.1 <TipoDocumento>tipologia di documento valori ammessi:<br>vedi codifiche in calce al documento<br>TD01 = fattura<br>TD02 = acconto/anticipo su fattura<br>TD03 = acconto/anticipo su parcella<br>TD04 = nota di credito<br>TD05 = nota di debito<br>TD06= parcella</div></span>
+
+						<%%COMBO(tipo_Documento_PA)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="divisa_PA" class="control-label col-lg-3">Divisa PA<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#divisa_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="divisa_PA-description"><div class="alert alert-info">2.1.1.2 <Divisa>codice (espresso secondo lo standard ISO 4217 alpha-3:2001) della valuta utilizzata per l'indicazione degli importi;<br>il codice deve essere compreso tra quelli<br>consentiti dallo standard ISO 4217 alpha-3:201,<br>ad esempio: [EUR], [USD], [GBP], [CZK], [...]
+</div></span>
+
+						<%%COMBO(divisa_PA)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="importo_Sc_Mg_PA" class="control-label col-lg-3">Importo Sconto o Mag PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#importo_Sc_Mg_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="importo_Sc_Mg_PA-description"><div class="alert alert-info">2.1.1.8 <ScontoMaggiorazione>eventuale sconto o maggiorazione applicati sul totale documento (la molteplicit&#224; N del blocco consente di gestire la presenza di<br>pi&#249; sconti o pi&#249; maggiorazioni a 'cascata') </div></span>
+
+						<input maxlength="18" type="text" class="form-control" name="importo_Sc_Mg_PA" id="importo_Sc_Mg_PA" value="<%%VALUE(importo_Sc_Mg_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="importoTot_Doc_PA" class="control-label col-lg-3">Importo Totale doc.<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#importoTot_Doc_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="importoTot_Doc_PA-description"><div class="alert alert-info">2.1.1.9 <ImportoTotaleDocumento>importo totale del documento al netto dell'eventuale sconto e comprensivo di imposta a debito del cessionario / committente;<br>formato numerico; i decimali vanno separati<br>dall'intero con il carattere '.' (punto) </div></span>
+
+						<input maxlength="13" type="text" class="form-control" name="importoTot_Doc_PA" id="importoTot_Doc_PA" value="<%%VALUE(importoTot_Doc_PA)%%>" required>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="arrotondamento_PA" class="control-label col-lg-3">Arrotondamento PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#arrotondamento_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="arrotondamento_PA-description"><div class="alert alert-info">2.1.1.10 <Arrotondamento>eventuale arrotondamento sul totale documento (ammette anche il segno negativo);<br>formato numerico; i decimali vanno separati<br>dall'intero con il carattere '.' (punto) </div></span>
+
+						<input maxlength="18" type="text" class="form-control" name="arrotondamento_PA" id="arrotondamento_PA" value="<%%VALUE(arrotondamento_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="causale_PA" class="control-label col-lg-3">Causale PA<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#causale_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="causale_PA-description"><div class="alert alert-info">2.1.1.11 <Causale>descrizione della causale del documento;<br></div></span>
+
+						<%%COMBO(causale_PA)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="data_Ord_PA" class="control-label col-lg-3">Data dell'ordine PA<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#data_Ord_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="data_Ord_PA-description"><div class="alert alert-info">2.1.1.3 <Data>data del documento (secondo il formato ISO 8601:2004);<br>formato ISO 8601:2004, con la precisione<br>seguente: YYYY-MM-DD <br>2.1.8.2 <DataDDT>data del documento di trasporto (secondo il formato ISO 8601:2004) </div></span>
+
+						<%%COMBO(data_Ord_PA)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="dataOraRit_PA" class="control-label col-lg-3">Data Ora Ritiro PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#dataOraRit_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="dataOraRit_PA-description"><div class="alert alert-info">2.1.9.9 <DataOraRitiro>data e ora del ritiro della merce (secondo il formato ISO 8601:2004);<br>formato ISO 8601:2004, con la precisione<br>seguente: YYYY-MM-DDTHH:MM:SS</div></span>
+
+						<%%COMBO(dataOraRit_PA)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="dataInizTrasp_PA" class="control-label col-lg-3">Data Inizo Trasporto PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#dataInizTrasp_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="dataInizTrasp_PA-description"><div class="alert alert-info">2.1.9.10 <DataInizioTrasporto>date data di inizio del trasporto (secondo il formato ISO 8601:2004); <br>formato ISO 8601:2004, con la precisione<br>seguente: YYYY-MM-DDTHH</div></span>
+
+						<%%COMBO(dataInizTrasp_PA)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="customer" class="control-label col-lg-3" data-parent_link="view_parent_modal">Cliente</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" style="white-space: nowrap; overflow-x: hidden;"><%%COMBO(customer)%%><%%PLINK(customer)%%><%%ADDNEW(companies)%%></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="supplier" class="control-label col-lg-3" data-parent_link="view_parent_modal">Fornitore</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" style="white-space: nowrap; overflow-x: hidden;"><%%COMBO(supplier)%%><%%PLINK(supplier)%%><%%ADDNEW(companies)%%></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="shipVia" class="control-label col-lg-3" data-parent_link="view_parent_modal">Spedizione a mezzo</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" style="white-space: nowrap; overflow-x: hidden;"><%%COMBO(shipVia)%%><%%PLINK(shipVia)%%><%%ADDNEW(companies)%%></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="pallets" class="control-label col-lg-3">Pallets</label>
+					<div class="col-lg-9">
+						<input maxlength="" type="text" class="form-control" name="pallets" id="pallets" value="<%%VALUE(pallets)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="mezzoTraspVet_PA" class="control-label col-lg-3">Targa Automezzo <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#mezzoTraspVet_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="mezzoTraspVet_PA-description"><div class="alert alert-info">2.1.9.2 <MezzoTrasporto>mezzo utilizzato per il trasporto;</div></span>
+
+						<input maxlength="80" type="text" class="form-control" name="mezzoTraspVet_PA" id="mezzoTraspVet_PA" value="<%%VALUE(mezzoTraspVet_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="causaleTraspVet_PA" class="control-label col-lg-3">CausaleTraspVet PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#causaleTraspVet_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="causaleTraspVet_PA-description"><div class="alert alert-info">2.1.9.3 <CausaleTrasporto>causale del trasporto</div></span>
+
+						<input maxlength="100" type="text" class="form-control" name="causaleTraspVet_PA" id="causaleTraspVet_PA" value="<%%VALUE(causaleTraspVet_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="nrColliVett_PA" class="control-label col-lg-3">NrColliVett PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#nrColliVett_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="nrColliVett_PA-description"><div class="alert alert-info">2.1.9.4 <NumeroColli>numero dei colli trasportati </div></span>
+
+						<input maxlength="4" type="text" class="form-control" name="nrColliVett_PA" id="nrColliVett_PA" value="<%%VALUE(nrColliVett_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="descTraspVet_PA" class="control-label col-lg-3">ASPETTO EST. BENI (DescTraspVet PA) <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#descTraspVet_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="descTraspVet_PA-description"><div class="alert alert-info">2.1.9.5 <Descrizione>descrizione (natura, qualit&#224;, aspetto &#8230;) relativa ai colli trasportati;<br></div></span>
+
+						<%%COMBO(descTraspVet_PA)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<div class="col-lg-offset-3 col-lg-9">
+						<div class="checkbox"><label for="cashCredit"><input type="checkbox" name="cashCredit" id="cashCredit" value="1" <%%CHECKED(cashCredit)%%>> Credito o cassa</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="related" class="control-label col-lg-3">Related <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#related-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="related-description"><div class="alert alert-info">Related Order</div></span>
+
+						<input maxlength="" type="text" class="form-control" name="related" id="related" value="<%%VALUE(related)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="tipo_rit_PA" class="control-label col-lg-3">Tipo ritenuta PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#tipo_rit_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="tipo_rit_PA-description"><div class="alert alert-info">2.1.1.5 <DatiRitenuta>blocco dati relativi alla ritenuta;<br>2.1.1.5.1 <TipoRitenuta>tipologia della ritenuta
+;<br>valori ammessi:<br>[RT01]: ritenuta pers. fisiche<br>[RT02]: ritenuta pers. giurid.</div></span>
+
+						<%%COMBO(tipo_rit_PA)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="imp_rit_PA" class="control-label col-lg-3">Importo rit. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#imp_rit_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="imp_rit_PA-description"><div class="alert alert-info">2.1.1.5.2 <ImportoRitenuta>importo della ritenuta</div></span>
+
+						<input maxlength="15" type="text" class="form-control" name="imp_rit_PA" id="imp_rit_PA" value="<%%VALUE(imp_rit_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="aliq_rit_PA" class="control-label col-lg-3">Aliquota rit. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#aliq_rit_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="aliq_rit_PA-description"><div class="alert alert-info">2.1.1.5.3 <AliquotaRitenuta>aliquota (%) della ritenuta;<br>formato numerico; i decimali vanno separati<br>dall'intero con il carattere '.' (punto) </div></span>
+
+						<input maxlength="6" type="text" class="form-control" name="aliq_rit_PA" id="aliq_rit_PA" value="<%%VALUE(aliq_rit_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="causale_pag_rit_PA" class="control-label col-lg-3">Causale pag. ritenuta PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#causale_pag_rit_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="causale_pag_rit_PA-description"><div class="alert alert-info">2.1.1.5.4 <CausalePagamento>causale del pagamento (quella del modello 770) ;<br>valori ammessi:<br>codifiche come da Mod. 770S </div></span>
+
+						<input maxlength="1" type="text" class="form-control" name="causale_pag_rit_PA" id="causale_pag_rit_PA" value="<%%VALUE(causale_pag_rit_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="nr_bollo_rit_PA" class="control-label col-lg-3">Nr bollo ritenuta PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#nr_bollo_rit_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="nr_bollo_rit_PA-description"><div class="alert alert-info">2.1.1.6 <DatiBollo>blocco dati relativi al bollo;<br>2.1.1.6.1 <NumeroBollo>numero del bollo</div></span>
+
+						<input maxlength="14" type="text" class="form-control" name="nr_bollo_rit_PA" id="nr_bollo_rit_PA" value="<%%VALUE(nr_bollo_rit_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="importo_Bollo_rit_PA" class="control-label col-lg-3">Importo Bollo ritenuta PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#importo_Bollo_rit_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="importo_Bollo_rit_PA-description"><div class="alert alert-info">2.1.1.6.2 <ImportoBollo>importo del bollo;<br>formato numerico; i decimali vanno separati<br>dall'intero con il carattere '.' (punto) </div></span>
+
+						<input maxlength="255" type="text" class="form-control" name="importo_Bollo_rit_PA" id="importo_Bollo_rit_PA" value="<%%VALUE(importo_Bollo_rit_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="tipo_cassa_Prev_PA" class="control-label col-lg-3">Tipo cassa previdenza PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#tipo_cassa_Prev_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="tipo_cassa_Prev_PA-description"><div class="alert alert-info">2.1.1.7 <DatiCassaPrevidenziale>blocco dati relativi alla cassa professionale di appartenenza;<br>2.1.1.7.1 <TipoCassa>tipologia cassa previdenziale di appartenenza <br>valori ammessi:<br>vedi codifiche in calce al documento</div></span>
+
+						<%%COMBO(tipo_cassa_Prev_PA)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="al_cassa_Prev_PA" class="control-label col-lg-3">Aliquota cassa Prev. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#al_cassa_Prev_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="al_cassa_Prev_PA-description"><div class="alert alert-info">2.1.1.7.2 <AlCassa>aliquota (%) del contributo, se previsto, per la cassa di appartenenza;<br>formato numerico; i decimali vanno separati<br>dall'intero con il carattere '.' (punto)</div></span>
+
+						<input maxlength="6" type="text" class="form-control" name="al_cassa_Prev_PA" id="al_cassa_Prev_PA" value="<%%VALUE(al_cassa_Prev_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="importo_cont_cassa_prev_PA" class="control-label col-lg-3">Importo cont. cassa prev. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#importo_cont_cassa_prev_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="importo_cont_cassa_prev_PA-description"><div class="alert alert-info">2.1.1.7.3 <ImportoContributoCassa>importo del contributo per la cassa di appartenenza;<br>formato numerico; i decimali vanno separati<br>dall'intero con il carattere '.' (punto)</div></span>
+
+						<input maxlength="15" type="text" class="form-control" name="importo_cont_cassa_prev_PA" id="importo_cont_cassa_prev_PA" value="<%%VALUE(importo_cont_cassa_prev_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="imponibile_cassa_Prev_PA" class="control-label col-lg-3">Imponibile cassa Prev PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#imponibile_cassa_Prev_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="imponibile_cassa_Prev_PA-description"><div class="alert alert-info">2.1.1.7.4 <ImponibileCassa>importo sul quale applicare il contributo cassa previdenziale;<br>formato numerico; i decimali vanno separati<br>dall'intero con il carattere '.' (punto)</div></span>
+
+						<input maxlength="15" type="text" class="form-control" name="imponibile_cassa_Prev_PA" id="imponibile_cassa_Prev_PA" value="<%%VALUE(imponibile_cassa_Prev_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="aliq_IVA_cassa_prev_PA" class="control-label col-lg-3">Aliq IVA cassa prev PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#aliq_IVA_cassa_prev_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="aliq_IVA_cassa_prev_PA-description"><div class="alert alert-info">formato numerico; i decimali vanno separati<br>dall'intero con il carattere '.' (punto)</div></span>
+
+						<input maxlength="6" type="text" class="form-control" name="aliq_IVA_cassa_prev_PA" id="aliq_IVA_cassa_prev_PA" value="<%%VALUE(aliq_IVA_cassa_prev_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="ritenuta_cassa_prev_PA" class="control-label col-lg-3">Ritenuta cassa prev PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#ritenuta_cassa_prev_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="ritenuta_cassa_prev_PA-description"><div class="alert alert-info">2.1.1.7.6 <Ritenuta>indica se il contributo cassa &#232; soggetto a ritenuta;<br>valore ammesso:<br>[SI]: contributo cassa soggetto a ritenuta</div></span>
+
+						<%%COMBO(ritenuta_cassa_prev_PA)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="natura_cassa_prev_PA" class="control-label col-lg-3">Natura cassa prev PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#natura_cassa_prev_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="natura_cassa_prev_PA-description"><div class="alert alert-info">2.1.1.7.7 <Natura>nei casi di AliquotaIVA (campo 2.1.1.7.5) pari a zero;<br>valori ammessi:<br>vedi codifiche in calce al documento </div></span>
+
+						<%%COMBO(natura_cassa_prev_PA)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="rif_amm_prev_PA" class="control-label col-lg-3">Riferimento amministrazione prev PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#rif_amm_prev_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="rif_amm_prev_PA-description"><div class="alert alert-info">2.1.1.7.8 <RiferimentoAmministrazione>codice identificativo ai fini amministrativo-contabili;<br></div></span>
+
+						<input maxlength="20" type="text" class="form-control" name="rif_amm_prev_PA" id="rif_amm_prev_PA" value="<%%VALUE(rif_amm_prev_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="tipoResa_PA" class="control-label col-lg-3">TipoResa PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#tipoResa_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="tipoResa_PA-description"><div class="alert alert-info">2.1.9.11 <TipoResa>codifica del termine di resa espresso secondo lo standard ICC-Camera di Commercio Internazionale (Incoterms) ;<br>[EXW], [CPT], [&#8230;] </div></span>
+
+						<%%COMBO(tipoResa_PA)%%>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="orders_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<input type="hidden" name="employee" value="<%%VALUE(employee)%%>">
+	<input type="hidden" name="CAP_Resa_PA" value="<%%VALUE(CAP_Resa_PA)%%>">
+	<input type="hidden" name="comuneResa_PA" value="<%%VALUE(comuneResa_PA)%%>">
+	<input type="hidden" name="provResa_PA" value="<%%VALUE(provResa_PA)%%>">
+	<input type="hidden" name="nazioneResa_PA" value="<%%VALUE(nazioneResa_PA)%%>">
+
+	<!-- child records -->
+	<hr>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<div id="orders-children" class="children-tabs"></div>
+		</div>
+	</div>
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode){
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			if(!(embedded_mode && AppGini.mobileDevice())){
+				$j('select, input[type=text], textarea').not(':disabled').eq(0).focus();
+			}
+
+			$j('form').eq(0).change(function(){
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			$j('a[href="<%%TRANSLATION(ImageFolder)%%>"]').click(function(){ /* */ return false; });
+
+			if(embedded_mode){
+				/* hide links to children tables in embedded mode */
+				$j('.detail_view a[id$=_link]').remove();
+
+				/* append embedded mode to all links */
+				var append_embedded = function(){
+					$j('a[href]:not([href^="#"]):not([href^="javascript"]):not([href$="Embedded=1"]):not([href*="link.php?t="]):not([href^="mailto:"])').each(
+						function(){
+							$j(this).attr('href', $j(this).attr('href') + '&Embedded=1');
+						}
+					);
+				}
+				setTimeout(append_embedded, 500);
+				setTimeout(append_embedded, 1500);
+				setTimeout(append_embedded, 2500);
+				setTimeout(append_embedded, 3500);
+			}
+
+			/* when no record is selected ('add new' mode) */
+			if(add_new_mode){
+				/* hide links to children tables */
+				$j('.detail_view a[id$=_link]').remove();
+			}else{
+				post(
+					'parent-children.php', {
+						ParentTable: 'orders',
+						SelectedID: '<%%VALUE(id)%%>',
+						Operation: 'show-children'
+					},
+					'orders-children'
+				);
+			}
+
+			if(!embedded_mode){
+				/* add a horizontal spacer to [add new parent] buttons that don't have a spacered element before them */
+				$j('.add_new_parent').prev(':not(.hspacer-md)').next().addClass('hspacer-md');
+
+				$j('.add_new_parent').click(function(){
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function(){
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function(){
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length){
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				}else{
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length){
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != ''){
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link){
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function(){
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+
+			/* load admin tools for admin user */
+			if(!add_new_mode){
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=orders&id=<%%URLVALUE(id)%%>',
+					function(resp){
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=orders&id=<%%URLVALUE(id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function(){
+				if($j('#deselect.btn-warning').length){
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>

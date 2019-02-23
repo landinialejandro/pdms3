@@ -1,0 +1,277 @@
+<!-- Edit this file to change the layout of the detail view form -->
+
+<a name="detail-view"></a>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div class="panel-body" id="allegati_PA_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="electronicInvoice_view.php?filterer_ALLEGATI_NOME_ALL_PA=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="electronicInvoice_link"><i class="glyphicon glyphicon-list-alt"></i> Fattura Elettronica PA</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="electronicInvoice_view.php?filterer_ALLEGATI_NOME_ALL_PA=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="xs_electronicInvoice_link"><i class="glyphicon glyphicon-list-alt"></i> Fattura Elettronica PA</a>
+			<input type="hidden" id="electronicInvoice_hclink" value="electronicInvoice_view.php?filterer_ALLEGATI_NOME_ALL_PA=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="allegati_PA_dv_form">
+			<fieldset class="form-horizontal">
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="id" class="control-label col-lg-3">ID</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="id"><%%VALUE(id)%%></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="momeAlleg_PA" class="control-label col-lg-3">Name <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#momeAlleg_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="momeAlleg_PA-description"><div class="alert alert-info">2.5.1 <NomeAttachment>nome dell'allegato</div></span>
+
+						<input maxlength="60" type="text" class="form-control" name="momeAlleg_PA" id="momeAlleg_PA" value="<%%VALUE(momeAlleg_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">File <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#file-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="file-description"><div class="alert alert-info">2.5.5 <Attachment>contiene il documento allegato alla fattura; il contenuto &#232; demandato agli accordi tra PA e fornitore;<br>valore vincolato alla<br>dimensione max prevista<br>per la fattura elettronica</div></span>
+
+						
+						<div class="row">
+							<div class="col-md-1">
+								<a id="file-link" href="link.php?t=allegati_PA&f=file&i=<%%VALUE(id)%%>" target="_blank"><i class="glyphicon glyphicon-picture" title="<%%VALUE(file)%%>" style="font-size: x-large; top: .35em;"></i></a>
+							</div> <!-- /div.col-* -->
+							<script>jQuery(function(){ /* */ var e_file = '<%%VALUE(file)%%>'; if(e_file == '' || e_file == '&nbsp;' || e_file == 'blank.gif') jQuery('#file-link').hide(); });</script>						<div class="pull-right" style="overflow-x: hidden;">
+							<div class="hidden-md hidden-lg vspacer-lg"></div>
+							<%%UPLOADFILE(file)%%>
+							<%%REMOVEFILE(file)%%>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="algoritmoComp_PA" class="control-label col-lg-3">Algoritmo compressione PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#algoritmoComp_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="algoritmoComp_PA-description"><div class="alert alert-info">2.5.2 <AlgoritmoCompressione>algoritmo usato per comprimere l'attachment (ad es.: ZIP, RAR, &#8230;) </div></span>
+
+						<input maxlength="10" type="text" class="form-control" name="algoritmoComp_PA" id="algoritmoComp_PA" value="<%%VALUE(algoritmoComp_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<div class="col-lg-offset-3 col-lg-9">
+						<div class="checkbox"><label for="thumbUse"><input type="checkbox" name="thumbUse" id="thumbUse" value="1" <%%CHECKED(thumbUse)%%>> ThumbUse</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="formatoAlleg_PA" class="control-label col-lg-3">FormatoAlleg PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#formatoAlleg_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="formatoAlleg_PA-description"><div class="alert alert-info">2.5.3 <FormatoAttachment>formato dell'attachment (ad es: TXT, XML, DOC, PDF &#8230;&#8230;.)</div></span>
+
+						<input maxlength="10" type="text" class="form-control" name="formatoAlleg_PA" id="formatoAlleg_PA" value="<%%VALUE(formatoAlleg_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="descrizAlleg_PA" class="control-label col-lg-3">Descriz. Alleg. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#descrizAlleg_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="descrizAlleg_PA-description"><div class="alert alert-info">2.5.4 <DescrizioneAttachment>g descrizione del documento</div></span>
+
+						<input maxlength="100" type="text" class="form-control" name="descrizAlleg_PA" id="descrizAlleg_PA" value="<%%VALUE(descrizAlleg_PA)%%>">
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="allegati_PA_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<input type="hidden" name="contact" value="<%%VALUE(contact)%%>">
+	<input type="hidden" name="company" value="<%%VALUE(company)%%>">
+
+	<!-- child records -->
+	<hr>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<div id="allegati_PA-children" class="children-tabs"></div>
+		</div>
+	</div>
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode){
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			if(!(embedded_mode && AppGini.mobileDevice())){
+				$j('select, input[type=text], textarea').not(':disabled').eq(0).focus();
+			}
+
+			$j('form').eq(0).change(function(){
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			$j('a[href="<%%TRANSLATION(ImageFolder)%%>"]').click(function(){ /* */ return false; });
+
+			if(embedded_mode){
+				/* hide links to children tables in embedded mode */
+				$j('.detail_view a[id$=_link]').remove();
+
+				/* append embedded mode to all links */
+				var append_embedded = function(){
+					$j('a[href]:not([href^="#"]):not([href^="javascript"]):not([href$="Embedded=1"]):not([href*="link.php?t="]):not([href^="mailto:"])').each(
+						function(){
+							$j(this).attr('href', $j(this).attr('href') + '&Embedded=1');
+						}
+					);
+				}
+				setTimeout(append_embedded, 500);
+				setTimeout(append_embedded, 1500);
+				setTimeout(append_embedded, 2500);
+				setTimeout(append_embedded, 3500);
+			}
+
+			/* when no record is selected ('add new' mode) */
+			if(add_new_mode){
+				/* hide links to children tables */
+				$j('.detail_view a[id$=_link]').remove();
+			}else{
+				post(
+					'parent-children.php', {
+						ParentTable: 'allegati_PA',
+						SelectedID: '<%%VALUE(id)%%>',
+						Operation: 'show-children'
+					},
+					'allegati_PA-children'
+				);
+			}
+
+			if(!embedded_mode){
+				/* add a horizontal spacer to [add new parent] buttons that don't have a spacered element before them */
+				$j('.add_new_parent').prev(':not(.hspacer-md)').next().addClass('hspacer-md');
+
+				$j('.add_new_parent').click(function(){
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function(){
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function(){
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length){
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				}else{
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length){
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != ''){
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link){
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function(){
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+
+			/* load admin tools for admin user */
+			if(!add_new_mode){
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=allegati_PA&id=<%%URLVALUE(id)%%>',
+					function(resp){
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=allegati_PA&id=<%%URLVALUE(id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function(){
+				if($j('#deselect.btn-warning').length){
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>

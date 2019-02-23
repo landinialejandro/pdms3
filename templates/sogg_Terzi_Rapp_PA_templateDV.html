@@ -1,0 +1,542 @@
+<!-- Edit this file to change the layout of the detail view form -->
+
+<a name="detail-view"></a>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div class="panel-body" id="sogg_Terzi_Rapp_PA_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="electronicInvoice_view.php?filterer_idPaeseRap_Fisc_PA=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="electronicInvoice_link"><i class="glyphicon glyphicon-list-alt"></i> Fattura Elettronica PA</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="electronicInvoice_view.php?filterer_idPaeseRap_Fisc_PA=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="xs_electronicInvoice_link"><i class="glyphicon glyphicon-list-alt"></i> Fattura Elettronica PA</a>
+			<input type="hidden" id="electronicInvoice_hclink" value="electronicInvoice_view.php?filterer_idPaeseRap_Fisc_PA=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="sogg_Terzi_Rapp_PA_dv_form">
+			<fieldset class="form-horizontal">
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="id" class="control-label col-lg-3">ID</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="id"><%%VALUE(id)%%></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="idPaese_RF_PA" class="control-label col-lg-3" data-parent_link="view_parent_modal">Id Paese PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#idPaese_RF_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="idPaese_RF_PA-description"><div class="alert alert-info">1.3.1.1.1 <IdPaese>codice della nazione espresso secondo lo standard ISO 3166-1 alpha-2 code [IT], [ES], [DK],[&#8230;]</div></span>
+
+						<div class="form-control-static" style="white-space: nowrap; overflow-x: hidden;"><%%COMBO(idPaese_RF_PA)%%><%%PLINK(idPaese_RF_PA)%%><%%ADDNEW(countries)%%></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="idCodice_RF_PA" class="control-label col-lg-3">Id Partita IVA PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#idCodice_RF_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="idCodice_RF_PA-description"><div class="alert alert-info">1.3.1.1.2 <IdCodice> codice identificativo fiscale</div></span>
+
+						<input maxlength="28" type="text" class="form-control" name="idCodice_RF_PA" id="idCodice_RF_PA" value="<%%VALUE(idCodice_RF_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="codiceFiscale_RF_PA" class="control-label col-lg-3">Codice Fiscale PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#codiceFiscale_RF_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="codiceFiscale_RF_PA-description"><div class="alert alert-info">1.3.1.2 <CodiceFiscale> numero di Codice Fiscale </div></span>
+
+						<input maxlength="16" type="text" class="form-control" name="codiceFiscale_RF_PA" id="codiceFiscale_RF_PA" value="<%%VALUE(codiceFiscale_RF_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="denominazione_RF_PA" class="control-label col-lg-3">Denominazione PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#denominazione_RF_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="denominazione_RF_PA-description"><div class="alert alert-info">1.3.1.3 <Anagrafica> dati anagrafici identificativi del rappresentante fiscale del cedente / prestatore
+<br>1.3.1.3.1 <Denominazione> ditta, denominazione o ragione sociale (ditta, impresa, societ&#224;, ente), da valorizzare in alternativa ai campi 1.3.1.3.2 e 1.3.1.3.3 </div></span>
+
+						<input maxlength="80" type="text" class="form-control" name="denominazione_RF_PA" id="denominazione_RF_PA" value="<%%VALUE(denominazione_RF_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="nome_RF_PA" class="control-label col-lg-3">Nome Rap. Fiscale PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#nome_RF_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="nome_RF_PA-description"><div class="alert alert-info">1.3.1.3.2 <Nome> nome della persona fisica. Da valorizzare insieme al campo 1.3.1.3.3 ed in alternativa al campo 1.3.1.3.1 </div></span>
+
+						<input maxlength="60" type="text" class="form-control" name="nome_RF_PA" id="nome_RF_PA" value="<%%VALUE(nome_RF_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="cognome_RF_PA" class="control-label col-lg-3">Cognome Rap. Fiscale PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#cognome_RF_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="cognome_RF_PA-description"><div class="alert alert-info">1.3.1.3.3 <Cognome> cognome della persona fisica. Da valorizzare insieme al campo 1.3.1.3.2 ed in alternativa al campo 1.3.1.3.1 </div></span>
+
+						<input maxlength="60" type="text" class="form-control" name="cognome_RF_PA" id="cognome_RF_PA" value="<%%VALUE(cognome_RF_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="titolo_RF_PA" class="control-label col-lg-3">Titolo Rap. Fisc. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#titolo_RF_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="titolo_RF_PA-description"><div class="alert alert-info">1.3.1.3.4 <Titolo> titolo onorifico </div></span>
+
+						<input maxlength="10" type="text" class="form-control" name="titolo_RF_PA" id="titolo_RF_PA" value="<%%VALUE(titolo_RF_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="codEORI__RF_PA" class="control-label col-lg-3">CodEORI  Rap. Fisc. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#codEORI__RF_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="codEORI__RF_PA-description"><div class="alert alert-info">1.3.1.3.5 <CodEORI>
+numero del Codice EORI (Economic Operator Registration and Identification) in base al Regolamento (CE) n. 312 del 16 aprile<br>2009. In vigore dal 1 luglio 2009</div></span>
+
+						<input maxlength="17" type="text" class="form-control" name="codEORI__RF_PA" id="codEORI__RF_PA" value="<%%VALUE(codEORI__RF_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="idPaeseIVA_3_Int_PA" class="control-label col-lg-3">IdFiscaleIVA 3 Intermediario <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#idPaeseIVA_3_Int_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="idPaeseIVA_3_Int_PA-description"><div class="alert alert-info">1.5.1.1.1 <IdPaese>codice della nazione espresso secondo lo standard ISO 3166-1 alpha-2 code [IT], [ES], [DK],[&#8230;]</div></span>
+
+						<input maxlength="2" type="text" class="form-control" name="idPaeseIVA_3_Int_PA" id="idPaeseIVA_3_Int_PA" value="<%%VALUE(idPaeseIVA_3_Int_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="idCodice_3_Int_PA" class="control-label col-lg-3">IdCodice 3 Int PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#idCodice_3_Int_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="idCodice_3_Int_PA-description"><div class="alert alert-info">1.5.1.1.2 <IdCodice>codice identificativo fiscale</div></span>
+
+						<input maxlength="28" type="text" class="form-control" name="idCodice_3_Int_PA" id="idCodice_3_Int_PA" value="<%%VALUE(idCodice_3_Int_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="codFiscale_3_Int_PA" class="control-label col-lg-3">CodFiscale 3 Int. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#codFiscale_3_Int_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="codFiscale_3_Int_PA-description"><div class="alert alert-info">1.5.1.2 <CodiceFiscale>numero di Codice Fiscale</div></span>
+
+						<input maxlength="16" type="text" class="form-control" name="codFiscale_3_Int_PA" id="codFiscale_3_Int_PA" value="<%%VALUE(codFiscale_3_Int_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="denominazione_3_Int_PA" class="control-label col-lg-3">Denominazione 3 Int. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#denominazione_3_Int_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="denominazione_3_Int_PA-description"><div class="alert alert-info">1.5.1.3 <Anagrafica>dati anagrafici identificativi del terzo intermediario;<br>1.5.1.3.1 <Denominazione>ditta, denominazione o ragione sociale (ditta, impresa, societ&#224;, ente), <br>da valorizzare in alternativa ai campi 1.5.1.3.2 e 1.5.1.3.3</div></span>
+
+						<input maxlength="80" type="text" class="form-control" name="denominazione_3_Int_PA" id="denominazione_3_Int_PA" value="<%%VALUE(denominazione_3_Int_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="nome_3_Int_PA" class="control-label col-lg-3">Nome 3 Int. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#nome_3_Int_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="nome_3_Int_PA-description"><div class="alert alert-info">1.5.1.3.2 <Nome>nome della persona fisica. Da valorizzare insieme al campo 1.5.1.3.3 ed in alternativa al campo 1.5.1.3.1 </div></span>
+
+						<input maxlength="60" type="text" class="form-control" name="nome_3_Int_PA" id="nome_3_Int_PA" value="<%%VALUE(nome_3_Int_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="cognome_3_Int_PA" class="control-label col-lg-3">Cognome 3 Int PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#cognome_3_Int_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="cognome_3_Int_PA-description"><div class="alert alert-info">1.5.1.3.3 <Cognome>
+cognome della persona fisica. Da valorizzare insieme al campo 1.5.1.3.2 ed in alternativa al campo 1.5.1.3.1 </div></span>
+
+						<input maxlength="60" type="text" class="form-control" name="cognome_3_Int_PA" id="cognome_3_Int_PA" value="<%%VALUE(cognome_3_Int_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="titolo_3_Int_PA" class="control-label col-lg-3">Titolo 3 Int. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#titolo_3_Int_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="titolo_3_Int_PA-description"><div class="alert alert-info">1.5.1.3.4 <Titolo>g titolo onorifico formato alfanumerico <0.1> 2 &#8230; 10<br>xs:string numero del Codice </div></span>
+
+						<input maxlength="10" type="text" class="form-control" name="titolo_3_Int_PA" id="titolo_3_Int_PA" value="<%%VALUE(titolo_3_Int_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="codEORI_3_Int_PA" class="control-label col-lg-3">CodEORI 3 Int. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#codEORI_3_Int_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="codEORI_3_Int_PA-description"><div class="alert alert-info">1.5.1.3.5 <CodEORI>numero del Codice EORI (Economic Operator Registration and Identification) in base al Regolamento (CE) n. 312 del 16 aprile<br>2009. In vigore dal 1 luglio 2009</div></span>
+
+						<input maxlength="17" type="text" class="form-control" name="codEORI_3_Int_PA" id="codEORI_3_Int_PA" value="<%%VALUE(codEORI_3_Int_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="sogg_Emittente_PA" class="control-label col-lg-3">Sogg Emittente PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#sogg_Emittente_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="sogg_Emittente_PA-description"><div class="alert alert-info">1.6 <SoggettoEmittente>da valorizzare nei casi di documenti emessi da un soggetto diverso dal cedente/prestatore; indica se la fattura sia stata emessa o<br>da parte del cessionario/committente oppure da parte di un terzo per conto del cedente/prestatore
+ valori ammessi:<br>[CC]: cessionario / committente<br>[TZ]: terzo.<br></div></span>
+
+						<%%COMBO(sogg_Emittente_PA)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="rif_num_linea_PA" class="control-label col-lg-3">Rif num linea PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#rif_num_linea_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="rif_num_linea_PA-description"><div class="alert alert-info">2.1.2 <DatiOrdineAcquisto>blocco contenente le informazioni relative all'ordine di acquisto;<br>2.1.2.1 <RiferimentoNumeroLinea>
+linea di dettaglio della fattura a cui si fa riferimento (se il riferimento &#232; all'intera fattura, non viene valorizzato) (vedi campo 2.2.1.1)</div></span>
+
+						<input maxlength="4" type="text" class="form-control" name="rif_num_linea_PA" id="rif_num_linea_PA" value="<%%VALUE(rif_num_linea_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="idDoc_PA" class="control-label col-lg-3">IdDoc PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#idDoc_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="idDoc_PA-description"><div class="alert alert-info">2.1.2.2 <IdDocumento>numero del documento;</div></span>
+
+						<input maxlength="20" type="text" class="form-control" name="idDoc_PA" id="idDoc_PA" value="<%%VALUE(idDoc_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="data_orAcq_PA" class="control-label col-lg-3">Data ordine Acq. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#data_orAcq_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="data_orAcq_PA-description"><div class="alert alert-info">2.1.2.3 <Data>data del documento (secondo il formato ISO 8601:2004);<br>formato ISO 8601:2004, con la precisione<br>seguente: YYYY-MM-DD </div></span>
+
+						<%%COMBO(data_orAcq_PA)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="numItem_PA" class="control-label col-lg-3">NumItem PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#numItem_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="numItem_PA-description"><div class="alert alert-info">2.1.2.4 <NumItem>
+identificativo della singola voce all'interno del documento (ad esempio, nel caso di ordine di acquisto, &#232; il numero della linea<br>dell'ordine di acquisto, oppure, nel caso di contratto, &#232; il numero della linea del contratto, etc. )</div></span>
+
+						<input maxlength="20" type="text" class="form-control" name="numItem_PA" id="numItem_PA" value="<%%VALUE(numItem_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="codCom_Con_PA" class="control-label col-lg-3">Cod Com Con PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#codCom_Con_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="codCom_Con_PA-description"><div class="alert alert-info">2.1.2.5 <CodiceCommessaConvenzione>codice della commessa o della convenzione</div></span>
+
+						<input maxlength="100" type="text" class="form-control" name="codCom_Con_PA" id="codCom_Con_PA" value="<%%VALUE(codCom_Con_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="codCUP_PA" class="control-label col-lg-3">CodCUP PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#codCUP_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="codCUP_PA-description"><div class="alert alert-info">2.1.2.6 <CodiceCUP>codice gestito dal CIPE che caratterizza ogni progetto di investimento pubblico (Codice Unitario Progetto);<br></div></span>
+
+						<input maxlength="15" type="text" class="form-control" name="codCUP_PA" id="codCUP_PA" value="<%%VALUE(codCUP_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="codGIG_PA" class="control-label col-lg-3">Cod GIG PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#codGIG_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="codGIG_PA-description"><div class="alert alert-info">2.1.2.7 <CodiceCIG>Codice Identificativo della Gara</div></span>
+
+						<input maxlength="15" type="text" class="form-control" name="codGIG_PA" id="codGIG_PA" value="<%%VALUE(codGIG_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="datiCont_PA" class="control-label col-lg-3">DatiCont PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#datiCont_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="datiCont_PA-description"><div class="alert alert-info">2.1.3 <DatiContratto>blocco contenente le informazioni relative al contratto; contiene gli stessi campi previsti per il blocco 2.1.2 </div></span>
+
+						<input maxlength="255" type="text" class="form-control" name="datiCont_PA" id="datiCont_PA" value="<%%VALUE(datiCont_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="datiConv_PA" class="control-label col-lg-3">DatiConv PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#datiConv_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="datiConv_PA-description"><div class="alert alert-info">2.1.4 <DatiConvenzione>blocco contenente le informazioni relative alla convenzione; contiene gli stessi campi previsti per il blocco 2.1.2</div></span>
+
+						<input maxlength="255" type="text" class="form-control" name="datiConv_PA" id="datiConv_PA" value="<%%VALUE(datiConv_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="datiRic_PA" class="control-label col-lg-3">DatiRic PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#datiRic_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="datiRic_PA-description"><div class="alert alert-info">2.1.5 <DatiRicezione>blocco contenente le informazioni relative ai dati presenti sul sistema gestionale in uso presso la PA (Agenzie Fiscali) riguardanti<br>la fase di ricezione; contiene gli stessi campi previsti per il blocco 2.1.2 </div></span>
+
+						<input maxlength="255" type="text" class="form-control" name="datiRic_PA" id="datiRic_PA" value="<%%VALUE(datiRic_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="datiFatCol_PA" class="control-label col-lg-3">DatiFatCol PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#datiFatCol_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="datiFatCol_PA-description"><div class="alert alert-info">2.1.6 <DatiFattureCollegate>blocco contenente le informazioni relative alle fatture precedentemente trasmesse e alle quali si collega il documento presente;<br>riguarda i casi di invio di nota di credito e/o di fatture di conguaglio a fronte di precedenti fatture di acconto; contiene gli stessi<br>campi previsti per il blocco 2.1.2
+</div></span>
+
+						<input maxlength="255" type="text" class="form-control" name="datiFatCol_PA" id="datiFatCol_PA" value="<%%VALUE(datiFatCol_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="datiSal_PA" class="control-label col-lg-3">DatiSal PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#datiSal_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="datiSal_PA-description"><div class="alert alert-info">2.1.7 <DatiSAL>blocco da valorizzare nei casi di fattura per stato di avanzamento</div></span>
+
+						<input maxlength="255" type="text" class="form-control" name="datiSal_PA" id="datiSal_PA" value="<%%VALUE(datiSal_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="riferFase_PA" class="control-label col-lg-3">RiferFase PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#riferFase_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="riferFase_PA-description"><div class="alert alert-info">2.1.7.1 <RiferimentoFase>fase dello stato di avanzamento cui il documento si riferisce</div></span>
+
+						<input maxlength="3" type="text" class="form-control" name="riferFase_PA" id="riferFase_PA" value="<%%VALUE(riferFase_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="normaRifer_PA" class="control-label col-lg-3">NormaRifer PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#normaRifer_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="normaRifer_PA-description"><div class="alert alert-info">data e ora della consegna della merce (secondo il formato ISO 8601:2004);<br>blocco da valorizzare nei casi di reverse charge (autofattura); contiene la norma di riferimento, comunitaria o nazionale, nei casi in<br>cui il cessionario/committente &#232; debitore di imposta in luogo del cedente/prestatore; negli altri casi il campo non va valorizzato </div></span>
+
+						<input maxlength="100" type="text" class="form-control" name="normaRifer_PA" id="normaRifer_PA" value="<%%VALUE(normaRifer_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="nrFatturaPrinc_PA" class="control-label col-lg-3">Nr. FatturaPrinc PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#nrFatturaPrinc_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="nrFatturaPrinc_PA-description"><div class="alert alert-info">2.1.11 <FatturaPrincipale>;<br>blocco da valorizzare nei casi di fatture per operazioni accessorie, emesse dagli 'autotrasportatori' per usufruire delle agevolazioni<br>in materia di registrazione e pagamento dell' IVA;<br>2.1.11.1 <NumeroFatturaPrincipale>;<br>numero della fattura relativa al trasporto di beni, da indicare sulle fatture emesse dagli autotrasportatori per certificare le<br>operazioni accessorie </div></span>
+
+						<input maxlength="20" type="text" class="form-control" name="nrFatturaPrinc_PA" id="nrFatturaPrinc_PA" value="<%%VALUE(nrFatturaPrinc_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="dataFattPrinc_PA" class="control-label col-lg-3">DataFattPrinc PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#dataFattPrinc_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="dataFattPrinc_PA-description"><div class="alert alert-info">2.1.11.2 <DataFatturaPrincipale>data della fattura di cui al campo 2.1.11.1 (secondo il formato ISO 8601:2004)</div></span>
+
+						<input maxlength="255" type="text" class="form-control" name="dataFattPrinc_PA" id="dataFattPrinc_PA" value="<%%VALUE(dataFattPrinc_PA)%%>">
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="sogg_Terzi_Rapp_PA_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- child records -->
+	<hr>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<div id="sogg_Terzi_Rapp_PA-children" class="children-tabs"></div>
+		</div>
+	</div>
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode){
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			if(!(embedded_mode && AppGini.mobileDevice())){
+				$j('select, input[type=text], textarea').not(':disabled').eq(0).focus();
+			}
+
+			$j('form').eq(0).change(function(){
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			$j('a[href="<%%TRANSLATION(ImageFolder)%%>"]').click(function(){ /* */ return false; });
+
+			if(embedded_mode){
+				/* hide links to children tables in embedded mode */
+				$j('.detail_view a[id$=_link]').remove();
+
+				/* append embedded mode to all links */
+				var append_embedded = function(){
+					$j('a[href]:not([href^="#"]):not([href^="javascript"]):not([href$="Embedded=1"]):not([href*="link.php?t="]):not([href^="mailto:"])').each(
+						function(){
+							$j(this).attr('href', $j(this).attr('href') + '&Embedded=1');
+						}
+					);
+				}
+				setTimeout(append_embedded, 500);
+				setTimeout(append_embedded, 1500);
+				setTimeout(append_embedded, 2500);
+				setTimeout(append_embedded, 3500);
+			}
+
+			/* when no record is selected ('add new' mode) */
+			if(add_new_mode){
+				/* hide links to children tables */
+				$j('.detail_view a[id$=_link]').remove();
+			}else{
+				post(
+					'parent-children.php', {
+						ParentTable: 'sogg_Terzi_Rapp_PA',
+						SelectedID: '<%%VALUE(id)%%>',
+						Operation: 'show-children'
+					},
+					'sogg_Terzi_Rapp_PA-children'
+				);
+			}
+
+			if(!embedded_mode){
+				/* add a horizontal spacer to [add new parent] buttons that don't have a spacered element before them */
+				$j('.add_new_parent').prev(':not(.hspacer-md)').next().addClass('hspacer-md');
+
+				$j('.add_new_parent').click(function(){
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function(){
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function(){
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length){
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				}else{
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length){
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != ''){
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link){
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function(){
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+
+			/* load admin tools for admin user */
+			if(!add_new_mode){
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=sogg_Terzi_Rapp_PA&id=<%%URLVALUE(id)%%>',
+					function(resp){
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=sogg_Terzi_Rapp_PA&id=<%%URLVALUE(id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function(){
+				if($j('#deselect.btn-warning').length){
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>

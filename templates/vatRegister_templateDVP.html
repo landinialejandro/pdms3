@@ -1,0 +1,119 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ID</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(id)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ID Azienda</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="idCompany<%%RND1%%>"><%%COMBOTEXT(idCompany)%%></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Nome Societ&#224;</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="companyName<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Aliquota riferimento</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(tax)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Mese corrispettivi</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(month)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Anno</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(year)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Importo</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(amount)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Ufficio Cedente PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(ufficio_Ced_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Numero Iscr. REA PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(numeroREA_Ced_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Capitale Sociale Ced. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(capitaleSociale_Ced_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Socio Unico Ced. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(socioUnico_Ced_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Stato Liquidazione</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(statoLiquidazione_Ced_PA)%%></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<!-- child records -->
+<div class="panel-body">
+	<div id="vatRegister-children"></div>
+</div>
+
+<script>
+	$j(function(){
+		/* prevent loading child records in multiple DVP */
+		if($j('[id=vatRegister-children]').length > 1) return;
+
+		post(
+			'parent-children.php', {
+				ParentTable: 'vatRegister',
+				SelectedID: '<%%VALUE(id)%%>',
+				Operation: 'show-children-printable'
+			},
+			'vatRegister-children',
+			'disable-element',
+			'loading-element',
+			apply_persisting_children
+		);
+
+		$j('form').on('click', '#children-tabs button[data-target]', function(){
+			$j(this).toggleClass('active');
+			persist_expanded_child($j(this).attr('id'));
+		});
+	})
+</script>
+

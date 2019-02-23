@@ -1,0 +1,209 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Data produzione PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(manufactureDate)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Data vendita PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(sellDate)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Codice Articolo PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="productCode<%%RND1%%>"><%%COMBOTEXT(productCode)%%></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Colli</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(packages)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Es. Colli</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(noSell)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Quantita PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(quantity_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Peso riscontrato</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(QuantityReal)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">UM PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="UMRifPeso_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Prezzo unitario PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(prezzoUn_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Aliquota IVA PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(aliquotaIVA_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Prezzo Totale PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(prezzoTot_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">TipoScMAg PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(tipoScMAg_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Sconto singolo Art. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(percScontoLinea_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Prezzo medio giorno</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(averagePrice)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Peso medio giorno</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(averageWeight)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Provvigione</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(commission)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Includi commissione</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><input type="checkbox" name="return" id="return" value="1" <%%CHECKED(return)%%> readonly></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">SupplierCode</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(supplierCode)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CausTrasp PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(causTrasp_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">NrLinea PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(nrLinea_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">DescrizioneArt PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="descrizioneArt_PA<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Percentuale Sconto PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(percentualeScontoMag_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ImportoScontoMag PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(importoScontoMag_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ImponibileImp PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(imponibileImp_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ImpostaRiep PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(impostaRiep_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Totale riga</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(LineTotal)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">EsigibilitaIVA PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(esigibilitaIVA_PA)%%></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<!-- child records -->
+<div class="panel-body">
+	<div id="ordersDetails-children"></div>
+</div>
+
+<script>
+	$j(function(){
+		/* prevent loading child records in multiple DVP */
+		if($j('[id=ordersDetails-children]').length > 1) return;
+
+		post(
+			'parent-children.php', {
+				ParentTable: 'ordersDetails',
+				SelectedID: '<%%VALUE(id)%%>',
+				Operation: 'show-children-printable'
+			},
+			'ordersDetails-children',
+			'disable-element',
+			'loading-element',
+			apply_persisting_children
+		);
+
+		$j('form').on('click', '#children-tabs button[data-target]', function(){
+			$j(this).toggleClass('active');
+			persist_expanded_child($j(this).attr('id'));
+		});
+	})
+</script>
+

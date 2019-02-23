@@ -1,0 +1,16 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the  and  formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the allegati_PA_init() hook (in hooks/allegati_PA.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="allegati_PA-momeAlleg_PA-<%%VALUE(id)%%>" class="allegati_PA-momeAlleg_PA"><%%VALUE(momeAlleg_PA)%%></td>
+		<td id="allegati_PA-file-<%%VALUE(id)%%>" class="allegati_PA-file"><a href="link.php?t=allegati_PA&f=file&i=<%%VALUE(id)%%>" target="_blank" title="<%%VALUE(file)%%>" class="btn btn-default"><i class="glyphicon glyphicon-picture text-info"></i></a></td>
+		<td id="allegati_PA-algoritmoComp_PA-<%%VALUE(id)%%>" class="allegati_PA-algoritmoComp_PA"><%%VALUE(algoritmoComp_PA)%%></td>
+		<td id="allegati_PA-thumbUse-<%%VALUE(id)%%>" class="allegati_PA-thumbUse text-right"><%%VALUE(thumbUse)%%></td>
+		<td id="allegati_PA-formatoAlleg_PA-<%%VALUE(id)%%>" class="allegati_PA-formatoAlleg_PA"><%%VALUE(formatoAlleg_PA)%%></td>
+		<td id="allegati_PA-descrizAlleg_PA-<%%VALUE(id)%%>" class="allegati_PA-descrizAlleg_PA"><%%VALUE(descrizAlleg_PA)%%></td>
+		<script>$j(function(){
+			var e_file = '<%%VALUE(file)%%>'; if(e_file == '' || e_file == '&nbsp;') $j(/*<*/ '#allegati_PA-file-<%%VALUE(id)%%>' /*>*/).html('');
+		});</script>

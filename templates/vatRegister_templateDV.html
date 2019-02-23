@@ -1,0 +1,305 @@
+<!-- Edit this file to change the layout of the detail view form -->
+
+<a name="detail-view"></a>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div class="panel-body" id="vatRegister_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="electronicInvoice_view.php?filterer_ufficio_Ced_PA=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="electronicInvoice_link"><i class="glyphicon glyphicon-list-alt"></i> Fattura Elettronica PA</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="electronicInvoice_view.php?filterer_ufficio_Ced_PA=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="xs_electronicInvoice_link"><i class="glyphicon glyphicon-list-alt"></i> Fattura Elettronica PA</a>
+			<input type="hidden" id="electronicInvoice_hclink" value="electronicInvoice_view.php?filterer_ufficio_Ced_PA=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="vatRegister_dv_form">
+			<fieldset class="form-horizontal">
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="id" class="control-label col-lg-3">ID</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="id"><%%VALUE(id)%%></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="idCompany" class="control-label col-lg-3" data-parent_link="view_parent_modal">ID Azienda</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" style="white-space: nowrap; overflow-x: hidden;"><%%COMBO(idCompany)%%><%%PLINK(idCompany)%%><%%ADDNEW(companies)%%><span id="idCompanyLoading"></span></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="companyName" class="control-label col-lg-3">Nome Societ&#224;</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="companyName"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="tax" class="control-label col-lg-3">Aliquota riferimento</label>
+					<div class="col-lg-9">
+						<%%COMBO(tax)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="month" class="control-label col-lg-3">Mese corrispettivi</label>
+					<div class="col-lg-9">
+						<%%COMBO(month)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="year" class="control-label col-lg-3">Anno</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="year" id="year" value="<%%VALUE(year)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="amount" class="control-label col-lg-3">Importo</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="amount" id="amount" value="<%%VALUE(amount)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="ufficio_Ced_PA" class="control-label col-lg-3">Ufficio Cedente PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#ufficio_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="ufficio_Ced_PA-description"><div class="alert alert-info">1.2.4.1 <Ufficio>sigla della provincia dell'Ufficio del registro delle imprese presso il quale &#232; registrata la societ&#224; </div></span>
+
+						<%%COMBO(ufficio_Ced_PA)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="numeroREA_Ced_PA" class="control-label col-lg-3">Numero Iscr. REA PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#numeroREA_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="numeroREA_Ced_PA-description"><div class="alert alert-info">1.2.4 <IscrizioneREA> numero di iscrizione al registro delle imprese </div></span>
+
+						<input maxlength="20" type="text" class="form-control" name="numeroREA_Ced_PA" id="numeroREA_Ced_PA" value="<%%VALUE(numeroREA_Ced_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="capitaleSociale_Ced_PA" class="control-label col-lg-3">Capitale Sociale Ced. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#capitaleSociale_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="capitaleSociale_Ced_PA-description"><div class="alert alert-info">1.2.4.3 <CapitaleSociale>nei soli casi di societ&#224; di capitali (SpA, SApA, SRL), il campo va compilato per indicare il capitale sociale  -<br> formato numerico; i decimali vanno separati dall'intero con il carattere '.' (punto)</div></span>
+
+						<input maxlength="18" type="text" class="form-control" name="capitaleSociale_Ced_PA" id="capitaleSociale_Ced_PA" value="<%%VALUE(capitaleSociale_Ced_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="socioUnico_Ced_PA" class="control-label col-lg-3">Socio Unico Ced. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#socioUnico_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="socioUnico_Ced_PA-description"><div class="alert alert-info">1.2.4.4 <SocioUnico>nei casi di societ&#224; per azioni e a responsabilit&#224; limitata, il campo va valorizzato per indicare se vi &#232; un <br>socio unico oppure se vi sono pi&#249; soci - valori ammessi: [SU] : socio unico [SM] : pi&#249; soci</div></span>
+
+						<%%COMBO(socioUnico_Ced_PA)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="statoLiquidazione_Ced_PA" class="control-label col-lg-3">Stato Liquidazione <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#statoLiquidazione_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="statoLiquidazione_Ced_PA-description"><div class="alert alert-info">1.2.4.5 <StatoLiquidazione>indica se la Societ&#224; si trova in stato di liquidazione oppure no
+ -  valori ammessi:<br>[LS] : in liquidazione<br>[LN] : non in liquidazione
+</div></span>
+
+						<%%COMBO(statoLiquidazione_Ced_PA)%%>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="vatRegister_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- child records -->
+	<hr>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<div id="vatRegister-children" class="children-tabs"></div>
+		</div>
+	</div>
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode){
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			if(!(embedded_mode && AppGini.mobileDevice())){
+				$j('select, input[type=text], textarea').not(':disabled').eq(0).focus();
+			}
+
+			$j('form').eq(0).change(function(){
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			$j('a[href="<%%TRANSLATION(ImageFolder)%%>"]').click(function(){ /* */ return false; });
+
+			if(embedded_mode){
+				/* hide links to children tables in embedded mode */
+				$j('.detail_view a[id$=_link]').remove();
+
+				/* append embedded mode to all links */
+				var append_embedded = function(){
+					$j('a[href]:not([href^="#"]):not([href^="javascript"]):not([href$="Embedded=1"]):not([href*="link.php?t="]):not([href^="mailto:"])').each(
+						function(){
+							$j(this).attr('href', $j(this).attr('href') + '&Embedded=1');
+						}
+					);
+				}
+				setTimeout(append_embedded, 500);
+				setTimeout(append_embedded, 1500);
+				setTimeout(append_embedded, 2500);
+				setTimeout(append_embedded, 3500);
+			}
+
+			/* when no record is selected ('add new' mode) */
+			if(add_new_mode){
+				/* hide links to children tables */
+				$j('.detail_view a[id$=_link]').remove();
+			}else{
+				post(
+					'parent-children.php', {
+						ParentTable: 'vatRegister',
+						SelectedID: '<%%VALUE(id)%%>',
+						Operation: 'show-children'
+					},
+					'vatRegister-children'
+				);
+			}
+
+			if(!embedded_mode){
+				/* add a horizontal spacer to [add new parent] buttons that don't have a spacered element before them */
+				$j('.add_new_parent').prev(':not(.hspacer-md)').next().addClass('hspacer-md');
+
+				$j('.add_new_parent').click(function(){
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function(){
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function(){
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length){
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				}else{
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length){
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != ''){
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link){
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function(){
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+
+			/* load admin tools for admin user */
+			if(!add_new_mode){
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=vatRegister&id=<%%URLVALUE(id)%%>',
+					function(resp){
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=vatRegister&id=<%%URLVALUE(id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function(){
+				if($j('#deselect.btn-warning').length){
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>

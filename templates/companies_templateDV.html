@@ -1,0 +1,429 @@
+<!-- Edit this file to change the layout of the detail view form -->
+
+<a name="detail-view"></a>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div class="panel-body" id="companies_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12">
+			<input type="hidden" id="orders_hclink" value="orders_view.php?filterer_company=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="_resumeOrders_hclink" value="_resumeOrders_view.php?filterer_company=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="firstCashNote_hclink" value="firstCashNote_view.php?filterer_idBank=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="vatRegister_hclink" value="vatRegister_view.php?filterer_idCompany=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="electronicInvoice_view.php?filterer_idFiscaleIVA_Ced_PA=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="electronicInvoice_link"><i class="glyphicon glyphicon-list-alt"></i> Fattura Elettronica PA</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="electronicInvoice_view.php?filterer_idFiscaleIVA_Ced_PA=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="xs_electronicInvoice_link"><i class="glyphicon glyphicon-list-alt"></i> Fattura Elettronica PA</a>
+			<input type="hidden" id="electronicInvoice_hclink" value="electronicInvoice_view.php?filterer_idFiscaleIVA_Ced_PA=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="attributes_hclink" value="attributes_view.php?filterer_companies=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="addresses_PA_hclink" value="addresses_PA_view.php?filterer_company=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="phones_hclink" value="phones_view.php?filterer_company=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="PEC_hclink" value="PEC_view.php?filterer_company=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="contacts_companies_hclink" value="contacts_companies_view.php?filterer_company=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="allegati_PA_hclink" value="allegati_PA_view.php?filterer_company=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="companies_dv_form">
+			<fieldset class="form-horizontal">
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="id" class="control-label col-lg-3">ID</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="id"><%%VALUE(id)%%></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="kind" class="control-label col-lg-3" data-parent_link="view_parent_modal">Kind<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<div class="form-control-static" style="white-space: nowrap; overflow-x: hidden;"><%%COMBO(kind)%%><%%PLINK(kind)%%><%%ADDNEW(kinds)%%></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="companyCode" class="control-label col-lg-3">CompanyCode</label>
+					<div class="col-lg-9">
+						<input maxlength="255" type="text" class="form-control" name="companyCode" id="companyCode" value="<%%VALUE(companyCode)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="companyName" class="control-label col-lg-3">CompanyName</label>
+					<div class="col-lg-9">
+						<input maxlength="255" type="text" class="form-control" name="companyName" id="companyName" value="<%%VALUE(companyName)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="notes" class="control-label col-lg-3">Notes</label>
+					<div class="col-lg-9">
+						<%%HTMLAREA(notes)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="idPaese_Ced_PA" class="control-label col-lg-3" data-parent_link="view_parent_modal">Id Paese <span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#idPaese_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="idPaese_Ced_PA-description"><div class="alert alert-info">1.2.1.1.1 <IdPaese>codice della nazione espresso secondo lo standard ISO 3166-1 alpha-2 code </div></span>
+
+						<div class="form-control-static" style="white-space: nowrap; overflow-x: hidden;"><%%COMBO(idPaese_Ced_PA)%%><%%PLINK(idPaese_Ced_PA)%%><%%ADDNEW(countries)%%></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="idCodice_Ced_PA" class="control-label col-lg-3">Id Codice/P.IVA<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#idCodice_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="idCodice_Ced_PA-description"><div class="alert alert-info">1.2.1.1.2 <IdCodice>codice identificativo fiscale</div></span>
+
+						<input maxlength="28" type="text" class="form-control" name="idCodice_Ced_PA" id="idCodice_Ced_PA" value="<%%VALUE(idCodice_Ced_PA)%%>" required>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="codiceFiscale_Ced_PA" class="control-label col-lg-3">Codice Fiscale PA<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#codiceFiscale_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="codiceFiscale_Ced_PA-description"><div class="alert alert-info">1.2.1.2 <CodiceFiscale>numero di Codice Fiscale </div></span>
+
+						<input maxlength="28" type="text" class="form-control" name="codiceFiscale_Ced_PA" id="codiceFiscale_Ced_PA" value="<%%VALUE(codiceFiscale_Ced_PA)%%>" required>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="denominazione_Ced_PA" class="control-label col-lg-3">Denominazione Ced PA<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#denominazione_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="denominazione_Ced_PA-description"><div class="alert alert-info">1.2.1.3 <Anagrafica>dati anagrafici identificativi del cedente / prestatore;<br>1.2.1.3.1 <Denominazione>ditta, denominazione o ragione sociale (ditta, impresa, societ&#224;, ente), da valorizzare in alternativa ai campi 1.2.1.3.2 e 1.2.1.3.3 ;<br></div></span>
+
+						<input maxlength="80" type="text" class="form-control" name="denominazione_Ced_PA" id="denominazione_Ced_PA" value="<%%VALUE(denominazione_Ced_PA)%%>" required>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="titolo_Ced_PA" class="control-label col-lg-3">Titolo Ced. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#titolo_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="titolo_Ced_PA-description"><div class="alert alert-info">1.2.1.3.4 <Titolo>
+titolo onorifico.</div></span>
+
+						<input maxlength="10" type="text" class="form-control" name="titolo_Ced_PA" id="titolo_Ced_PA" value="<%%VALUE(titolo_Ced_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="nome_Ced_PA" class="control-label col-lg-3">Nome cedente PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#nome_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="nome_Ced_PA-description"><div class="alert alert-info">1.2.1.3.2 <Nome>nome della persona fisica. Da valorizzare insieme al campo 1.2.1.3.3 ed in alternativa al campo 1.2.1.3.1 </div></span>
+
+						<input maxlength="60" type="text" class="form-control" name="nome_Ced_PA" id="nome_Ced_PA" value="<%%VALUE(nome_Ced_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="cognome_Ced_PA" class="control-label col-lg-3">Cognome Cedente PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#cognome_Ced_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="cognome_Ced_PA-description"><div class="alert alert-info">1.2.1.3.3 <Cognome>cognome della persona fisica. Da valorizzare insieme al campo 1.2.1.3.2 </div></span>
+
+						<input maxlength="60" type="text" class="form-control" name="cognome_Ced_PA" id="cognome_Ced_PA" value="<%%VALUE(cognome_Ced_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="regimeFiscalePA" class="control-label col-lg-3">Regime Ced. Fiscale PA<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#regimeFiscalePA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="regimeFiscalePA-description"><div class="alert alert-info">1.2.1.8 <RegimeFiscale> regime fiscale valori ammessi: vedi codifiche in calce al documento</div></span>
+
+						<%%COMBO(regimeFiscalePA)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="idPaeseVett_PA" class="control-label col-lg-3">IdPaeseVett PA<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#idPaeseVett_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="idPaeseVett_PA-description"><div class="alert alert-info">2.1.9.1.1.1 <IdPaese>codice della nazione espresso secondo lo standard ISO 3166-1 alpha-2 code;<br>[IT], [ES], [DK],[&#8230;] </div></span>
+
+						<%%COMBO(idPaeseVett_PA)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="idFiscaleVet_PA" class="control-label col-lg-3">IdFiscaleVettore PA<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#idFiscaleVet_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="idFiscaleVet_PA-description"><div class="alert alert-info">2.1.9 <DatiTrasporto>
+blocco valorizzabile nei casi di fattura "accompagnatoria" per inserire informazioni relative al trasporto ;<br>2.1.9.1 <DatiAnagraficiVettore>blocco contenente i dati fiscali e anagrafici del vettore;<br>2.1.9.1.1 <IdFiscaleIVA>numero di identificazione fiscale ai fini IVA; i primi due caratteri rappresentano il paese ( IT, DE, ES &#8230;..) ed i restanti (fino ad un<br>massimo di 28) il codice vero e proprio che, per i residenti in Italia, corrisponde al numero di partita IVA;<br>2.1.9.1.1.2 <IdCodice>codice identificativo fiscale </div></span>
+
+						<input maxlength="28" type="text" class="form-control" name="idFiscaleVet_PA" id="idFiscaleVet_PA" value="<%%VALUE(idFiscaleVet_PA)%%>" required>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="codFiscVet_PA" class="control-label col-lg-3">CodFiscVet PA<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#codFiscVet_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="codFiscVet_PA-description"><div class="alert alert-info">2.1.9.1.2 <CodiceFiscale>numero di Codice Fiscale </div></span>
+
+						<input maxlength="16" type="text" class="form-control" name="codFiscVet_PA" id="codFiscVet_PA" value="<%%VALUE(codFiscVet_PA)%%>" required>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="denominazioneVet_PA" class="control-label col-lg-3">DenominazioneVet PA<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#denominazioneVet_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="denominazioneVet_PA-description"><div class="alert alert-info">2.1.9.1.3 <Anagrafica>dati anagrafici identificativi del vettore;<br>2.1.9.1.3.1 <Denominazione>ditta, denominazione o ragione sociale (ditta, impresa, societ&#224;, ente), da valorizzare in alternativa ai campi 2.1.9.1.3.2 e<br>2.1.9.1.3.3;<br></div></span>
+
+						<input maxlength="80" type="text" class="form-control" name="denominazioneVet_PA" id="denominazioneVet_PA" value="<%%VALUE(denominazioneVet_PA)%%>" required>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="titoloVet_PA" class="control-label col-lg-3">TitoloVet PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#titoloVet_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="titoloVet_PA-description"><div class="alert alert-info">2.1.9.1.3.4 <Titolo>titolo onorifico</div></span>
+
+						<input maxlength="10" type="text" class="form-control" name="titoloVet_PA" id="titoloVet_PA" value="<%%VALUE(titoloVet_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="nomeVet_PA" class="control-label col-lg-3">NomeVet PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#nomeVet_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="nomeVet_PA-description"><div class="alert alert-info">2.1.9.1.3.2 <Nome>
+nome della persona fisica. Da valorizzare insieme al campo 2.1.9.1.3.3 ed in alternativa al campo 2.1.9.1.3.1 </div></span>
+
+						<input maxlength="60" type="text" class="form-control" name="nomeVet_PA" id="nomeVet_PA" value="<%%VALUE(nomeVet_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="cognomeVett_PA" class="control-label col-lg-3">CognomeVett PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#cognomeVett_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="cognomeVett_PA-description"><div class="alert alert-info">2.1.9.1.3.3 <Cognome>cognome della persona fisica. Da valorizzare insieme al campo 2.1.9.1.3.2 ed in alternativa al campo 2.1.9.1.3.1 </div></span>
+
+						<input maxlength="60" type="text" class="form-control" name="cognomeVett_PA" id="cognomeVett_PA" value="<%%VALUE(cognomeVett_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="data_DatiVeic_PA" class="control-label col-lg-3">Data Dati Veic PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#data_DatiVeic_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="data_DatiVeic_PA-description"><div class="alert alert-info">2.3 <DatiVeicoli>
+dati relativi ai veicoli di cui all'art. 38, comma 4 del dl 331 del 1993;<br>2.3.1 <Data>data di prima immatricolazione o di iscrizione nei pubblici registri (secondo il formato ISO 8601:2004);<br>formato ISO 8601:2004, con la precisione<br>seguente: YYYY-MM-DD</div></span>
+
+						<%%COMBO(data_DatiVeic_PA)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="mezzoTrVet_PA" class="control-label col-lg-3">MezzoTrVet PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#mezzoTrVet_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="mezzoTrVet_PA-description"><div class="alert alert-info">2.1.9.2 <MezzoTrasporto>mezzo utilizzato per il trasporto </div></span>
+
+						<input maxlength="255" type="text" class="form-control" name="mezzoTrVet_PA" id="mezzoTrVet_PA" value="<%%VALUE(mezzoTrVet_PA)%%>">
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="companies_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- child records -->
+	<hr>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<div id="companies-children" class="children-tabs"></div>
+		</div>
+	</div>
+
+</div><!-- /div class="panel-body" -->
+	<script src="nicEdit.js"></script>
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode){
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+			bkLib.onDomLoaded(function(){
+				if($j('textarea#notes').length) new nicEditor({ fullPanel : true }).panelInstance('notes');
+
+				$j('.nicEdit-panelContain').parent().width('100%');
+				$j('.nicEdit-panelContain').parent().next().width('98%');
+				$j('.nicEdit-main').width('99%');
+			});
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			if(!(embedded_mode && AppGini.mobileDevice())){
+				$j('select, input[type=text], textarea').not(':disabled').eq(0).focus();
+			}
+
+			$j('form').eq(0).change(function(){
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			$j('a[href="<%%TRANSLATION(ImageFolder)%%>"]').click(function(){ /* */ return false; });
+
+			if(embedded_mode){
+				/* hide links to children tables in embedded mode */
+				$j('.detail_view a[id$=_link]').remove();
+
+				/* append embedded mode to all links */
+				var append_embedded = function(){
+					$j('a[href]:not([href^="#"]):not([href^="javascript"]):not([href$="Embedded=1"]):not([href*="link.php?t="]):not([href^="mailto:"])').each(
+						function(){
+							$j(this).attr('href', $j(this).attr('href') + '&Embedded=1');
+						}
+					);
+				}
+				setTimeout(append_embedded, 500);
+				setTimeout(append_embedded, 1500);
+				setTimeout(append_embedded, 2500);
+				setTimeout(append_embedded, 3500);
+			}
+
+			/* when no record is selected ('add new' mode) */
+			if(add_new_mode){
+				/* hide links to children tables */
+				$j('.detail_view a[id$=_link]').remove();
+			}else{
+				post(
+					'parent-children.php', {
+						ParentTable: 'companies',
+						SelectedID: '<%%VALUE(id)%%>',
+						Operation: 'show-children'
+					},
+					'companies-children'
+				);
+			}
+
+			if(!embedded_mode){
+				/* add a horizontal spacer to [add new parent] buttons that don't have a spacered element before them */
+				$j('.add_new_parent').prev(':not(.hspacer-md)').next().addClass('hspacer-md');
+
+				$j('.add_new_parent').click(function(){
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function(){
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function(){
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length){
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				}else{
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length){
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != ''){
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link){
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function(){
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+
+			/* load admin tools for admin user */
+			if(!add_new_mode){
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=companies&id=<%%URLVALUE(id)%%>',
+					function(resp){
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=companies&id=<%%URLVALUE(id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function(){
+				if($j('#deselect.btn-warning').length){
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>

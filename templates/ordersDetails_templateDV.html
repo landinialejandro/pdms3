@@ -1,0 +1,457 @@
+<!-- Edit this file to change the layout of the detail view form -->
+
+<a name="detail-view"></a>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div class="panel-body" id="ordersDetails_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="electronicInvoice_view.php?filterer_rifNumLineaDoc_PA=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="electronicInvoice_link"><i class="glyphicon glyphicon-list-alt"></i> Fattura Elettronica PA</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="electronicInvoice_view.php?filterer_rifNumLineaDoc_PA=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="xs_electronicInvoice_link"><i class="glyphicon glyphicon-list-alt"></i> Fattura Elettronica PA</a>
+			<input type="hidden" id="electronicInvoice_hclink" value="electronicInvoice_view.php?filterer_rifNumLineaDoc_PA=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="ordersDetails_dv_form">
+			<fieldset class="form-horizontal">
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="manufactureDate" class="control-label col-lg-3">Data produzione PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#manufactureDate-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="manufactureDate-description"><div class="alert alert-info">2.2.1.7 <DataInizioPeriodo>data iniziale del periodo di riferimento cui si riferisce l'eventuale servizio prestato (secondo il formato ISO 8601:2004);<br>formato ISO 8601:2004, con la precisione<br>seguente: YYYY-MM-DD</div></span>
+
+						<%%COMBO(manufactureDate)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="sellDate" class="control-label col-lg-3">Data vendita PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#sellDate-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="sellDate-description"><div class="alert alert-info">2.2.1.8 <DataFinePeriodo>data finale del periodo di riferimento cui si riferisce l'eventuale servizio prestato (secondo il formato ISO 8601:2004);<br>formato ISO 8601:2004, con la precisione<br>seguente: YYYY-MM-DD </div></span>
+
+						<%%COMBO(sellDate)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="productCode" class="control-label col-lg-3" data-parent_link="view_parent_modal">Codice Articolo PA<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#productCode-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="productCode-description"><div class="alert alert-info">2.2.1.3 <CodiceArticolo>eventuale codifica dell'articolo (la molteplicit&#224; N del blocco consente di gestire la presenza di pi&#249; codifiche) </div></span>
+
+						<div class="form-control-static" style="white-space: nowrap; overflow-x: hidden;"><%%COMBO(productCode)%%><%%PLINK(productCode)%%><%%ADDNEW(products)%%><span id="productCodeLoading"></span></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="packages" class="control-label col-lg-3">Colli</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="packages" id="packages" value="<%%VALUE(packages)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="noSell" class="control-label col-lg-3">Es. Colli</label>
+					<div class="col-lg-9">
+						<input maxlength="" type="text" class="form-control" name="noSell" id="noSell" value="<%%VALUE(noSell)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="quantity_PA" class="control-label col-lg-3">Quantita PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#quantity_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="quantity_PA-description"><div class="alert alert-info">2.2.1.5 <Quantita>numero di unit&#224; cedute / prestate;<br>formato numerico; i decimali vanno separati<br>dall'intero con il carattere '.' (punto)</div></span>
+
+						<input maxlength="13" type="text" class="form-control" name="quantity_PA" id="quantity_PA" value="<%%VALUE(quantity_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="QuantityReal" class="control-label col-lg-3">Peso riscontrato<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="QuantityReal" id="QuantityReal" value="<%%VALUE(QuantityReal)%%>" required>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="UMRifPeso_PA" class="control-label col-lg-3">UM PA<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#UMRifPeso_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="UMRifPeso_PA-description"><div class="alert alert-info">2.2.1.6 <UnitaMisura>unit&#224; di misura riferita alla quantit&#224;;</div></span>
+
+						<div class="form-control-static" id="UMRifPeso_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="prezzoUn_PA" class="control-label col-lg-3">Prezzo unitario PA<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#prezzoUn_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="prezzoUn_PA-description"><div class="alert alert-info">2.2.1.9 <PrezzoUnitario>prezzo unitario del bene/servizio; nel caso di beni ceduti a titolo di sconto, premio o abbuono, l'importo indicato rappresenta il<br>"valore normale"</div></span>
+
+						<input maxlength="24" type="text" class="form-control" name="prezzoUn_PA" id="prezzoUn_PA" value="<%%VALUE(prezzoUn_PA)%%>" required>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="aliquotaIVA_PA" class="control-label col-lg-3">Aliquota IVA PA<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#aliquotaIVA_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="aliquotaIVA_PA-description"><div class="alert alert-info">2.2.1.12 <AliquotaIVA>aliquota (%) IVA applicata al bene/servizio;<br>formato numerico; i decimali vanno separati<br>dall'intero con il carattere '.' (punto) </div></span>
+
+						<input maxlength="9" type="text" class="form-control" name="aliquotaIVA_PA" id="aliquotaIVA_PA" value="<%%VALUE(aliquotaIVA_PA)%%>" required>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="prezzoTot_PA" class="control-label col-lg-3">Prezzo Totale PA<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#prezzoTot_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="prezzoTot_PA-description"><div class="alert alert-info">2.2.1.11 <PrezzoTotale>importo totale del bene/servizio (che tiene conto di eventuali sconti / maggiorazioni) IVA esclusa;<br>formato numerico; i decimali vanno separati<br>dall'intero con il carattere '.' (punto) </div></span>
+
+						<input maxlength="24" type="text" class="form-control" name="prezzoTot_PA" id="prezzoTot_PA" value="<%%VALUE(prezzoTot_PA)%%>" required>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="tipoScMAg_PA" class="control-label col-lg-3">TipoScMAg PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#tipoScMAg_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="tipoScMAg_PA-description"><div class="alert alert-info">2.2.1.10.1 <Tipo>indica se trattasi di sconto o di maggiorazione</div></span>
+
+						<%%COMBO(tipoScMAg_PA)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="percScontoLinea_PA" class="control-label col-lg-3">Sconto singolo Art. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#percScontoLinea_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="percScontoLinea_PA-description"><div class="alert alert-info">2.2.1.10 <ScontoMaggiorazione>eventuale sconto o maggiorazione applicati (la molteplicit&#224; N del blocco consente di gestire la presenza di pi&#249; sconti o<br>maggiorazioni a 'cascata');<br>2.2.1.10.2 <Percentuale>percentuale di sconto o di maggiorazione;<br>formato numerico; i decimali vanno separati<br>dall'intero con il carattere '.' (punto) </div></span>
+
+						<input maxlength="13" type="text" class="form-control" name="percScontoLinea_PA" id="percScontoLinea_PA" value="<%%VALUE(percScontoLinea_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="averagePrice" class="control-label col-lg-3">Prezzo medio giorno</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="averagePrice" id="averagePrice" value="<%%VALUE(averagePrice)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="averageWeight" class="control-label col-lg-3">Peso medio giorno</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="averageWeight" id="averageWeight" value="<%%VALUE(averageWeight)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="commission" class="control-label col-lg-3">Provvigione</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="commission" id="commission" value="<%%VALUE(commission)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<div class="col-lg-offset-3 col-lg-9">
+						<div class="checkbox"><label for="return"><input type="checkbox" name="return" id="return" value="1" <%%CHECKED(return)%%>> Includi commissione</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="supplierCode" class="control-label col-lg-3">SupplierCode</label>
+					<div class="col-lg-9">
+						<input maxlength="100" type="text" class="form-control" name="supplierCode" id="supplierCode" value="<%%VALUE(supplierCode)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="causTrasp_PA" class="control-label col-lg-3">CausTrasp PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#causTrasp_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="causTrasp_PA-description"><div class="alert alert-info">2.1.9.3 <CausaleTrasporto>causale del trasporto</div></span>
+
+						<input maxlength="100" type="text" class="form-control" name="causTrasp_PA" id="causTrasp_PA" value="<%%VALUE(causTrasp_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="nrLinea_PA" class="control-label col-lg-3">NrLinea PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#nrLinea_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="nrLinea_PA-description"><div class="alert alert-info">2.2.1.1 <NumeroLinea>numero della riga di dettaglio del documento;<br></div></span>
+
+						<input maxlength="4" type="text" class="form-control" name="nrLinea_PA" id="nrLinea_PA" value="<%%VALUE(nrLinea_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="descrizioneArt_PA" class="control-label col-lg-3">DescrizioneArt PA<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#descrizioneArt_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="descrizioneArt_PA-description"><div class="alert alert-info">2.2.1.4 <Descrizione>natura e qualit&#224; dell'oggetto della cessione/prestazione; pu&#242; fare anche riferimento ad un precedente documento emesso a titolo di<br>'anticipo/acconto' , nel qual caso il valore del campo 2.2.1.9 e 2.2.1.11 sar&#224; negativo</div></span>
+
+						<div class="form-control-static" id="descrizioneArt_PA"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="percentualeScontoMag_PA" class="control-label col-lg-3">Percentuale Sconto PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#percentualeScontoMag_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="percentualeScontoMag_PA-description"><div class="alert alert-info">2.1.1.8.2 <Percentuale>percentuale di sconto o di maggiorazione;<br>formato numerico; i decimali vanno separati<br>dall'intero con il carattere '.' (punto)</div></span>
+
+						<input maxlength="9" type="text" class="form-control" name="percentualeScontoMag_PA" id="percentualeScontoMag_PA" value="<%%VALUE(percentualeScontoMag_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="importoScontoMag_PA" class="control-label col-lg-3">ImportoScontoMag PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#importoScontoMag_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="importoScontoMag_PA-description"><div class="alert alert-info">2.2.1.10.3 <Importo>importo dello sconto o della maggiorazione; PREVEDERE UN CAMPO TOTALE QUI<br>formato numerico; i decimali vanno separati<br>dall'intero con il carattere '.' (punto) </div></span>
+
+						<input maxlength="18" type="text" class="form-control" name="importoScontoMag_PA" id="importoScontoMag_PA" value="<%%VALUE(importoScontoMag_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="imponibileImp_PA" class="control-label col-lg-3">ImponibileImp PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#imponibileImp_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="imponibileImp_PA-description"><div class="alert alert-info">2.2.2.5 <ImponibileImporto>questo valore rappresenta:<br>base imponibile, per le operazioni soggette ad IVA;<br>importo, per le operazioni che non rientrano tra quelle 'imponibili' (campo 2.2.2.2 valorizzato);<br>formato numerico; i decimali vanno separati<br>dall'intero con il carattere '.' (punto)</div></span>
+
+						<input maxlength="18" type="text" class="form-control" name="imponibileImp_PA" id="imponibileImp_PA" value="<%%VALUE(imponibileImp_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="impostaRiep_PA" class="control-label col-lg-3">ImpostaRiep PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#impostaRiep_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="impostaRiep_PA-description"><div class="alert alert-info">2.2.2.6 <Imposta>imposta risultante dall'applicazione dell'aliquota IVA all'imponibile;<br>formato numerico; i decimali vanno separati<br>dall'intero con il carattere '.' (punto) </div></span>
+
+						<input maxlength="18" type="text" class="form-control" name="impostaRiep_PA" id="impostaRiep_PA" value="<%%VALUE(impostaRiep_PA)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="LineTotal" class="control-label col-lg-3">Totale riga <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#LineTotal-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="LineTotal-description"><div class="alert alert-info">Totale riga al netto di sconti omaggiorazioni </div></span>
+
+						<input maxlength="13" type="text" class="form-control" name="LineTotal" id="LineTotal" value="<%%VALUE(LineTotal)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="esigibilitaIVA_PA" class="control-label col-lg-3">EsigibilitaIVA PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#esigibilitaIVA_PA-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="esigibilitaIVA_PA-description"><div class="alert alert-info">2.2.2.7 <EsigibilitaIVA>esigibilit&#224; IVA (immediata ai sensi dell'Art. 6 comma 5 del DPR 633 1972, oppure differita);<br>valori ammessi:<br>[I]: IVA ad esigibilit&#224; immediata<br>[D]: IVA ad esigibilit&#224; differita
+</div></span>
+
+						<%%COMBO(esigibilitaIVA_PA)%%>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="ordersDetails_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<input type="hidden" name="order" value="<%%VALUE(order)%%>">
+	<input type="hidden" name="codebar" value="<%%VALUE(codebar)%%>">
+	<input type="hidden" name="batch" value="<%%VALUE(batch)%%>">
+	<input type="hidden" name="section" value="<%%VALUE(section)%%>">
+	<input type="hidden" name="transaction_type" value="<%%VALUE(transaction_type)%%>">
+
+	<!-- child records -->
+	<hr>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<div id="ordersDetails-children" class="children-tabs"></div>
+		</div>
+	</div>
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode){
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			if(!(embedded_mode && AppGini.mobileDevice())){
+				$j('select, input[type=text], textarea').not(':disabled').eq(0).focus();
+			}
+
+			$j('form').eq(0).change(function(){
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			$j('a[href="<%%TRANSLATION(ImageFolder)%%>"]').click(function(){ /* */ return false; });
+
+			if(embedded_mode){
+				/* hide links to children tables in embedded mode */
+				$j('.detail_view a[id$=_link]').remove();
+
+				/* append embedded mode to all links */
+				var append_embedded = function(){
+					$j('a[href]:not([href^="#"]):not([href^="javascript"]):not([href$="Embedded=1"]):not([href*="link.php?t="]):not([href^="mailto:"])').each(
+						function(){
+							$j(this).attr('href', $j(this).attr('href') + '&Embedded=1');
+						}
+					);
+				}
+				setTimeout(append_embedded, 500);
+				setTimeout(append_embedded, 1500);
+				setTimeout(append_embedded, 2500);
+				setTimeout(append_embedded, 3500);
+			}
+
+			/* when no record is selected ('add new' mode) */
+			if(add_new_mode){
+				/* hide links to children tables */
+				$j('.detail_view a[id$=_link]').remove();
+			}else{
+				post(
+					'parent-children.php', {
+						ParentTable: 'ordersDetails',
+						SelectedID: '<%%VALUE(id)%%>',
+						Operation: 'show-children'
+					},
+					'ordersDetails-children'
+				);
+			}
+
+			if(!embedded_mode){
+				/* add a horizontal spacer to [add new parent] buttons that don't have a spacered element before them */
+				$j('.add_new_parent').prev(':not(.hspacer-md)').next().addClass('hspacer-md');
+
+				$j('.add_new_parent').click(function(){
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function(){
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function(){
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length){
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				}else{
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length){
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != ''){
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link){
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function(){
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+
+			/* load admin tools for admin user */
+			if(!add_new_mode){
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=ordersDetails&id=<%%URLVALUE(id)%%>',
+					function(resp){
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=ordersDetails&id=<%%URLVALUE(id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function(){
+				if($j('#deselect.btn-warning').length){
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>

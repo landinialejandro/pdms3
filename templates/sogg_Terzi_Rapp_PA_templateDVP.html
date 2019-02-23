@@ -1,0 +1,251 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ID</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(id)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Id Paese PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="idPaese_RF_PA<%%RND1%%>"><%%COMBOTEXT(idPaese_RF_PA)%%></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Id Partita IVA PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(idCodice_RF_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Codice Fiscale PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(codiceFiscale_RF_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Denominazione PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(denominazione_RF_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Nome Rap. Fiscale PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(nome_RF_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Cognome Rap. Fiscale PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(cognome_RF_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Titolo Rap. Fisc. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(titolo_RF_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CodEORI  Rap. Fisc. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(codEORI__RF_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">IdFiscaleIVA 3 Intermediario</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(idPaeseIVA_3_Int_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">IdCodice 3 Int PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(idCodice_3_Int_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CodFiscale 3 Int. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(codFiscale_3_Int_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Denominazione 3 Int. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(denominazione_3_Int_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Nome 3 Int. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(nome_3_Int_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Cognome 3 Int PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(cognome_3_Int_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Titolo 3 Int. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(titolo_3_Int_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CodEORI 3 Int. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(codEORI_3_Int_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Sogg Emittente PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(sogg_Emittente_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Rif num linea PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(rif_num_linea_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">IdDoc PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(idDoc_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Data ordine Acq. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(data_orAcq_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">NumItem PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(numItem_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Cod Com Con PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(codCom_Con_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CodCUP PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(codCUP_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Cod GIG PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(codGIG_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">DatiCont PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(datiCont_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">DatiConv PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(datiConv_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">DatiRic PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(datiRic_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">DatiFatCol PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(datiFatCol_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">DatiSal PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(datiSal_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">RiferFase PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(riferFase_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">NormaRifer PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(normaRifer_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Nr. FatturaPrinc PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(nrFatturaPrinc_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">DataFattPrinc PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(dataFattPrinc_PA)%%></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<!-- child records -->
+<div class="panel-body">
+	<div id="sogg_Terzi_Rapp_PA-children"></div>
+</div>
+
+<script>
+	$j(function(){
+		/* prevent loading child records in multiple DVP */
+		if($j('[id=sogg_Terzi_Rapp_PA-children]').length > 1) return;
+
+		post(
+			'parent-children.php', {
+				ParentTable: 'sogg_Terzi_Rapp_PA',
+				SelectedID: '<%%VALUE(id)%%>',
+				Operation: 'show-children-printable'
+			},
+			'sogg_Terzi_Rapp_PA-children',
+			'disable-element',
+			'loading-element',
+			apply_persisting_children
+		);
+
+		$j('form').on('click', '#children-tabs button[data-target]', function(){
+			$j(this).toggleClass('active');
+			persist_expanded_child($j(this).attr('id'));
+		});
+	})
+</script>
+

@@ -1,0 +1,10 @@
+/nbproject/private/
+config.php
+setup.md5
+images/*.json
+images/*.jpg
+.vscode/
+PDFfolder/*.pdf
+plugins/
+nbproject/
+xmlFiles/*.xml

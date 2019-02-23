@@ -1,0 +1,179 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ID</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(id)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Kind</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="kind<%%RND1%%>"><%%COMBOTEXT(kind)%%></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CompanyCode</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(companyCode)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CompanyName</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(companyName)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Notes</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(notes)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Id Paese </label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="idPaese_Ced_PA<%%RND1%%>"><%%COMBOTEXT(idPaese_Ced_PA)%%></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Id Codice/P.IVA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(idCodice_Ced_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Codice Fiscale PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(codiceFiscale_Ced_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Denominazione Ced PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(denominazione_Ced_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Titolo Ced. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(titolo_Ced_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Nome cedente PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(nome_Ced_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Cognome Cedente PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(cognome_Ced_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Regime Ced. Fiscale PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(regimeFiscalePA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">IdPaeseVett PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(idPaeseVett_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">IdFiscaleVettore PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(idFiscaleVet_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CodFiscVet PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(codFiscVet_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">DenominazioneVet PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(denominazioneVet_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">TitoloVet PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(titoloVet_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">NomeVet PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(nomeVet_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CognomeVett PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(cognomeVett_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Data Dati Veic PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(data_DatiVeic_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">MezzoTrVet PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(mezzoTrVet_PA)%%></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<!-- child records -->
+<div class="panel-body">
+	<div id="companies-children"></div>
+</div>
+
+<script>
+	$j(function(){
+		/* prevent loading child records in multiple DVP */
+		if($j('[id=companies-children]').length > 1) return;
+
+		post(
+			'parent-children.php', {
+				ParentTable: 'companies',
+				SelectedID: '<%%VALUE(id)%%>',
+				Operation: 'show-children-printable'
+			},
+			'companies-children',
+			'disable-element',
+			'loading-element',
+			apply_persisting_children
+		);
+
+		$j('form').on('click', '#children-tabs button[data-target]', function(){
+			$j(this).toggleClass('active');
+			persist_expanded_child($j(this).attr('id'));
+		});
+	})
+</script>
+

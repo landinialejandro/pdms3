@@ -1,0 +1,281 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Kind</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="kind<%%RND1%%>"><%%COMBOTEXT(kind)%%></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ID Azienda</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="company<%%RND1%%>"><%%COMBOTEXT(company)%%></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Documento</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="typeDoc<%%RND1%%>"><%%COMBOTEXT(typeDoc)%%></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Numero</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(multiOrder_nr_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Formato Trasmissione PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(formatoTrasmissione_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tipo Documento PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(tipo_Documento_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Divisa PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(divisa_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Importo Sconto o Mag PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(importo_Sc_Mg_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Importo Totale doc.</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(importoTot_Doc_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Arrotondamento PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(arrotondamento_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Causale PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(causale_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Data dell'ordine PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(data_Ord_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Data Ora Ritiro PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(dataOraRit_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Data Inizo Trasporto PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(dataInizTrasp_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Cliente</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="customer<%%RND1%%>"><%%COMBOTEXT(customer)%%></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Fornitore</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="supplier<%%RND1%%>"><%%COMBOTEXT(supplier)%%></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Spedizione a mezzo</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="shipVia<%%RND1%%>"><%%COMBOTEXT(shipVia)%%></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Pallets</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(pallets)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Targa Automezzo</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(mezzoTraspVet_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CausaleTraspVet PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(causaleTraspVet_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">NrColliVett PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(nrColliVett_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ASPETTO EST. BENI (DescTraspVet PA)</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(descTraspVet_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Credito o cassa</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><input type="checkbox" name="cashCredit" id="cashCredit" value="1" <%%CHECKED(cashCredit)%%> readonly></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Related</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(related)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tipo ritenuta PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(tipo_rit_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Importo rit. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(imp_rit_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Aliquota rit. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(aliq_rit_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Causale pag. ritenuta PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(causale_pag_rit_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Nr bollo ritenuta PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(nr_bollo_rit_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Importo Bollo ritenuta PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(importo_Bollo_rit_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tipo cassa previdenza PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(tipo_cassa_Prev_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Aliquota cassa Prev. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(al_cassa_Prev_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Importo cont. cassa prev. PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(importo_cont_cassa_prev_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Imponibile cassa Prev PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(imponibile_cassa_Prev_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Aliq IVA cassa prev PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(aliq_IVA_cassa_prev_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Ritenuta cassa prev PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(ritenuta_cassa_prev_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Natura cassa prev PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(natura_cassa_prev_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Riferimento amministrazione prev PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(rif_amm_prev_PA)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">TipoResa PA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(tipoResa_PA)%%></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<!-- child records -->
+<div class="panel-body">
+	<div id="orders-children"></div>
+</div>
+
+<script>
+	$j(function(){
+		/* prevent loading child records in multiple DVP */
+		if($j('[id=orders-children]').length > 1) return;
+
+		post(
+			'parent-children.php', {
+				ParentTable: 'orders',
+				SelectedID: '<%%VALUE(id)%%>',
+				Operation: 'show-children-printable'
+			},
+			'orders-children',
+			'disable-element',
+			'loading-element',
+			apply_persisting_children
+		);
+
+		$j('form').on('click', '#children-tabs button[data-target]', function(){
+			$j(this).toggleClass('active');
+			persist_expanded_child($j(this).attr('id'));
+		});
+	})
+</script>
+
