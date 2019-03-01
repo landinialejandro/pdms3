@@ -535,7 +535,7 @@ function ordersDetails_form($selected_id = '', $AllowUpdate = 1, $AllowInsert = 
 	$combo_tipoCessionePrest_PA->SelectName = 'tipoCessionePrest_PA';
 	// combobox: esigibilitaIVA_PA
 	$combo_esigibilitaIVA_PA = new Combo;
-	$combo_esigibilitaIVA_PA->ListType = 2;
+	$combo_esigibilitaIVA_PA->ListType = 0;
 	$combo_esigibilitaIVA_PA->MultipleSeparator = ', ';
 	$combo_esigibilitaIVA_PA->ListBoxHeight = 10;
 	$combo_esigibilitaIVA_PA->RadiosPerLine = 1;
@@ -987,7 +987,7 @@ function ordersDetails_form($selected_id = '', $AllowUpdate = 1, $AllowInsert = 
 		$jsReadOnly .= "\tjQuery('#imponibileImp_PA').replaceWith('<div class=\"form-control-static\" id=\"imponibileImp_PA\">' + (jQuery('#imponibileImp_PA').val() || '') + '</div>');\n";
 		$jsReadOnly .= "\tjQuery('#impostaRiep_PA').replaceWith('<div class=\"form-control-static\" id=\"impostaRiep_PA\">' + (jQuery('#impostaRiep_PA').val() || '') + '</div>');\n";
 		$jsReadOnly .= "\tjQuery('#LineTotal').replaceWith('<div class=\"form-control-static\" id=\"LineTotal\">' + (jQuery('#LineTotal').val() || '') + '</div>');\n";
-		$jsReadOnly .= "\tjQuery('input[name=esigibilitaIVA_PA]').parent().html('<div class=\"form-control-static\">' + jQuery('input[name=esigibilitaIVA_PA]:checked').next().text() + '</div>')\n";
+		$jsReadOnly .= "\tjQuery('#esigibilitaIVA_PA').replaceWith('<div class=\"form-control-static\" id=\"esigibilitaIVA_PA\">' + (jQuery('#esigibilitaIVA_PA').val() || '') + '</div>'); jQuery('#esigibilitaIVA_PA-multi-selection-help').hide();\n";
 		$jsReadOnly .= "\tjQuery('.select2-container').hide();\n";
 
 		$noUploads = true;

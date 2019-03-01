@@ -194,7 +194,7 @@
                 $buttons['print']['invoice']['update'] = true;
                 $buttons['print']['invoice']['style'] = 'default';
                 $buttons['print']['invoice']['icon'] = 'fa fa-files-o';
-                $buttons['print']['invoice']['onclick'] = '';
+                $buttons['print']['invoice']['onclick'] = 'location|sdi.php?id='.$selectedID;
                 $buttons['print']['invoice']['confirm'] = '';
 
                 $html .= mkbuttons('orders', $selectedID, $buttons);

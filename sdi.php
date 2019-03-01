@@ -204,7 +204,7 @@ $header = $xml_invoice->FatturaElettronicaHeader;
         //1.1.2 obligatory
         $DatiTrasmissione->addChild("ProgressivoInvio",$order['multiOrder']);
         //1.1.3 obligatory assume valore fisso pari a “FPA12”, se la fattura è destinata ad una pubblica amministrazione, oppure “FPR12”, se la fattura è destinata ad un soggetto privato.
-        $DatiTrasmissione->addChild("FormatoTrasmissione",$company['FormatoTrasmissione']);
+        $DatiTrasmissione->addChild("FormatoTrasmissione",$company_values['FormatoTrasmissione']);
         /*  1.1.4 obligatory
             Utilità: è indispensabile al Sistema di Interscambio per individuare gli
             elementi necessari per recapitare correttamente il file al destinatario.

@@ -74,6 +74,11 @@ function CLIENTI_CESSIONARI_PA_insert(){
 		echo '<a href="" onclick="history.go(-1); return false;">'.$Translation['< back'].'</a></div>';
 		exit;
 	}
+	if($data['Denominazione_Ces_PA']== ''){
+		echo StyleSheet() . "\n\n<div class=\"alert alert-danger\">" . $Translation['error:'] . " 'Denominazione Cessionario PA': " . $Translation['field not null'] . '<br><br>';
+		echo '<a href="" onclick="history.go(-1); return false;">'.$Translation['< back'].'</a></div>';
+		exit;
+	}
 	if($data['indirizzo_Ces_PA']== ''){
 		echo StyleSheet() . "\n\n<div class=\"alert alert-danger\">" . $Translation['error:'] . " 'Indirizzo Ces. PA': " . $Translation['field not null'] . '<br><br>';
 		echo '<a href="" onclick="history.go(-1); return false;">'.$Translation['< back'].'</a></div>';
@@ -377,6 +382,11 @@ function CLIENTI_CESSIONARI_PA_update($selected_id){
 	}
 	$data['Denominazione_Ces_PA'] = makeSafe($_REQUEST['Denominazione_Ces_PA']);
 		if($data['Denominazione_Ces_PA'] == empty_lookup_value){ $data['Denominazione_Ces_PA'] = ''; }
+	if($data['Denominazione_Ces_PA']==''){
+		echo StyleSheet() . "\n\n<div class=\"alert alert-danger\">{$Translation['error:']} 'Denominazione Cessionario PA': {$Translation['field not null']}<br><br>";
+		echo '<a href="" onclick="history.go(-1); return false;">'.$Translation['< back'].'</a></div>';
+		exit;
+	}
 	$data['tit_Ces_PA'] = makeSafe($_REQUEST['tit_Ces_PA']);
 		if($data['tit_Ces_PA'] == empty_lookup_value){ $data['tit_Ces_PA'] = ''; }
 	$data['nome_Ces_PA'] = makeSafe($_REQUEST['nome_Ces_PA']);

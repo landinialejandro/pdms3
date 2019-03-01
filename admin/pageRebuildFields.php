@@ -238,7 +238,7 @@
 			'idPaese_Ces_PA' => array('appgini' => 'INT unsigned not null '),
 			'idCodice_Ces_PA' => array('appgini' => 'CHAR(28) not null '),
 			'codiceFiscale_Ces_PA' => array('appgini' => 'CHAR(16) not null '),
-			'Denominazione_Ces_PA' => array('appgini' => 'VARCHAR(80) null '),
+			'Denominazione_Ces_PA' => array('appgini' => 'VARCHAR(80) not null '),
 			'tit_Ces_PA' => array('appgini' => 'CHAR(10) null '),
 			'nome_Ces_PA' => array('appgini' => 'VARCHAR(60) null '),
 			'cogn_Ces_PA' => array('appgini' => 'VARCHAR(60) null '),

@@ -355,10 +355,10 @@
 	$x->DefaultSortField = '1';
 	$x->DefaultSortDirection = 'desc';
 
-	$x->ColWidth   = array(  150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 200, 150, 150, 150, 150, 150, 150, 150, 150, 150);
-	$x->ColCaption = array("Kind", "ID Azienda", "Documento", "Numero", "Formato Trasmissione PA", "Tipo Documento PA", "Divisa PA", "Importo Sconto o Mag PA", "Importo Totale doc.", "Arrotondamento PA", "Causale PA", "Data dell'ordine PA", "Data Ora Ritiro PA", "Data Inizo Trasporto PA", "Cliente", "Fornitore", "Spedizione a mezzo", "Pallets", "Targa Automezzo", "CausaleTraspVet PA", "NrColliVett PA", "ASPETTO EST. BENI (DescTraspVet PA)", "Credito o cassa", "TipoResa PA");
-	$x->ColFieldName = array('kind', 'company', 'typeDoc', 'multiOrder_nr_PA', 'formatoTrasmissione_PA', 'tipo_Documento_PA', 'divisa_PA', 'importo_Sc_Mg_PA', 'importoTot_Doc_PA', 'arrotondamento_PA', 'causale_PA', 'data_Ord_PA', 'dataOraRit_PA', 'dataInizTrasp_PA', 'customer', 'supplier', 'shipVia', 'pallets', 'mezzoTraspVet_PA', 'causaleTraspVet_PA', 'nrColliVett_PA', 'descTraspVet_PA', 'cashCredit', 'tipoResa_PA');
-	$x->ColNumber  = array(2, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 18, 19, 20, 22, 24, 25, 26, 27, 28, 29, 50);
+	$x->ColWidth   = array(  150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 200, 150, 150, 150, 150, 150);
+	$x->ColCaption = array("Kind", "ID Azienda", "Documento", "Numero", "Formato Trasmissione PA", "Tipo Documento PA", "Divisa PA", "Importo Sconto o Mag PA", "Importo Totale doc.", "Causale PA", "Data dell'ordine PA", "Data Ora Ritiro PA", "Data Inizo Trasporto PA", "Cliente", "Spedizione a mezzo", "Pallets", "Targa Automezzo", "ASPETTO EST. BENI (DescTraspVet PA)", "Credito o cassa");
+	$x->ColFieldName = array('kind', 'company', 'typeDoc', 'multiOrder_nr_PA', 'formatoTrasmissione_PA', 'tipo_Documento_PA', 'divisa_PA', 'importo_Sc_Mg_PA', 'importoTot_Doc_PA', 'causale_PA', 'data_Ord_PA', 'dataOraRit_PA', 'dataInizTrasp_PA', 'customer', 'shipVia', 'pallets', 'mezzoTraspVet_PA', 'descTraspVet_PA', 'cashCredit');
+	$x->ColNumber  = array(2, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 17, 18, 19, 22, 24, 25, 28, 29);
 
 	// template paths below are based on the app main directory
 	$x->Template = 'templates/orders_templateTV.html';
@@ -428,21 +428,16 @@
 			$sumRow .= '<td class="orders-divisa_PA"></td>';
 			$sumRow .= '<td class="orders-importo_Sc_Mg_PA"></td>';
 			$sumRow .= "<td class=\"orders-importoTot_Doc_PA text-right\">{$row[0]}</td>";
-			$sumRow .= '<td class="orders-arrotondamento_PA"></td>';
 			$sumRow .= '<td class="orders-causale_PA"></td>';
 			$sumRow .= '<td class="orders-data_Ord_PA"></td>';
 			$sumRow .= '<td class="orders-dataOraRit_PA"></td>';
 			$sumRow .= '<td class="orders-dataInizTrasp_PA"></td>';
 			$sumRow .= '<td class="orders-customer"></td>';
-			$sumRow .= '<td class="orders-supplier"></td>';
 			$sumRow .= '<td class="orders-shipVia"></td>';
 			$sumRow .= "<td class=\"orders-pallets text-right\">{$row[1]}</td>";
 			$sumRow .= '<td class="orders-mezzoTraspVet_PA"></td>';
-			$sumRow .= '<td class="orders-causaleTraspVet_PA"></td>';
-			$sumRow .= '<td class="orders-nrColliVett_PA"></td>';
 			$sumRow .= '<td class="orders-descTraspVet_PA"></td>';
 			$sumRow .= '<td class="orders-cashCredit"></td>';
-			$sumRow .= '<td class="orders-tipoResa_PA"></td>';
 			$sumRow .= '</tr>';
 
 			$x->HTML = str_replace('<!-- tv data below -->', '', $x->HTML);

@@ -12,6 +12,8 @@
 			<input type="hidden" id="ordersDetails_hclink" value="ordersDetails_view.php?filterer_order=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
 			<input type="hidden" id="_resumeOrders_hclink" value="_resumeOrders_view.php?filterer_related=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
 			<input type="hidden" id="firstCashNote_hclink" value="firstCashNote_view.php?filterer_order=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="electronicInvoice_view.php?filterer_tipoDocumentoFEB_PA=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="electronicInvoice_link"><i class="glyphicon glyphicon-list-alt"></i> Fattura Elettronica PA</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="electronicInvoice_view.php?filterer_tipoDocumentoFEB_PA=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="xs_electronicInvoice_link"><i class="glyphicon glyphicon-list-alt"></i> Fattura Elettronica PA</a>
 			<input type="hidden" id="electronicInvoice_hclink" value="electronicInvoice_view.php?filterer_tipoDocumentoFEB_PA=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
 			<div class="clearfix"></div>
 		</div>
@@ -114,16 +116,6 @@
 
 				<div class="form-group">
 					<hr class="hidden-md hidden-lg">
-					<label for="arrotondamento_PA" class="control-label col-lg-3">Arrotondamento PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#arrotondamento_PA-description"></i></label>
-					<div class="col-lg-9">
-						<span class="help-block collapse" id="arrotondamento_PA-description"><div class="alert alert-info">2.1.1.10 <Arrotondamento>eventuale arrotondamento sul totale documento (ammette anche il segno negativo);<br>formato numerico; i decimali vanno separati<br>dall'intero con il carattere '.' (punto) </div></span>
-
-						<input maxlength="18" type="text" class="form-control" name="arrotondamento_PA" id="arrotondamento_PA" value="<%%VALUE(arrotondamento_PA)%%>">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<hr class="hidden-md hidden-lg">
 					<label for="causale_PA" class="control-label col-lg-3">Causale PA<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#causale_PA-description"></i></label>
 					<div class="col-lg-9">
 						<span class="help-block collapse" id="causale_PA-description"><div class="alert alert-info">2.1.1.11 <Causale>descrizione della causale del documento;<br></div></span>
@@ -172,14 +164,6 @@
 
 				<div class="form-group">
 					<hr class="hidden-md hidden-lg">
-					<label for="supplier" class="control-label col-lg-3" data-parent_link="view_parent_modal">Fornitore</label>
-					<div class="col-lg-9">
-						<div class="form-control-static" style="white-space: nowrap; overflow-x: hidden;"><%%COMBO(supplier)%%><%%PLINK(supplier)%%><%%ADDNEW(companies)%%></div>
-					</div>
-				</div>
-
-				<div class="form-group">
-					<hr class="hidden-md hidden-lg">
 					<label for="shipVia" class="control-label col-lg-3" data-parent_link="view_parent_modal">Spedizione a mezzo</label>
 					<div class="col-lg-9">
 						<div class="form-control-static" style="white-space: nowrap; overflow-x: hidden;"><%%COMBO(shipVia)%%><%%PLINK(shipVia)%%><%%ADDNEW(companies)%%></div>
@@ -201,26 +185,6 @@
 						<span class="help-block collapse" id="mezzoTraspVet_PA-description"><div class="alert alert-info">2.1.9.2 <MezzoTrasporto>mezzo utilizzato per il trasporto;</div></span>
 
 						<input maxlength="80" type="text" class="form-control" name="mezzoTraspVet_PA" id="mezzoTraspVet_PA" value="<%%VALUE(mezzoTraspVet_PA)%%>">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<hr class="hidden-md hidden-lg">
-					<label for="causaleTraspVet_PA" class="control-label col-lg-3">CausaleTraspVet PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#causaleTraspVet_PA-description"></i></label>
-					<div class="col-lg-9">
-						<span class="help-block collapse" id="causaleTraspVet_PA-description"><div class="alert alert-info">2.1.9.3 <CausaleTrasporto>causale del trasporto</div></span>
-
-						<input maxlength="100" type="text" class="form-control" name="causaleTraspVet_PA" id="causaleTraspVet_PA" value="<%%VALUE(causaleTraspVet_PA)%%>">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<hr class="hidden-md hidden-lg">
-					<label for="nrColliVett_PA" class="control-label col-lg-3">NrColliVett PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#nrColliVett_PA-description"></i></label>
-					<div class="col-lg-9">
-						<span class="help-block collapse" id="nrColliVett_PA-description"><div class="alert alert-info">2.1.9.4 <NumeroColli>numero dei colli trasportati </div></span>
-
-						<input maxlength="4" type="text" class="form-control" name="nrColliVett_PA" id="nrColliVett_PA" value="<%%VALUE(nrColliVett_PA)%%>">
 					</div>
 				</div>
 
@@ -252,157 +216,6 @@
 					</div>
 				</div>
 
-				<div class="form-group">
-					<hr class="hidden-md hidden-lg">
-					<label for="tipo_rit_PA" class="control-label col-lg-3">Tipo ritenuta PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#tipo_rit_PA-description"></i></label>
-					<div class="col-lg-9">
-						<span class="help-block collapse" id="tipo_rit_PA-description"><div class="alert alert-info">2.1.1.5 <DatiRitenuta>blocco dati relativi alla ritenuta;<br>2.1.1.5.1 <TipoRitenuta>tipologia della ritenuta
-;<br>valori ammessi:<br>[RT01]: ritenuta pers. fisiche<br>[RT02]: ritenuta pers. giurid.</div></span>
-
-						<%%COMBO(tipo_rit_PA)%%>
-					</div>
-				</div>
-
-				<div class="form-group">
-					<hr class="hidden-md hidden-lg">
-					<label for="imp_rit_PA" class="control-label col-lg-3">Importo rit. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#imp_rit_PA-description"></i></label>
-					<div class="col-lg-9">
-						<span class="help-block collapse" id="imp_rit_PA-description"><div class="alert alert-info">2.1.1.5.2 <ImportoRitenuta>importo della ritenuta</div></span>
-
-						<input maxlength="15" type="text" class="form-control" name="imp_rit_PA" id="imp_rit_PA" value="<%%VALUE(imp_rit_PA)%%>">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<hr class="hidden-md hidden-lg">
-					<label for="aliq_rit_PA" class="control-label col-lg-3">Aliquota rit. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#aliq_rit_PA-description"></i></label>
-					<div class="col-lg-9">
-						<span class="help-block collapse" id="aliq_rit_PA-description"><div class="alert alert-info">2.1.1.5.3 <AliquotaRitenuta>aliquota (%) della ritenuta;<br>formato numerico; i decimali vanno separati<br>dall'intero con il carattere '.' (punto) </div></span>
-
-						<input maxlength="6" type="text" class="form-control" name="aliq_rit_PA" id="aliq_rit_PA" value="<%%VALUE(aliq_rit_PA)%%>">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<hr class="hidden-md hidden-lg">
-					<label for="causale_pag_rit_PA" class="control-label col-lg-3">Causale pag. ritenuta PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#causale_pag_rit_PA-description"></i></label>
-					<div class="col-lg-9">
-						<span class="help-block collapse" id="causale_pag_rit_PA-description"><div class="alert alert-info">2.1.1.5.4 <CausalePagamento>causale del pagamento (quella del modello 770) ;<br>valori ammessi:<br>codifiche come da Mod. 770S </div></span>
-
-						<input maxlength="1" type="text" class="form-control" name="causale_pag_rit_PA" id="causale_pag_rit_PA" value="<%%VALUE(causale_pag_rit_PA)%%>">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<hr class="hidden-md hidden-lg">
-					<label for="nr_bollo_rit_PA" class="control-label col-lg-3">Nr bollo ritenuta PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#nr_bollo_rit_PA-description"></i></label>
-					<div class="col-lg-9">
-						<span class="help-block collapse" id="nr_bollo_rit_PA-description"><div class="alert alert-info">2.1.1.6 <DatiBollo>blocco dati relativi al bollo;<br>2.1.1.6.1 <NumeroBollo>numero del bollo</div></span>
-
-						<input maxlength="14" type="text" class="form-control" name="nr_bollo_rit_PA" id="nr_bollo_rit_PA" value="<%%VALUE(nr_bollo_rit_PA)%%>">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<hr class="hidden-md hidden-lg">
-					<label for="importo_Bollo_rit_PA" class="control-label col-lg-3">Importo Bollo ritenuta PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#importo_Bollo_rit_PA-description"></i></label>
-					<div class="col-lg-9">
-						<span class="help-block collapse" id="importo_Bollo_rit_PA-description"><div class="alert alert-info">2.1.1.6.2 <ImportoBollo>importo del bollo;<br>formato numerico; i decimali vanno separati<br>dall'intero con il carattere '.' (punto) </div></span>
-
-						<input maxlength="255" type="text" class="form-control" name="importo_Bollo_rit_PA" id="importo_Bollo_rit_PA" value="<%%VALUE(importo_Bollo_rit_PA)%%>">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<hr class="hidden-md hidden-lg">
-					<label for="tipo_cassa_Prev_PA" class="control-label col-lg-3">Tipo cassa previdenza PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#tipo_cassa_Prev_PA-description"></i></label>
-					<div class="col-lg-9">
-						<span class="help-block collapse" id="tipo_cassa_Prev_PA-description"><div class="alert alert-info">2.1.1.7 <DatiCassaPrevidenziale>blocco dati relativi alla cassa professionale di appartenenza;<br>2.1.1.7.1 <TipoCassa>tipologia cassa previdenziale di appartenenza <br>valori ammessi:<br>vedi codifiche in calce al documento</div></span>
-
-						<%%COMBO(tipo_cassa_Prev_PA)%%>
-					</div>
-				</div>
-
-				<div class="form-group">
-					<hr class="hidden-md hidden-lg">
-					<label for="al_cassa_Prev_PA" class="control-label col-lg-3">Aliquota cassa Prev. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#al_cassa_Prev_PA-description"></i></label>
-					<div class="col-lg-9">
-						<span class="help-block collapse" id="al_cassa_Prev_PA-description"><div class="alert alert-info">2.1.1.7.2 <AlCassa>aliquota (%) del contributo, se previsto, per la cassa di appartenenza;<br>formato numerico; i decimali vanno separati<br>dall'intero con il carattere '.' (punto)</div></span>
-
-						<input maxlength="6" type="text" class="form-control" name="al_cassa_Prev_PA" id="al_cassa_Prev_PA" value="<%%VALUE(al_cassa_Prev_PA)%%>">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<hr class="hidden-md hidden-lg">
-					<label for="importo_cont_cassa_prev_PA" class="control-label col-lg-3">Importo cont. cassa prev. PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#importo_cont_cassa_prev_PA-description"></i></label>
-					<div class="col-lg-9">
-						<span class="help-block collapse" id="importo_cont_cassa_prev_PA-description"><div class="alert alert-info">2.1.1.7.3 <ImportoContributoCassa>importo del contributo per la cassa di appartenenza;<br>formato numerico; i decimali vanno separati<br>dall'intero con il carattere '.' (punto)</div></span>
-
-						<input maxlength="15" type="text" class="form-control" name="importo_cont_cassa_prev_PA" id="importo_cont_cassa_prev_PA" value="<%%VALUE(importo_cont_cassa_prev_PA)%%>">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<hr class="hidden-md hidden-lg">
-					<label for="imponibile_cassa_Prev_PA" class="control-label col-lg-3">Imponibile cassa Prev PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#imponibile_cassa_Prev_PA-description"></i></label>
-					<div class="col-lg-9">
-						<span class="help-block collapse" id="imponibile_cassa_Prev_PA-description"><div class="alert alert-info">2.1.1.7.4 <ImponibileCassa>importo sul quale applicare il contributo cassa previdenziale;<br>formato numerico; i decimali vanno separati<br>dall'intero con il carattere '.' (punto)</div></span>
-
-						<input maxlength="15" type="text" class="form-control" name="imponibile_cassa_Prev_PA" id="imponibile_cassa_Prev_PA" value="<%%VALUE(imponibile_cassa_Prev_PA)%%>">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<hr class="hidden-md hidden-lg">
-					<label for="aliq_IVA_cassa_prev_PA" class="control-label col-lg-3">Aliq IVA cassa prev PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#aliq_IVA_cassa_prev_PA-description"></i></label>
-					<div class="col-lg-9">
-						<span class="help-block collapse" id="aliq_IVA_cassa_prev_PA-description"><div class="alert alert-info">formato numerico; i decimali vanno separati<br>dall'intero con il carattere '.' (punto)</div></span>
-
-						<input maxlength="6" type="text" class="form-control" name="aliq_IVA_cassa_prev_PA" id="aliq_IVA_cassa_prev_PA" value="<%%VALUE(aliq_IVA_cassa_prev_PA)%%>">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<hr class="hidden-md hidden-lg">
-					<label for="ritenuta_cassa_prev_PA" class="control-label col-lg-3">Ritenuta cassa prev PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#ritenuta_cassa_prev_PA-description"></i></label>
-					<div class="col-lg-9">
-						<span class="help-block collapse" id="ritenuta_cassa_prev_PA-description"><div class="alert alert-info">2.1.1.7.6 <Ritenuta>indica se il contributo cassa &#232; soggetto a ritenuta;<br>valore ammesso:<br>[SI]: contributo cassa soggetto a ritenuta</div></span>
-
-						<%%COMBO(ritenuta_cassa_prev_PA)%%>
-					</div>
-				</div>
-
-				<div class="form-group">
-					<hr class="hidden-md hidden-lg">
-					<label for="natura_cassa_prev_PA" class="control-label col-lg-3">Natura cassa prev PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#natura_cassa_prev_PA-description"></i></label>
-					<div class="col-lg-9">
-						<span class="help-block collapse" id="natura_cassa_prev_PA-description"><div class="alert alert-info">2.1.1.7.7 <Natura>nei casi di AliquotaIVA (campo 2.1.1.7.5) pari a zero;<br>valori ammessi:<br>vedi codifiche in calce al documento </div></span>
-
-						<%%COMBO(natura_cassa_prev_PA)%%>
-					</div>
-				</div>
-
-				<div class="form-group">
-					<hr class="hidden-md hidden-lg">
-					<label for="rif_amm_prev_PA" class="control-label col-lg-3">Riferimento amministrazione prev PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#rif_amm_prev_PA-description"></i></label>
-					<div class="col-lg-9">
-						<span class="help-block collapse" id="rif_amm_prev_PA-description"><div class="alert alert-info">2.1.1.7.8 <RiferimentoAmministrazione>codice identificativo ai fini amministrativo-contabili;<br></div></span>
-
-						<input maxlength="20" type="text" class="form-control" name="rif_amm_prev_PA" id="rif_amm_prev_PA" value="<%%VALUE(rif_amm_prev_PA)%%>">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<hr class="hidden-md hidden-lg">
-					<label for="tipoResa_PA" class="control-label col-lg-3">TipoResa PA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#tipoResa_PA-description"></i></label>
-					<div class="col-lg-9">
-						<span class="help-block collapse" id="tipoResa_PA-description"><div class="alert alert-info">2.1.9.11 <TipoResa>codifica del termine di resa espresso secondo lo standard ICC-Camera di Commercio Internazionale (Incoterms) ;<br>[EXW], [CPT], [&#8230;] </div></span>
-
-						<%%COMBO(tipoResa_PA)%%>
-					</div>
-				</div>
-
 			</fieldset>
 		</div>
 
@@ -424,6 +237,7 @@
 		</div>
 	</div>
 
+	<input type="hidden" name="supplier" value="<%%VALUE(supplier)%%>">
 	<input type="hidden" name="employee" value="<%%VALUE(employee)%%>">
 	<input type="hidden" name="CAP_Resa_PA" value="<%%VALUE(CAP_Resa_PA)%%>">
 	<input type="hidden" name="comuneResa_PA" value="<%%VALUE(comuneResa_PA)%%>">
